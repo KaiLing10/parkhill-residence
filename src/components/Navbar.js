@@ -11,54 +11,56 @@ const Navbar = () => {
     }
 
     return (
-        <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
-            {/* dekstop */}
-            <h1 className='w-full text-3xl font-bold text-[#00df9a]'>REACT</h1>
-            <nav>
-                <ul className='hidden md:flex'>
-                    <li className='p-4'>
-                        <Link to="/"> Home </Link></li>
-                    <li className='p-4'>
-                        <Link to="/about"> About </Link></li>
-                    <li className='p-4'>
-                        <Link to="/"> Location </Link></li>
-                    <li className='p-4'>
-                        <Link to="/"> Facilities </Link></li>
-                    <li className='p-4'>
-                        <Link to="/"> Rent </Link></li>
-                </ul>
-            </nav>
-
-            {/* menu icon */}
-            <div onClick={handleNav} className='block md:hidden'>
-                {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
-            </div>
-
-            {/* mobile */}
-            <div className={nav ? 'fixed left-0 top-0 w-[60%] h-full bg-[#000300] ease-in-out duration-500' : 'fixed left-[-100%]'}>
-                <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>REACT</h1>
+        <div className='fixed z-50 w-screen'>
+            <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
+                {/* dekstop */}
+                <h1 className='w-full text-3xl font-bold text-[#00df9a]'>REACT</h1>
                 <nav>
-                    <ul className='p-4'>
-                        <li className='p-4 border-b border-gray-600'>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li className='p-4 border-b border-gray-600'>
-                            <Link to="/about">About</Link>
-                        </li>
-                        <li className='p-4 border-b border-gray-600'>
-                            <Link to="/">Location</Link>
-                        </li>
-                        <li className='p-4 border-b border-gray-600'>
-                            <Link to="/">Facilities</Link>
-                        </li>
+                    <ul className='hidden md:flex '>
                         <li className='p-4'>
-                            <Link to="/">Location</Link>
-                        </li>
+                            <Link to="/"> Home </Link></li>
+                        <li className='p-4'>
+                            <Link to="/about"> About </Link></li>
+                        <li className='p-4'>
+                            <Link to="/"> Location </Link></li>
+                        <li className='p-4'>
+                            <Link to="/"> Facilities </Link></li>
+                        <li className='p-4'>
+                            <Link to="/"> Rent </Link></li>
                     </ul>
                 </nav>
-            </div>
 
-            <Outlet />
+                {/* menu icon */}
+                <div onClick={handleNav} className='block md:hidden'>
+                    {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+                </div>
+
+                {/* mobile */}
+                <div className={nav ? 'fixed left-0 top-0 w-[80%] h-full bg-black/70 ease-in-out duration-500' : 'fixed left-[-100%]'}>
+                    <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>REACT</h1>
+                    <nav>
+                        <ul className='p-4'>
+                            <li className='p-4 border-b border-gray-600'>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li className='p-4 border-b border-gray-600'>
+                                <Link to="/about">About</Link>
+                            </li>
+                            <li className='p-4 border-b border-gray-600'>
+                                <Link to="/">Location</Link>
+                            </li>
+                            <li className='p-4 border-b border-gray-600'>
+                                <Link to="/">Facilities</Link>
+                            </li>
+                            <li className='p-4'>
+                                <Link to="/">Location</Link>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <Outlet />
+            </div>
         </div>
     )
 }
