@@ -1,43 +1,23 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import Typed from 'react-typed';
 
-const HighlightText = () => {
-  const highlightRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const { top, bottom } = highlightRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      if (top < windowHeight && bottom > 0) {
-        // Element is visible in the viewport
-        // Implement your highlight animation logic here
-        // You can use inline styles or add/remove classes to achieve the desired effect
-        highlightRef.current.classList.add('highlight-animation');
-      } else {
-        // Element is not visible in the viewport
-        // Implement logic to reset or remove animation classes if needed
-        highlightRef.current.classList.remove('highlight-animation');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
+export default function Tour() {
   return (
-    <div className="container m-10 text-center  flex items-center justify-center w-1/2">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
-        <span ref={highlightRef} className="inline-block">
-          specific word
-        </span>
-        Donec ultricies, lectus sed tempor consectetur, neque elit ullamcorper nisi,
-        ut tincidunt leo neque vel ligula.
-      </p>
+    <div className='bg-gray-800 h-52 p-10 text-white'>
+      <div className='text-xl md:text-4xl text-center'>
+        <p className=''>Ultimate embodiment</p>
+        <div className='flex justify-center'>
+          <p className='pr-2'>of </p>
+          <Typed 
+            className='text-yellow-400'
+            strings={[' convenience', ' luxurious living']}
+            typeSpeed={50} backSpeed={40} loop />
+        </div>
+      </div>
+      <button className=' border-2 border-yellow-300 rounded-md py-2 px-4'>Virtual Tour</button>
     </div>
-  );
-};
 
-export default HighlightText;
+  )
+}
+
