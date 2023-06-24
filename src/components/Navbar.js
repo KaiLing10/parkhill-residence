@@ -12,11 +12,14 @@ const Navbar = () => {
     }
 
     return (
-        <div className='fixed z-50 w-screen'>
+        <div className='fixed  z-50 w-screen'>
             <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
                 {/* dekstop */}
-
-                <h1 className='w-full text-3xl font-bold text-[#00df9a]'>REACT</h1>
+                <div className='flex ml-6 pt-1 md:pt-0 md:ml-10'>
+                    <div className='items-startcursor-pointer font-bold w-14 md:w-24'>
+                        <img className='' src={process.env.PUBLIC_URL + `/logo.png`} alt="logo" />
+                    </div>
+                </div>
                 <motion.nav
                     initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}

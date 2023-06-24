@@ -2,8 +2,7 @@ import React from "react";
 import ImageBlock from "./ImageBlock";
 import { motion } from "framer-motion"
 
-
-//Variant
+//Variants
 const container = {
     show: {
         transition: {
@@ -57,12 +56,6 @@ const itemMain = {
 };
 
 const Loader = ({ setLoading }) => {
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         setLoading(false);
-    //     }, 4000);
-    //     return () => clearTimeout(timer);
-    // });
 
     return (
         <div className="loader">
@@ -75,14 +68,12 @@ const Loader = ({ setLoading }) => {
                 onAnimationComplete={() => setLoading(false)}>
 
                 <ImageBlock variants={item} id='loader1' />
+
                 <motion.div variants={itemMain} className="transition-image p-2 w-1/2 object-cover">
                     <motion.img
-                        // layoutId="main_image_1"
                         src={process.env.PUBLIC_URL + `/loader/loader2.jpeg`}
                         alt='main_image'
                     />
-
-
                 </motion.div>
 
                 <ImageBlock variants={item} id='loader3' />
@@ -90,7 +81,6 @@ const Loader = ({ setLoading }) => {
                 <ImageBlock variants={item} id='loader5' />
             </motion.div>
         </div>
-
     );
 };
 
