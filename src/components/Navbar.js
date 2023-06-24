@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { Outlet, Link } from "react-router-dom";
+import { motion } from "framer-motion"
 
 const Navbar = () => {
 
@@ -14,8 +15,16 @@ const Navbar = () => {
         <div className='fixed z-50 w-screen'>
             <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
                 {/* dekstop */}
+
                 <h1 className='w-full text-3xl font-bold text-[#00df9a]'>REACT</h1>
-                <nav>
+                <motion.nav
+                    initial={{ opacity: 0, y: -30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        ease: "easeInOut",
+                        duration: 1,
+                        delay: 2,
+                    }}>
                     <ul className='hidden md:flex '>
                         <li className='p-4'>
                             <Link to="/"> Home </Link></li>
@@ -28,7 +37,7 @@ const Navbar = () => {
                         <li className='p-4'>
                             <Link to="/"> Rent </Link></li>
                     </ul>
-                </nav>
+                </motion.nav>
 
                 {/* menu icon */}
                 <div onClick={handleNav} className='block md:hidden'>
