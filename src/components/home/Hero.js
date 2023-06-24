@@ -74,6 +74,8 @@ const Hero = () => {
 
   return (
     <div className='relative h-screen bg-black'>
+
+      {/* Banner */}
       <div className="absolute inset-0 flex justify-center items-center z-20">
         <div className=' text-white'>
           <motion.div className='banner' variants={banner}>
@@ -84,43 +86,34 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ ease: "easeInOut", duration: 1, delay: 2, }}
-              className="">
+              transition={{ ease: "easeInOut", duration: 1, delay: 2, }}>
               <div className="text-center">
                 - the height of convenient living-
               </div>
-
             </motion.div>
+
           </motion.div>
-
-
         </div>
-      
-
       </div>
 
-      <div className='bg-black h-10 absolute z-30 bottom-12 left-1/2'>
-          <div class='icon-scroll ' ></div>
-        </div>
+      <div className='absolute z-30 bottom-16 left-1/2'>
+        <div class='icon-scroll' ></div>
+      </div>
 
       {/* Background */}
-      <div >
-        {/* Overlay */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="absolute z-10 top-0 left-0 bg-black/30 w-full h-screen">
-        </motion.div>
-        {/* Image */}
-        <img
-          src={process.env.PUBLIC_URL + `/loader/loader2.jpeg`}
-          alt='condo_image_background'
-          className=' absolute w-full h-screen object-cover'
-        />
-
-      </div>
-
+      {/* Overlay */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="absolute z-10 top-0 left-0 bg-black/30 w-full h-screen">
+      </motion.div>
+      {/* Image */}
+      <img
+        src={process.env.PUBLIC_URL + `/loader/loader2.jpeg`}
+        alt='condo_image_background'
+        className=' absolute w-full h-screen object-cover'
+      />
     </div>
   )
 }
