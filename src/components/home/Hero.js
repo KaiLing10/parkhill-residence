@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion";
 
 // https://wrongakram.notion.site/Framer-Motion-Basic-Animations-d464a00579144f5c86998731f7afba00
@@ -47,8 +47,6 @@ const AnimatedLetters = ({ title }) => (
 );
 
 
-
-
 const BannerRowTop = ({ title }) => {
   return (
     <div className={"banner-row"}>
@@ -70,11 +68,25 @@ const BannerRowCenter = ({ title }) => {
   );
 };
 
+
 const Hero = () => {
 
-  return (
-    <div className='relative h-screen bg-black'>
+  const [scrollPosition, setScrollPosition] = useState(0);
 
+  // Update scroll position on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+    <div className='relative h-screen'>
       {/* Banner */}
       <div className="absolute inset-0 flex justify-center items-center z-20">
         <div className=' text-white'>
@@ -109,10 +121,16 @@ const Hero = () => {
         className="absolute z-10 top-0 left-0 bg-black/30 w-full h-screen">
       </motion.div>
       {/* Image */}
+
+
       <img
         src={process.env.PUBLIC_URL + `/loader/loader2.jpeg`}
         alt='condo_image_background'
-        className=' absolute w-full h-screen object-cover'
+        className={`bg-white fixed w-full h-screen object-cover `}
+        style={{
+          transform: `scale(${1 + Math.min(scrollPosition / window.innerHeight, 1) * 0.5})`,
+          opacity: 1 - Math.min(scrollPosition / window.innerHeight, 1)*0.8,
+        }}
       />
     </div>
   )

@@ -1,6 +1,8 @@
 import React from 'react'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
+
 
 // Components
 import Navbar from '../components/Navbar';
@@ -23,9 +25,16 @@ export default function Home() {
         <>
           <Navbar />
           <Hero />
-          <Concept />
-          <Tour />
-          <Facilities />
+          <ParallaxProvider>
+            <Parallax >
+              <div className='h-screen'>
+                <Concept />
+                <Tour />
+              </div>
+              <Facilities />
+            </ Parallax>
+
+          </ ParallaxProvider>
         </>
       )}
     </AnimatePresence>
