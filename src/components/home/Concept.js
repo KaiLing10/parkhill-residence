@@ -21,7 +21,7 @@ export default function Concept() {
 
     return (
 
-        <div className={`bg-white h-3/4 pt-10 `}>
+        <div className={`bg-gray-100 h-2/3 pt-10 `}>
 
             <motion.div
                 className='m-auto pl-20 pb-6 text-green-800 text-xl md:text-2xl'

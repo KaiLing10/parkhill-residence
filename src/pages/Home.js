@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
@@ -11,8 +11,11 @@ import Hero from '../components/home/Hero';
 import Concept from '../components/home/Concept';
 import Tour from '../components/home/Tour';
 import Facilities from '../components/home/Facilities';
+import Location from '../components/home/Location'
+import Footer from '../components/Footer';
 
-export default function Home() {
+
+const Home = () => {
   const [loading, setLoading] = useState(true);
 
   return (
@@ -32,12 +35,19 @@ export default function Home() {
                 <Tour />
               </div>
               <Facilities />
+              <Location />
+              <Footer />
             </ Parallax>
-
           </ ParallaxProvider>
+
         </>
       )}
     </AnimatePresence>
 
   )
 }
+
+
+
+export default Home
+
