@@ -55,7 +55,7 @@ const markers = [
 const Location = () => {
 
     return (
-        <div className="bg-yellow-200 flex p-20 ">
+        <div className="bg-gray-200 flex p-20 ">
             <div className="w-1/2">
                 View Location
             </div>

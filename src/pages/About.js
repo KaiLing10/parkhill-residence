@@ -1,5 +1,15 @@
+
 const About = () => {
-    return <h1>About Articles</h1>;
-  };
-  
-  export default About;
+    return (
+        <div>
+            {/* <h1 className="text-black">hihi</h1> */}
+           
+                
+        </div>
+    );
+};
+
+
+export default About;
+
+

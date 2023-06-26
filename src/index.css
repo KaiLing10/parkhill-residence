@@ -10,19 +10,19 @@
 
 /* loader */
 .loader1 {
-  width: 300px;
-  left: 16%;
-  bottom: 14%;
+  width: 220px;
+  left: 8%;
+  bottom: 8%;
 
   @media (max-width: 480px) {
-    left: 4%;
+    left: 14%;
     bottom: 28%;
   }
 }
 
 .loader3 {
-  width: 200px;
-  right: 12%;
+  width: 250px;
+  right: 5%;
   top: 8%;
 
   @media (max-width: 480px) {
@@ -32,21 +32,22 @@
 }
 
 .loader4 {
-  max-width: 300px;
-  width: 40%;
-  right: 20%;
-  bottom: 10%;
+  width: 360px;
+  right: 10%;
+  bottom: 2%;
 
   @media (max-width: 480px) {
     right: 6%;
     bottom: 32%;
   }
+
+
 }
 
 .loader5 {
-  width: 180px;
-  left: 14%;
-  top: 12%;
+  width: 220px;
+  left: 10%;
+  top: 6%;
 
   @media (max-width: 480px) {
     left: 6%;

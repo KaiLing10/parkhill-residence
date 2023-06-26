@@ -39,7 +39,7 @@ const itemMain = {
     show: {
         opacity: 1,
         y: 0,
-        scale:1,
+        scale: 1,
         transition: {
             ease: [0.6, 0.01, 0, 0.95],
             duration: 1.6,
@@ -47,7 +47,7 @@ const itemMain = {
     },
     exit: {
         y: 0,
-        scale:2,
+        scale: 2.5,
         transition: {
             ease: "easeInOut",
             duration: 0.8,
@@ -66,16 +66,13 @@ const Loader = ({ setLoading }) => {
                 animate='show'
                 exit='exit'
                 onAnimationComplete={() => setLoading(false)}>
-
-                <ImageBlock variants={item} id='loader1' />
-
-                <motion.div variants={itemMain} className="transition-image p-2 w-1/2 object-cover">
+                <motion.div variants={itemMain} className="transition-image p-2 w-2/5 object-cover">
                     <motion.img
                         src={process.env.PUBLIC_URL + `/loader/loader2.jpeg`}
                         alt='main_image'
                     />
                 </motion.div>
-
+                <ImageBlock variants={item} id='loader1' />
                 <ImageBlock variants={item} id='loader3' />
                 <ImageBlock variants={item} id='loader4' />
                 <ImageBlock variants={item} id='loader5' />
