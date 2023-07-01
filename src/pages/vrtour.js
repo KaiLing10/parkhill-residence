@@ -6,8 +6,6 @@ import C1 from '../components/virtualTour/level7/C1';
 import C2 from '../components/virtualTour/level7/C2';
 import CLift from '../components/virtualTour/level7/CLift';
 
-import Playground from '../components/virtualTour/level7/Playground';
-import PlaygroundRestingArea from '../components/virtualTour/level7/PlaygroundRestingArea';
 import BbqArea from '../components/virtualTour/level7/BbqArea';
 import BlockD from '../components/virtualTour/level7/BlockD';
 import BlockDDoor from '../components/virtualTour/level7/BlockDDoor';
@@ -19,6 +17,17 @@ import ClubhouseDoor from '../components/virtualTour/level7/ClubhouseDoor';
 import Jacuzzi from '../components/virtualTour/level7/Jacuzzi';
 import Jacuzzi2 from '../components/virtualTour/level7/Jacuzzi2';
 import MazeGarden from '../components/virtualTour/level7/MazeGarden';
+import Playground from '../components/virtualTour/level7/Playground';
+import PlaygroundRestingArea from '../components/virtualTour/level7/PlaygroundRestingArea';
+import Pool from '../components/virtualTour/level7/Pool';
+import Pool0 from '../components/virtualTour/level7/Pool0';
+import PoolCenter from '../components/virtualTour/level7/PoolCenter';
+import PoolLounge from '../components/virtualTour/level7/PoolLounge';
+import ReflexologyPath from '../components/virtualTour/level7/ReflexologyPath';
+import RiverViewDeck from '../components/virtualTour/level7/RiverViewDeck';
+import RiverViewDeck2 from '../components/virtualTour/level7/RiverViewDeck2';
+import Yoga from '../components/virtualTour/level7/Yoga';
+
 
 
 function Vrtour() {
@@ -37,10 +46,6 @@ function Vrtour() {
         return <C1 />;
       case 'level7_blockC':
         return <C2 />;
-      case 'playground':
-        return <Playground />;
-      case 'playground_resting_area':
-        return <PlaygroundRestingArea />;
       case 'bbq_area':
         return <BbqArea />;
       case 'blockD':
@@ -51,7 +56,7 @@ function Vrtour() {
         return <Center1 />;
       case 'center3':
         return <Center3 />;
-      case 'center3Down':
+      case 'center3_down':
         return <Center3Down />;
       case 'center4':
         return <Center4 />;
@@ -59,10 +64,30 @@ function Vrtour() {
         return <ClubhouseDoor />
       case 'jacuzzi':
         return <Jacuzzi />
-      case 'jacuzzi_2':
+      case 'jacuzzi2':
         return <Jacuzzi2 />
       case 'maze_garden':
         return <MazeGarden />
+      case 'playground':
+        return <Playground />;
+      case 'playground_resting_area':
+        return <PlaygroundRestingArea />;
+      case 'pool':
+        return <Pool />
+      case 'pool0':
+        return <Pool0 />
+      case 'pool_center':
+        return <PoolCenter />
+      case 'pool_lounge':
+        return <PoolLounge />
+      case 'reflexology_path':
+        return <ReflexologyPath />
+      case 'river_view_deck':
+        return <RiverViewDeck />
+      case 'river_view_deck_2':
+        return <RiverViewDeck2 />
+      case 'yoga':
+        return <Yoga />
       default:
         return null;
     }

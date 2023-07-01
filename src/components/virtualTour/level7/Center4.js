@@ -11,12 +11,12 @@ export default function Center4() {
     <>
       <Entity
         geometry={{ primitive: 'cylinder' }}
-        position="-1.5 0.8 0"
+        position="-1.5 1 -1"
         rotation="270 180 90"
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'level7_blockC_door'}
+        navigate={'center3'}
       />
        <Entity
         geometry={{ primitive: 'cylinder' }}
@@ -25,16 +25,16 @@ export default function Center4() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'playground'}
+        navigate={'blockD'}
       />
       <Entity
         geometry={{ primitive: 'cylinder' }}
-        position="0 1.3 -3"
-        rotation="270 180 0"
+        position="1 1 -2"
+        rotation="270 145 0"
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'clubhouse_outside'}
+        navigate={'river_view_deck'}
       />
 
       <Entity primitive='a-sky' src={scene} rotation="0 90 0" />

@@ -16,26 +16,18 @@ export default function Jacuzzi() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'level7_blockC_door'}
+        navigate={'jacuzzi2'}
       />
        <Entity
         geometry={{ primitive: 'cylinder' }}
-        position="1.9 1.6 3"
-        rotation="270 180 0"
+        position="1.9 1.6 1"
+        rotation="270 60 0"
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'playground'}
+        navigate={'pool'}
       />
-      <Entity
-        geometry={{ primitive: 'cylinder' }}
-        position="0 1.3 -3"
-        rotation="270 180 0"
-        scale="0.2 0.05 0.2"
-        material={{ src: ArrowIcon, shader: 'flat' }}
-        class="clickable"
-        navigate={'clubhouse_outside'}
-      />
+   
 
       <Entity primitive='a-sky' src={scene} rotation="0 90 0" />
     </>
