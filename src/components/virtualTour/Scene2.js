@@ -1,14 +1,16 @@
-import React from 'react';
-import { Entity, Scene } from 'aframe-react';
+import React, { useEffect, useState } from 'react';
 
-export default function Scene2({ navigateToScene }) {
-  const handleBoxClick = () => {
-    navigateToScene('scene1');
-  };
+// import AFRAME from 'aframe';
+import { Entity } from 'aframe-react';
+import scene from '../../assets/vrtour/scene.jpg';
+
+
+export default function Scene1({ navigateToScene }) {
 
   return (
-    <Scene>
+    <>
       <Entity
+        id="testBox"
         position="0 1.6 -4"
         rotation="0 180 0"
         scale="2 2 2"
@@ -19,10 +21,17 @@ export default function Scene2({ navigateToScene }) {
           color: 'blue',
         }}
         class="clickable"
-        onClick={handleBoxClick}
+        log={'1'}
       ></Entity>
 
-      {/* Other entities and components specific to Scene2 */}
-    </Scene>
+      <Entity primitive='a-sky' src={scene} rotation="0 90 0" />
+      {/* <Camera
+        <Entity
+          primitive="a-cursor"
+          cursor={{ fuse: true }}
+          raycaster={{ objects: '.clickable' }}
+        />
+      </Camera> */}
+    </>
   );
 }

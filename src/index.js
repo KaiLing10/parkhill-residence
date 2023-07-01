@@ -28,7 +28,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         {/* <Route path="/" element={<Navbar />}> */}
-          <Route path="home" index element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="vrtour" element={<VRTour />} />
           <Route path="*" element={<NoPage />} />
