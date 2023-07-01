@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 // import AFRAME from 'aframe';
 import { Entity } from 'aframe-react';
-import scene from '../../assets/vrtour/scene.jpg';
+import scene from '../../../assets/vrtour/level7/C2.jpg';
 
 
-export default function Scene1({ navigateToScene }) {
+export default function C2() {
 
   return (
     <>
@@ -21,17 +21,11 @@ export default function Scene1({ navigateToScene }) {
           color: 'blue',
         }}
         class="clickable"
-        log={'1'}
+        navigate={'level7_c1'}
       ></Entity>
 
       <Entity primitive='a-sky' src={scene} rotation="0 90 0" />
-      {/* <Camera
-        <Entity
-          primitive="a-cursor"
-          cursor={{ fuse: true }}
-          raycaster={{ objects: '.clickable' }}
-        />
-      </Camera> */}
+     
     </>
   );
 }
