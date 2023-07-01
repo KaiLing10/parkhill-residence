@@ -2,12 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
-// import Navbar from './components/Navbar';
 import Home from './pages/home';
 import About from './pages/about';
 import NoPage from "./pages/nopage";
 import VRTour from './pages/vrtour';
-// import Main from './vrscene'
 
 
 
@@ -30,7 +28,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         {/* <Route path="/" element={<Navbar />}> */}
-          <Route index element={<Home />} />
+          <Route path="home" index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="vrtour" element={<VRTour />} />
           <Route path="*" element={<NoPage />} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import Typed from 'react-typed';
+import { Link } from "react-router-dom";
 
 
 export default function Tour() {
@@ -15,7 +16,9 @@ export default function Tour() {
             typeSpeed={50} backSpeed={40} loop />
         </div>
       </div>
-      <button className=' border-2 border-yellow-300 hover:bg-yellow-200 rounded-md mt-8 py-2 px-4'>Virtual Tour</button>
+      <Link className=' border-2 border-yellow-300 hover:bg-yellow-200 rounded-md mt-8 py-2 px-4' to="/vrtour">Virtual Tour</Link>
+
+        
     </div>
 
   )

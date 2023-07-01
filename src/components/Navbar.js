@@ -53,7 +53,7 @@ const Navbar = () => {
                     <nav>
                         <ul className='p-4'>
                             <li className='p-4 border-b border-gray-600'>
-                                <Link to="/">Home</Link>
+                                <Link to="/home">Home</Link>
                             </li>
                             <li className='p-4 border-b border-gray-600'>
                                 <Link to="/about">About</Link>
