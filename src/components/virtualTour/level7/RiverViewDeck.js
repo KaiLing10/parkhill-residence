@@ -16,7 +16,7 @@ export default function RiverViewDeck() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'center4'}
+        navigate={'Center4'}
       />
        <Entity
         geometry={{ primitive: 'cylinder' }}
@@ -25,7 +25,7 @@ export default function RiverViewDeck() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'river_view_deck_2'}
+        navigate={'RiverViewDeck2'}
       />
       
 

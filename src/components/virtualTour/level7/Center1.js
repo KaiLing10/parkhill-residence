@@ -16,7 +16,7 @@ export default function Center1() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'level7_blockC'}
+        navigate={'BlockC'}
       />
        <Entity
         geometry={{ primitive: 'cylinder' }}
@@ -25,7 +25,7 @@ export default function Center1() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'clubhouse_door'}
+        navigate={'ClubhouseDoor'}
       />
       <Entity
         geometry={{ primitive: 'cylinder' }}
@@ -34,7 +34,7 @@ export default function Center1() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'pool'}
+        navigate={'Pool'}
       />
 
       <Entity primitive='a-sky' src={scene} rotation="0 90 0" />

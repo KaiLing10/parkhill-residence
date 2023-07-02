@@ -16,7 +16,7 @@ export default function ReflexologyPath() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'center4'}
+        navigate={'Center4'}
       />
       
 

@@ -16,7 +16,7 @@ export default function PoolCenter() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'clubhouse_door'}
+        navigate={'ClubhouseDoor'}
       />
        
       <Entity
@@ -26,7 +26,7 @@ export default function PoolCenter() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'pool0'}
+        navigate={'Pool0'}
       />
 
       <Entity primitive='a-sky' src={scene} rotation="0 90 0" />

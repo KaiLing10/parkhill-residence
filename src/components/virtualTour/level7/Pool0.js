@@ -16,7 +16,7 @@ export default function Pool0() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'pool_center'}
+        navigate={'PoolCenter'}
       />
        <Entity
         geometry={{ primitive: 'cylinder' }}
@@ -25,7 +25,7 @@ export default function Pool0() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'pool_lounge'}
+        navigate={'PoolLounge'}
       />
       <Entity
         geometry={{ primitive: 'cylinder' }}
@@ -34,7 +34,7 @@ export default function Pool0() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'center1'}
+        navigate={'Center1'}
       />
        <Entity
         geometry={{ primitive: 'cylinder' }}
@@ -43,7 +43,7 @@ export default function Pool0() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'pool'}
+        navigate={'Pool'}
       />
 
       <Entity primitive='a-sky' src={scene} rotation="0 90 0" />

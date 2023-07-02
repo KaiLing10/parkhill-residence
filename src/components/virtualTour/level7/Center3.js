@@ -16,7 +16,7 @@ export default function Center3() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'center3_down'}
+        navigate={'Center3Down'}
       />
        <Entity
         geometry={{ primitive: 'cylinder' }}
@@ -25,7 +25,7 @@ export default function Center3() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'pool'}
+        navigate={'Pool'}
       />
         <Entity
         geometry={{ primitive: 'cylinder' }}
@@ -34,7 +34,7 @@ export default function Center3() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'reflexology_path'}
+        navigate={'ReflexologyPath'}
       />
       <Entity
         geometry={{ primitive: 'cylinder' }}
@@ -43,7 +43,7 @@ export default function Center3() {
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
         class="clickable"
-        navigate={'center4'}
+        navigate={'Center4'}
       />
 
       <Entity primitive='a-sky' src={scene} rotation="0 90 0" />
