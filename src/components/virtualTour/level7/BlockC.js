@@ -3,6 +3,8 @@ import { Entity } from 'aframe-react';
 
 //assets
 import scene from '../../../assets/vrtour/level7/blockC.jpg';
+
+// import scene from '../../../assets/vrtour/clubHouse/clubhouse-roof2.jpg';
 import ArrowIcon from '../../../assets/vrtour/arrow.png';
 
 
