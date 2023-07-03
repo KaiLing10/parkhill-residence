@@ -1,4 +1,5 @@
 // load vr tour components
+// https://webpack.js.org/guides/dependency-management/#requirecontext
 
 const components = {};
 

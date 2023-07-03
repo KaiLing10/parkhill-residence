@@ -5,14 +5,18 @@ import components from './fileLoader';
 
 export default function Vrtour() {
   const [currentScene, setCurrentScene] = useState('BlockC');
-  
+  const [zoomIn, setZoomIn] = useState(false);
 
-  // Navigate to different scene
+  // Navigate to other scene with animation
   const navigateToScene = (scene) => {
-    setCurrentScene(scene);
+    setZoomIn(true); // Enable zoom animation
+    setTimeout(() => {
+      setCurrentScene(scene);
+      setZoomIn(false); 
+    }, 1500);
   };
 
-  // Render the current scene component
+  // Render current scene component
   const renderScene = () => {
     const SceneComponent = components[currentScene];
 
@@ -23,7 +27,7 @@ export default function Vrtour() {
     }
   };
 
-  // Register custom A-Frame component for navigation through click
+  // Register custom A-Frame component for navigation through click event
   useEffect(() => {
     if (AFRAME.components["navigate"]) {
       delete AFRAME.components["navigate"];
@@ -49,12 +53,12 @@ export default function Vrtour() {
     <Scene loading-screen="backgroundColor: #ffc83d" cursor="rayOrigin: mouse" raycaster="objects: .clickable">
       {renderScene()}
 
-      <Entity primitive='a-camera' look-controls="pointerLockEnabled: true" position="0 1.6 0"  >
-        <Entity 
-        cursor="fuse: false;" 
-        position="0 0 -1" 
-        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" 
-        material="color: #ffc600; shader: flat"></Entity>
+      <Entity
+        primitive='a-camera'
+        animation={zoomIn ? "property: camera.zoom; from: 1; to: 1.5; dur: 1500" : "property: camera.zoom; from: 0.85; to: 1; dur: 1200"}
+        look-controls="pointerLockEnabled: true"
+        position="0 1.6 0"  >
+        <Entity cursor="fuse: false;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: #ffc600; shader: flat"></Entity>
       </Entity>
 
     </Scene>
