@@ -10,7 +10,7 @@ export default function Playground() {
     <Entity>
 
       <Arrow position="-2.5 1.4 -0.7" rotation="0 160 70" navigate={'BlockC'}
-        text="Level 7 Entrance" text_rotation="0 80 0" />
+        text="Block C Entrance" text_rotation="0 80 0" />
       <Arrow position="2.3 1.3 1.1" rotation="0 -20 70" navigate={'Playground2'}
         text="" text_rotation="0 240 0" />
 

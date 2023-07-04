@@ -1,58 +1,21 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
-
 //assets
 import scene from '../../../assets/vrtour/level7/blockC_door.jpg';
-import ArrowIcon from '../../../assets/vrtour/arrow.png';
+import Arrow from '../ArrowEntity';
 
 
 export default function BlockCDoor() {
   return (
-    <>
-      {/* <Entity
-        id="testBox"
-        position="0 1.6 -4"
-        rotation="0 180 0"
-        scale="2 2 2"
-        geometry={{
-          primitive: 'box',
-        }}
-        material={{
-          color: 'red',
-        }}
-        class="clickable"
-        navigate={'level7_c2'} 
-      />  */}
-      {/* <Entity id="sphere" geometry="primitive: sphere"
-                material="color: #EFEFEF; shader: flat"
-                position="0 0.15 -5"
-                light="type: point; intensity: 5"
-                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 0 -0.10 -5; loop: true"></a-entity>
+    < >
 
-      <Entity */}
+      <Arrow position="-1.5 1.5 2" rotation="0 230 70" navigate={''}
+        text="Lift" text_rotation="0 140 1" />
+      <Arrow position="2 1 -2" rotation="0 40 40" navigate={'BlockC'}
+        text="" text_rotation="0 0 0" />
 
-      <Entity
-        geometry={{ primitive: 'cylinder' }}
-        position="1.8 1.5 -2"
-        rotation="0 45 90"
-        scale="0.2 0.05 0.2"
-        material={{ src: ArrowIcon, shader: 'flat' }}
-        class="clickable"
-        navigate={'CLift'}
+      <Entity primitive='a-sky' src={scene} rotation="0 330 2" />
 
-      />
-
-      <Entity
-        geometry={{ primitive: 'cylinder' }}
-        position="-1.5 0.8 0"
-        rotation="270 180 90"
-        scale="0.2 0.05 0.2"
-        material={{ src: ArrowIcon, shader: 'flat' }}
-        class="clickable"
-        navigate={'BlockC'}
-
-      />
-      <Entity primitive='a-sky' src={scene} rotation="0 90 0" />
     </>
   );
 }

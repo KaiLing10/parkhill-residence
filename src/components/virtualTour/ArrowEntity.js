@@ -36,7 +36,7 @@ export default function Arrow({ position, rotation, navigate, text, text_rotatio
         geometry={{ primitive: 'cylinder' }}
 
         rotation={rotation}
-        scale="0.3 0.05 0.3"
+        scale="0.3 0.03 0.3"
         material={{
           src: isHovered ? ArrowIconHover : ArrowIcon, shader: 'flat'
         }}
