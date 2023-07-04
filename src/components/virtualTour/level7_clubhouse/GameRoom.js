@@ -1,43 +1,21 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
-
 //assets
 import scene from '../../../assets/vrtour/level7_clubhouse/game_room.jpg';
-import ArrowIcon from '../../../assets/vrtour/arrow.png';
+import Arrow from '../ArrowEntity';
 
 
-export default function GameRoom() {
+ export default function GameRoom() {
   return (
-    <>
-      <Entity
-        geometry={{ primitive: 'cylinder' }}
-        position="-1.5 0.8 0"
-        rotation="270 180 90"
-        scale="0.2 0.05 0.2"
-        material={{ src: ArrowIcon, shader: 'flat' }}
-        class="clickable"
-        navigate={'BlockC'}
-      />
-       <Entity
-        geometry={{ primitive: 'cylinder' }}
-        position="-1 1.6 3"
-        rotation="270 180 0"
-        scale="0.2 0.05 0.2"
-        material={{ src: ArrowIcon, shader: 'flat' }}
-        class="clickable"
-        navigate={'ClubhouseDoor'}
-      />
-      <Entity
-        geometry={{ primitive: 'cylinder' }}
-        position="2 1 -1"
-        rotation="270 90 0"
-        scale="0.2 0.05 0.2"
-        material={{ src: ArrowIcon, shader: 'flat' }}
-        class="clickable"
-        navigate={'Pool'}
-      />
+    < >
 
-      <Entity primitive='a-sky' src={scene} rotation="0 90 0" />
+      <Arrow position="0.9 1.1 2.2" rotation="320 310 50" navigate={'GameRoom2'}
+        text="" text_rotation="-10 210 1" />
+      <Arrow position="1.9 1.3 -2.8" rotation="0 60 50" navigate={'ClubHouseHallway2'}
+        text="Hallway" text_rotation="0 0 355" />
+   
+      <Entity primitive='a-sky' src={scene} rotation="0 8 0" />
+
     </>
   );
 }

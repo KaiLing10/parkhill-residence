@@ -14,7 +14,7 @@ export default function Center1() {
       <Arrow position="-0.5 1.2 -3" rotation="12 75 70" navigate={'Pool0'}
         text="" text_rotation="0 0 0" />
       <Arrow position="2.6 1.3 0.6" rotation="0 -20 50" navigate={'ClubHouseEntrance'}
-        text="Club House" text_rotation="-10 240 0" />
+        text="Club House Entrance" text_rotation="-10 240 0" />
 
       <Entity primitive='a-sky' src={scene} rotation="0 180 0" />
 
