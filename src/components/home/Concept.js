@@ -2,6 +2,7 @@ import React from 'react'
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion'
 import ConceptImage from '../../assets/concept.jpg'
+import { Parallax } from 'react-scroll-parallax';
 
 
 // Animation variants
@@ -45,14 +46,15 @@ const Concept = () => {
         threshold: 1,
     });
     const [ref2, inViewImage] = useInView({
+        triggerOnce:true,
         threshold: 0.7,
     });
 
     return (
-        <div className={`bg-gray-100 h-2/3 pt-10 `}>
+        <div className={`bg-gray-100 flex-col h-auto py-20 font-title `}>
 
             <motion.div
-                className='m-auto pl-20 pb-6 text-green-800 text-xl md:text-2xl'
+                className='m-auto pl-20 pb-6 text-xl md:text-2xl'
                 variants={fadeInText}
                 initial='hidden'
                 animate={inViewText ? 'visible' : 'hidden'}
@@ -66,9 +68,9 @@ const Concept = () => {
             <div className='grid grid-cols-5 '>
                 {/* image */}
                 <motion.div
-                    className='pl-20 col-span-3'
-                    initial={{ opacity: 0 }}
-                    animate={inViewImage ? { opacity: 1 } : { opacity: 0 }}
+                    className='pl-20 col-span-3 mt-10'
+                    initial={{ opacity: 0, y:-20 }}
+                    animate={inViewImage ? { opacity: 1, y:-20 } : { opacity: 0, y:0 }}
                     transition={{ ease: "easeInOut", duration: 1.5 }}
                     ref={ref2}
                 >
@@ -77,7 +79,7 @@ const Concept = () => {
 
                 {/* text content */}
                 <motion.div
-                    className="load-screen--message col-span-2 p-10 pt-24 text-2xl md:text-3xl"
+                    className="  load-screen--message col-span-2 p-10 pt-24 text-2xl md:text-3xl"
                     variants={sentence}
                     initial="hidden"
                     animate={inViewImage ? 'visible' : 'hidden'}
@@ -91,6 +93,7 @@ const Concept = () => {
                 </motion.div>
 
             </div>
+          
         </div>
 
 
