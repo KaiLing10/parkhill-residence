@@ -12,8 +12,8 @@ const Navbar = () => {
     }
 
     return (
-        <div className='fixed  z-50 w-screen'>
-            <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
+        <div className='fixed z-50 w-screen'>
+            <div className='font-content flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
                 {/* dekstop */}
                 <div className='flex ml-6 pt-1 md:pt-0 md:ml-10'>
                     <div className='items-startcursor-pointer font-bold w-14 md:w-24'>

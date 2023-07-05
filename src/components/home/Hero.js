@@ -73,11 +73,11 @@ const Hero = () => {
         <div className=' text-white'>
           <motion.div className='banner' variants={banner}>
 
-            <div className="row-col text-xl md:text-3xl lg:text-4xl text-left">
+            <div className="font-title drop-shadow-black row-col text-xl md:text-3xl lg:text-4xl text-left">
               <AnimatedText text={"Welcome\u00A0to"} />
             </div>
 
-            <div className="text-4xl md:text-7xl lg:text-8xl text-left">
+            <div className="font-title drop-shadow-black text-4xl md:text-7xl lg:text-8xl">
               <AnimatedText text={"Parkhill\u00A0Residence"} />
             </div>
 
@@ -85,7 +85,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ ease: "easeInOut", duration: 1, delay: 2, }}>
-              <div className="text-center">
+              <div className="font-content text-center">
                 - the height of convenient living-
               </div>
             </motion.div>

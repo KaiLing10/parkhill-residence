@@ -16,7 +16,7 @@ import Footer from '../components/Footer';
 
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   return (
     <AnimatePresence>
@@ -30,10 +30,10 @@ const Home = () => {
           <Hero />
           <ParallaxProvider>
             <Parallax >
-              <div className='h-screen'>
+              {/* <div className='h-screen'> */}
                 <Concept />
                 <Tour />
-              </div>
+              {/* </div> */}
               <Facilities />
               <Location />
               <Footer />
