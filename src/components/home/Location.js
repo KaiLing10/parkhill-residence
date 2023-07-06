@@ -1,9 +1,17 @@
-// import "./styles.css";
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
-
 import { Icon, divIcon, point } from "leaflet";
+import { Link } from "react-router-dom";
+
+const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+};
+
 // https://www.youtube.com/watch?v=jD6813wGdBA&t=6s
 
 // create custom icon
@@ -11,7 +19,7 @@ const customIcon = new Icon({
     iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
     //   iconUrl: require("../../assets/concept.jpg"),
 
-    iconSize: [38, 38] // size of the icon
+    iconSize: [48, 48] // size of the icon
 });
 
 // custom cluster icon
@@ -26,93 +34,93 @@ const createClusterCustomIcon = function (cluster) {
 // markers
 const markers = [
     {
-        geocode: [3.13774, 101.68763],
-        popUp: "Parkhill Residence Marker 1"
+        geocode: [3.05530,101.695780],
+        popUp: "Parkhill Residence"
     },
-    // {
-    //   geocode: [3.13794, 101.68685],
-    //   popUp: "Parkhill Residence Marker 2"
-    // },
-    // Add more markers if needed
 ];
 
-
-// const markers = [
-//   {
-//     geocode: [48.86, 2.3522],
-//     popUp: "Hello, I am pop up 1"
-//   },
-//   {
-//     geocode: [48.85, 2.3522],
-//     popUp: "Hello, I am pop up 2"
-//   },
-//   {
-//     geocode: [48.855, 2.34],
-//     popUp: "Hello, I am pop up 3"
-//   }
-// ];
-
 const Location = () => {
+    // const [ref1, inView1] = useInView({
+    //     threshold: 1,
+    //   });
+
+    // https://www.framer.com/motion/use-in-view/
+
+    const ref1 = useRef(null)
+    const isInView1 = useInView(ref1)
+
+    const ref2 = useRef(null)
+    const isInView2 = useInView(ref2)
+
+    const ref3 = useRef(null)
+    const isInView3 = useInView(ref3)
+
+    const ref4 = useRef(null)
+    const isInView4 = useInView(ref4)
+
 
     return (
-        <div className=" h-screen bg-gradient-to-b from-gray-300  to-white flex p-20 pt-40">
-            <div className="w-1/2 grid grid-cols-4  text-2xl md:text-5xl font-title">
-                {/* Location */}
-                <div className="col-span-4  flex items-end pb-10 " >
-                    <span className="= text-4xl">Located in</span>
-                    <span className="ml-3 text-5xl">Bukit Jalil,</span>
-                </div>
-                <div className="col-start-2 col-end-5 ">
-                    <div className="text-xl my-5">easy access to transportation, shopping, entertainment</div>
-                    <div className="text-xl">under 20 km from the city center </div>
-                </div>
-                <div className="col-span-4">it's the perfect location for modern living."</div>
-            </div>
-            <div className="w-1/2 p-10 ">
-                <MapContainer center={[3.13803, 101.68685]} zoom={13}>
-                    {/* OPEN STREEN MAPS TILES */}
-                    {/* <TileLayer
-                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    /> */}
-                    {/* WATERCOLOR CUSTOM TILES */}
-                    {/* <TileLayer
-                        attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg"
-                    /> */}
-                    GOOGLE MAPS TILES
+        <div className=" h-screen bg-gradient-to-b from-gray-300  to-white md:flex p-20 pt-40">
+            <div className="md:w-1/2 grid grid-cols-5 text-base md:text-xl font-title">
+                <motion.div
+                    className="col-span-5 flex items-end pb-10 "
+                    variants={fadeIn}
+                    initial='hidden'
+                    animate={isInView1 ? 'visible' : 'hidden'}
+                    transition={{ ease: "easeInOut", duration: 1.5 }}
+                    ref={ref1}>
+                    <span className="text-2xl md:text-4xl">Located in</span>
+                    <span className="ml-3 text-3xl md:text-5xl text-yellow-500">Bukit Jalil,</span>
+                </motion.div>
 
+                <div className="col-start-2 col-end-6">
+                    <motion.div className=" my-5" variants={fadeIn}
+                        initial='hidden' animate={isInView2 ? 'visible' : 'hidden'}
+                        transition={{ ease: "easeInOut", duration: 1.5 }} ref={ref2}>
+                        easy access to transportation, shopping, entertainment
+                    </motion.div>
+                    <motion.div variants={fadeIn} initial='hidden' animate={isInView4 ? 'visible' : 'hidden'}
+                        transition={{ ease: "easeInOut", duration: 1.5 }} ref={ref4}>
+                        under 20 km from the city center
+                    </motion.div>
+                </div>
+
+                <motion.div
+                    className="col-span-5 text-2xl md:text-4xl "
+                    variants={fadeIn}
+                    initial='hidden'
+                    animate={isInView3 ? 'visible' : 'hidden'}
+                    transition={{ ease: "easeInOut", duration: 1.5 }}
+                    ref={ref3}>
+                    It's the perfect location for modern living.
+                </motion.div>
+
+                <Link to="/vrtour" className="col-span-5">
+                        <button className='font-content text-xl border-2 bg-white border-black rounded-xl mt-5 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
+                            View Location
+                        </button>
+                    </Link>
+
+            </div>
+
+            {/* Map */}
+            <div className="md:w-1/2 h-full overflow-hidden flex justify-center">
+                <MapContainer center={[3.05530,101.695780]} zoom={12}  >
+       
                     <TileLayer
                         attribution="Google Maps"
-                        // url="http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}" // regular
-                        // url="http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}" // satellite
-                        url="http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}" // terrain
+                        url="http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}" // regular
                         maxZoom={20}
                         subdomains={["mt0", "mt1", "mt2", "mt3"]}
                     />
 
-                    <MarkerClusterGroup
-                        chunkedLoading
-                        iconCreateFunction={createClusterCustomIcon}
-                    >
+                    <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterCustomIcon} >
                         {/* Mapping through the markers */}
                         {markers.map((marker) => (
                             <Marker position={marker.geocode} icon={customIcon}>
                                 <Popup>{marker.popUp}</Popup>
                             </Marker>
                         ))}
-
-                        {/* Hard coded markers */}
-                        {/* <Marker position={[51.505, -0.09]} icon={customIcon}>
-                            <Popup>This is popup 1</Popup>
-                            </Marker>
-                            <Marker position={[51.504, -0.1]} icon={customIcon}>
-                            <Popup>This is popup 2</Popup>
-                            </Marker>
-                            <Marker position={[51.5, -0.09]} icon={customIcon}>
-                            <Popup>This is popup 3</Popup>
-                            </Marker>
-                        */}
                     </MarkerClusterGroup>
                 </MapContainer>
             </div>
