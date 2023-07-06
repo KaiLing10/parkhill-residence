@@ -6,7 +6,7 @@ import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 // Components
 import Navbar from '../components/Navbar';
-import Loader from "../components/home/Loader";
+import Loader from "../components/home/Loader/Loader";
 import Hero from '../components/home/Hero';
 import Concept from '../components/home/Concept';
 import Tour from '../components/home/Tour';
@@ -16,7 +16,7 @@ import Footer from '../components/Footer';
 
 
 const Home = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   return (
     <AnimatePresence>

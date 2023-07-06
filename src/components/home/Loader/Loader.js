@@ -62,11 +62,9 @@ const Loader = ({ setLoading }) => {
             <motion.div
                 className='h-screen flex justify-center items-center'
                 variants={container}
-                initial='hidden'
-                animate='show'
-                exit='exit'
+                initial='hidden' animate='show' exit='exit'
                 onAnimationComplete={() => setLoading(false)}>
-                <motion.div variants={itemMain} className="transition-image p-2 w-2/5 object-cover">
+                <motion.div variants={itemMain} className="transition-image p-2 w-2/3 md:w-2/5 object-cover">
                     <motion.img
                         src={process.env.PUBLIC_URL + `/loader/loader2.jpeg`}
                         alt='main_image'

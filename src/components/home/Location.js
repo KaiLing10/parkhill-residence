@@ -55,22 +55,31 @@ const markers = [
 const Location = () => {
 
     return (
-        <div className="bg-gray-200 flex p-20 ">
-            <div className="w-1/2">
-                View Location
+        <div className=" h-screen bg-gradient-to-b from-gray-300  to-white flex p-20 pt-40">
+            <div className="w-1/2 grid grid-cols-4  text-2xl md:text-5xl font-title">
+                {/* Location */}
+                <div className="col-span-4  flex items-end pb-10 " >
+                    <span className="= text-4xl">Located in</span>
+                    <span className="ml-3 text-5xl">Bukit Jalil,</span>
+                </div>
+                <div className="col-start-2 col-end-5 ">
+                    <div className="text-xl my-5">easy access to transportation, shopping, entertainment</div>
+                    <div className="text-xl">under 20 km from the city center </div>
+                </div>
+                <div className="col-span-4">it's the perfect location for modern living."</div>
             </div>
-            <div className="w-1/2 p-10">
+            <div className="w-1/2 p-10 ">
                 <MapContainer center={[3.13803, 101.68685]} zoom={13}>
                     {/* OPEN STREEN MAPS TILES */}
                     {/* <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      /> */}
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    /> */}
                     {/* WATERCOLOR CUSTOM TILES */}
                     {/* <TileLayer
-        attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg"
-      /> */}
+                        attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg"
+                    /> */}
                     GOOGLE MAPS TILES
 
                     <TileLayer
@@ -95,15 +104,15 @@ const Location = () => {
 
                         {/* Hard coded markers */}
                         {/* <Marker position={[51.505, -0.09]} icon={customIcon}>
-          <Popup>This is popup 1</Popup>
-        </Marker>
-        <Marker position={[51.504, -0.1]} icon={customIcon}>
-          <Popup>This is popup 2</Popup>
-        </Marker>
-        <Marker position={[51.5, -0.09]} icon={customIcon}>
-          <Popup>This is popup 3</Popup>
-        </Marker>
-       */}
+                            <Popup>This is popup 1</Popup>
+                            </Marker>
+                            <Marker position={[51.504, -0.1]} icon={customIcon}>
+                            <Popup>This is popup 2</Popup>
+                            </Marker>
+                            <Marker position={[51.5, -0.09]} icon={customIcon}>
+                            <Popup>This is popup 3</Popup>
+                            </Marker>
+                        */}
                     </MarkerClusterGroup>
                 </MapContainer>
             </div>

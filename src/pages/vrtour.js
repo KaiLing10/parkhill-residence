@@ -4,7 +4,7 @@ import AFRAME from 'aframe'
 import components from './fileLoader';
 
 export default function Vrtour() {
-  const [currentScene, setCurrentScene] = useState('FunctionRoom');
+  const [currentScene, setCurrentScene] = useState('BlockC');
   const [zoomIn, setZoomIn] = useState(false);
 
   // Navigate to other scene with animation
