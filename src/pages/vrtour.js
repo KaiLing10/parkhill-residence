@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 import InfoModal from '../components/virtualTour/InfoModal'
-// import SwitchSceneModal from '../components/virtualTour/SwitchSceneModal';
+import SwitchSceneModal from '../components/virtualTour/SwitchSceneModal';
 import facilitiesImage from '../assets/facilities/center.jpg'
 
 
@@ -15,11 +15,12 @@ export default function Vrtour() {
   const [currentScene, setCurrentScene] = useState('Badminton');
   const [zoomIn, setZoomIn] = useState(false);
   const [openInfo, setOpenInfo] = useState(false);
-  // const [openSwitchScene, setOpenSwitchScene] = useState(false);
+  const [openSwitchScene, setOpenSwitchScene] = useState(false);
 
   // Navigate to other scene with animation
   const navigateToScene = (scene) => {
-    console.log('test_clicked')
+    setOpenSwitchScene(false)
+    setOpenInfo(false)
     setZoomIn(true); // Enable zoom animation
     setTimeout(() => {
       setCurrentScene(scene);
@@ -32,9 +33,9 @@ export default function Vrtour() {
     setOpenInfo(!openInfo)
   }
 
-  // const handleSwitchSceneModal = () => {
-  //   setOpenSwitchScene(!openSwitchScene)
-  // }
+  const handleSwitchSceneModal = () => {
+    setOpenSwitchScene(!openSwitchScene)
+  }
 
 
   // Render current scene component
@@ -80,7 +81,7 @@ export default function Vrtour() {
         const test = this.data;
         console.log(this.data)
         console.log(test)
-        this.el.addEventListener("click", () => { handleInfoModal(test) });
+        this.el.addEventListener("click", () => { handleInfoModal() });
       },
 
     });
@@ -94,24 +95,24 @@ export default function Vrtour() {
 
       <div className='relative h-screen'>
      {/* modal */}
-      {/* <div className="absolute h-screen w-screen overflow-y-scroll"> */}
+      <div className="absolute h-full w-screen overflow-y-scroll">
 
         {openInfo ? <InfoModal handleInfoModal={handleInfoModal} /> : ''}
-        {/* {openSwitchScene ? <SwitchSceneModal handleSwitchSceneModal={handleSwitchSceneModal} /> : ''} */}
-      {/* </div> */}
-      
+        {openSwitchScene ? <SwitchSceneModal handleSwitchSceneModal={handleSwitchSceneModal} navigateToScene={navigateToScene} /> : ''}
+      </div>
+
         {/* static toolbar */}
         <div className='flex h-full justify-center items-end'>
-          <div className='absolute bg-white/80 h-16 w-2/3 z-10'>
-            <Link to="/home" className='w-4/5'>
-              <button className='font-content text-xl border-2 bg-white border-black rounded-xl mt-5 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
-                About
+          <div className='bg-white/80 h-20 w-2/3 z-10 p-2 text-center'>
+            <Link to="/home" className='w-4/5 mx-3'>
+              <button className='font-content text-lg border-2 bg-white border-black rounded-xl my-2 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
+                Home
               </button>
             </Link>
 
-            {/* <button onClick={handleSwitchSceneModal} className='font-content text-xl border-2 bg-white border-black rounded-xl mt-5 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
+            <button onClick={handleSwitchSceneModal} className='font-content text-lg border-2 bg-white border-black rounded-xl my-2 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
               Switch
-            </button> */}
+            </button>
           </div>
         </div>
 

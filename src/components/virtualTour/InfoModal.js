@@ -7,10 +7,10 @@ export default function InfoModal({ handleInfoModal }) {
   // const closeModal = () =>{
 
   // }
-  console.log('here')
+
   return (
 
-    <div className="absolute h-screen w-screen overflow-y-scroll">
+    // <div className="absolute h-screen w-screen overflow-y-scroll">
       <div className='flex h-full justify-center items-center'>
         <motion.div
           className='relative bg-black/80 w-1/2 z-30 h-2/3 p-10 text-white font-content '
@@ -28,6 +28,6 @@ export default function InfoModal({ handleInfoModal }) {
           </div> */}
         </motion.div>
       </div>
-    </div>
+    // </div>
   )
 }
