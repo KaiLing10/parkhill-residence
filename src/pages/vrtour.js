@@ -9,10 +9,9 @@ import InfoModal from '../components/virtualTour/InfoModal'
 import SwitchSceneModal from '../components/virtualTour/SwitchSceneModal';
 import facilitiesImage from '../assets/facilities/center.jpg'
 
-
 export default function Vrtour() {
   const [firstTour, setFirstTour] = useState(true);
-  const [currentScene, setCurrentScene] = useState('Badminton');
+  const [currentScene, setCurrentScene] = useState('BlockC');
   const [zoomIn, setZoomIn] = useState(false);
   const [openInfo, setOpenInfo] = useState(false);
   const [openSwitchScene, setOpenSwitchScene] = useState(false);
@@ -36,7 +35,6 @@ export default function Vrtour() {
   const handleSwitchSceneModal = () => {
     setOpenSwitchScene(!openSwitchScene)
   }
-
 
   // Render current scene component
   const renderScene = () => {
@@ -83,9 +81,7 @@ export default function Vrtour() {
         console.log(test)
         this.el.addEventListener("click", () => { handleInfoModal() });
       },
-
     });
-
   }, []);
 
 
@@ -93,13 +89,25 @@ export default function Vrtour() {
 
     <Scene loading-screen="backgroundColor: #ffc83d" cursor="rayOrigin: mouse" raycaster="objects: .clickable">
 
-      <div className='relative h-screen'>
-     {/* modal */}
-      <div className="absolute h-full w-screen overflow-y-scroll">
 
-        {openInfo ? <InfoModal handleInfoModal={handleInfoModal} /> : ''}
-        {openSwitchScene ? <SwitchSceneModal handleSwitchSceneModal={handleSwitchSceneModal} navigateToScene={navigateToScene} /> : ''}
-      </div>
+      <div className='relative h-screen'>
+        <div className='absolute flex bg-red-300 h-full w-full justify-center items-center'>
+          <motion.div
+            className=' z-30 bg-black/50 font-title text-white drop-shadow-black text-center text-2xl md:text-4xl'
+            initial={{ opacity: 0, y: 20 }}
+            animate={firstTour ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ ease: "easeInOut", duration: 1, delay: 1 }}
+            onAnimationComplete={() => setFirstTour(false)}
+          >
+            <p>You are now at Level 7</p>
+          </motion.div>
+        </div>
+
+        {/* modal */}
+        <div className="absolute h-full w-screen overflow-y-scroll">
+          {openInfo ? <InfoModal handleInfoModal={handleInfoModal} /> : ''}
+          {openSwitchScene ? <SwitchSceneModal handleSwitchSceneModal={handleSwitchSceneModal} navigateToScene={navigateToScene} /> : ''}
+        </div>
 
         {/* static toolbar */}
         <div className='flex h-full justify-center items-end'>
@@ -117,20 +125,12 @@ export default function Vrtour() {
         </div>
 
         {/* welcome text */}
-        <div className='flex h-full justify-center items-center'>
-          <motion.div
-            className='absolute z-10 bg-black/50 font-title text-white drop-shadow-black text-center text-2xl md:text-4xl'
-            initial={{ opacity: 0, y: 20 }}
-            animate={firstTour ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ ease: "easeInOut", duration: 1, delay: 1 }}
-            onAnimationComplete={() => setFirstTour(false)}
-          >
-            <p>You are now at Level 7</p>
-          </motion.div>
-        </div>
+
+
+
       </div>
 
- 
+
 
       {/* 360 scene */}
       {renderScene()}

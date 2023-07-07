@@ -73,7 +73,7 @@ const Hero = () => {
         <div className=' text-white'>
           <motion.div className='banner' variants={banner}>
 
-            <div className="font-title drop-shadow-black row-col text-xl md:text-3xl lg:text-4xl text-left">
+            <div className="font-title drop-shadow-black row-col text-2xl md:text-3xl lg:text-4xl text-left">
               <AnimatedText text={"Welcome\u00A0to"} />
             </div>
 

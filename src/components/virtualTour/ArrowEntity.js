@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Entity } from 'aframe-react';
 import ArrowIcon from '../../assets/vrtour/arrowwhite.png';
-import ArrowIconHover from '../../assets/vrtour/arrow_hover.png'
+import ArrowIconHover from '../../assets/vrtour/arrowYellow_hover.png'
 
 export default function Arrow({ position, rotation, navigate, text, text_rotation }) {
   const [isHovered, setIsHovered] = useState(false);
