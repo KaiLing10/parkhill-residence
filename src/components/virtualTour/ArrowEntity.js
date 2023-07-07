@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Entity } from 'aframe-react';
-import ArrowIcon from '../../assets/vrtour/arrow.png';
+import ArrowIcon from '../../assets/vrtour/arrowwhite.png';
 import ArrowIconHover from '../../assets/vrtour/arrow_hover.png'
 
 export default function Arrow({ position, rotation, navigate, text, text_rotation }) {
@@ -18,6 +18,7 @@ export default function Arrow({ position, rotation, navigate, text, text_rotatio
   return (
 
     <Entity position={position}>
+      {/* location text */}
       <Entity
         text={{
           value: text , // Text content
@@ -30,15 +31,18 @@ export default function Arrow({ position, rotation, navigate, text, text_rotatio
           // letterSpacing: 0.02
         }}
         rotation= {text_rotation}
-        position="0 -0.4 0" // Position of the text entity
+        position="0 -0.4 0" 
       />
+
+      {/* arrow icon */}
       <Entity
         geometry={{ primitive: 'cylinder' }}
-
         rotation={rotation}
         scale="0.3 0.03 0.3"
         material={{
-          src: isHovered ? ArrowIconHover : ArrowIcon, shader: 'flat'
+          src: isHovered ? ArrowIconHover : ArrowIcon, 
+          shader: 'flat', 
+          opacity:'0.8',
         }}
         class="clickable"
         events={{
