@@ -1,6 +1,5 @@
-import { useRef } from "react";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import React, {useRef} from 'react'
+import { motion, useInView } from "framer-motion";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
@@ -60,8 +59,8 @@ const Location = () => {
 
 
     return (
-        <div className=" h-screen bg-gradient-to-b from-gray-300  to-white md:flex p-20 pt-40">
-            <div className="md:w-1/2 grid grid-cols-5 text-base md:text-xl font-title">
+        <div className=" h-screen bg-gradient-to-b from-gray-300  to-white md:flex p-10 md:p-20 pt-40">
+            <div className="w-full md:w-1/2 grid grid-cols-5 text-base md:text-xl font-title">
                 <motion.div
                     className="col-span-5 flex items-end pb-10 "
                     variants={fadeIn}
@@ -70,10 +69,10 @@ const Location = () => {
                     transition={{ ease: "easeInOut", duration: 1.5 }}
                     ref={ref1}>
                     <span className="text-2xl md:text-4xl">Located in</span>
-                    <span className="ml-3 text-3xl md:text-5xl text-yellow-500">Bukit Jalil,</span>
+                    <span className="ml-3 text-4xl md:text-5xl text-yellow-500">Bukit Jalil,</span>
                 </motion.div>
 
-                <div className="col-start-2 col-end-6">
+                <div className="col-start-2 col-end-6 mb-10 md:mb-0">
                     <motion.div className=" my-5" variants={fadeIn}
                         initial='hidden' animate={isInView2 ? 'visible' : 'hidden'}
                         transition={{ ease: "easeInOut", duration: 1.5 }} ref={ref2}>

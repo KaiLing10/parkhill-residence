@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 export default function Tour() {
   return (
-    <div className='font-title bg-gray-800 h-80 p-10 text-white drop-shadow-black text-center'>
-      <div className='text-xl md:text-4xl mb-10 text-center'>
+    <div className='font-title bg-gray-800 h-80 pt-20 text-white drop-shadow-black text-center'>
+      <div className='text-2xl md:text-4xl mb-10 text-center'>
         <p className=''>Ultimate embodiment</p>
         <div className='flex justify-center'>
           <p className='pr-2'>of </p>
@@ -18,7 +18,7 @@ export default function Tour() {
 
 
       <Link to="/vrtour">
-        <button className='font-content text-xl border-2  bg-black/20 border-white rounded-xl py-2 px-4 transition ease-in-out delay-150 hover:bg-white/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
+        <button className='font-content text-xl md:text-xl border-2  bg-black/20 border-white rounded-xl py-2 px-4 transition ease-in-out delay-150 hover:bg-white/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
           Virtual Tour
         </button>
       </Link>

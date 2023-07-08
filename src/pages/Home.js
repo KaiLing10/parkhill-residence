@@ -16,7 +16,7 @@ import Footer from '../components/Footer';
 
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   return (
     <AnimatePresence>
