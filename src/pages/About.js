@@ -1,8 +1,15 @@
 import React, { useRef } from 'react'
+import { useInView, motion } from 'framer-motion'
+
+// components
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+
+// assets
 import bg from '../assets/condo.jpeg'
 import logoPic from '../assets/logo.png'
-import { useInView, motion } from 'framer-motion'
+import typeD from '../assets/about/typeD.jpeg'
+import typeE from '../assets/about/typeE.jpeg'
 
 
 
@@ -13,7 +20,6 @@ const fadeIn = {
 
 
 const About = () => {
-
 
     const ref1 = useRef(null)
     const isInView1 = useInView(ref1)
@@ -77,17 +83,20 @@ const About = () => {
                         <p>Units Per Floor and No of Lifts: 14 units per floor, served by 7 lifts</p>
 
                         <p>Unit Types and Built Up: Only 2 types available</p>
-                        <div>
-                            <span>Type D: 1,100sq ft (3R2B)</span>
-                            <span>Type E:  1,300sq ft (4R2B)</span>
+                        <div className='grid'>
+                            <div className=''>Type D: 1,100sq ft (3R2B)</div>
+                            <img src={typeD} alt='type D unit' className='w-1/2' />
+                            
+                            <div>Type E:  1,300sq ft (4R2B)</div>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-
+            <Footer />
         </div>
+        
     )
 }
 
