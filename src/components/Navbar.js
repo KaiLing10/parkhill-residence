@@ -30,15 +30,15 @@ const Navbar = () => {
                     }}>
                     <ul className='hidden md:flex '>
                         <li className='p-4'>
-                            <Link to="/"> Home </Link></li>
+                            <Link to="/home"> Home </Link></li>
                         <li className='p-4'>
                             <Link to="/about"> About </Link></li>
                         <li className='p-4'>
-                            <Link to="/vrtour"> Location </Link></li>
+                            <Link to="/location"> Location </Link></li>
                         <li className='p-4'>
-                            <Link to="/"> Facilities </Link></li>
+                            <Link to="/facilities"> Facilities </Link></li>
                         <li className='p-4'>
-                            <Link to="/"> Rent </Link></li>
+                            <Link to="/rent"> Rent </Link></li>
                     </ul>
                 </motion.nav>
 

@@ -3,7 +3,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
-
 // Components
 import Navbar from '../components/Navbar';
 import Loader from "../components/home/Loader/Loader";
@@ -30,10 +29,8 @@ const Home = () => {
           <Hero />
           <ParallaxProvider>
             <Parallax >
-              {/* <div className='h-screen'> */}
-                <Concept />
-                <Tour />
-              {/* </div> */}
+              <Concept />
+              <Tour />
               <Facilities />
               <Location />
               <Footer />

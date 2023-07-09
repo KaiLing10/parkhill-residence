@@ -1,9 +1,9 @@
 import React from 'react'
 
-const facilities = () => {
+const Facilities = () => {
   return (
     <div>facilities</div>
   )
 }
 
-export default facilities
+export default Facilities

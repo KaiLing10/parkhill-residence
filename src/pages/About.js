@@ -4,13 +4,13 @@ import { useInView, motion } from 'framer-motion'
 // components
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import NumberCountAnimation from './location/NumberCounting'
 
 // assets
 import bg from '../assets/condo.jpeg'
 import logoPic from '../assets/logo.png'
 import typeD from '../assets/about/typeD.jpeg'
 import typeE from '../assets/about/typeE.jpeg'
-
 
 
 const fadeIn = {
@@ -23,6 +23,15 @@ const About = () => {
 
     const ref1 = useRef(null)
     const isInView1 = useInView(ref1)
+
+    // const ref2 = useRef(null)
+    // const isInView2 = useInView(ref2)
+
+    // style
+    const infoStyle = 'col-span-3 text-xl md:text-2xl flex items-end mb-5'
+    const infoTitleStyle = 'col-span-1 text-lg md:px-10 text-yellow-600 md:mb-5'
+
+
 
     return (
         <div className='bg-gray-100 font-title'>
@@ -59,36 +68,68 @@ const About = () => {
                 </div>
 
                 {/* info content */}
-                <div className=' font-light'>
-                    <div className=' w-[50vw] m-auto text-center text-3xl p-10'>
-                        <span>2 towers </span>
-                        <span>43 storeys</span>
-                        <p>1062 units in total</p>
-                    </div>
-                    <div className='p-10 md:px-20 text-xl md:text-2xl' >
-                        <p>Project Name: Parkhill Residence</p>
+                <div className='font-light'>
+                    <div className=' md:w-[50vw] m-auto text-center text-3xl md:text-4xl p-10'>
 
-                        <p> Address:  Technology Park Malaysia, Lebuhraya Puchong-Sungai Besi, Bukit Jalil, 57000, Kuala Lumpur</p>
-
-                        <p>Developer:  Aset Kayamas Sdn Bhd (929423-V)</p>
-
-                        <p>Property Type: Condominium</p>
-
-                        <p>  Land Title: Residential</p>
-
-                        <p>Tenure: Leasehold</p>
-
-                        <p> Land Area: 5.65 acres (condo alone)</p>
-
-                        <p>Units Per Floor and No of Lifts: 14 units per floor, served by 7 lifts</p>
-
-                        <p>Unit Types and Built Up: Only 2 types available</p>
-                        <div className='grid'>
-                            <div className=''>Type D: 1,100sq ft (3R2B)</div>
-                            <img src={typeD} alt='type D unit' className='w-1/2' />
-                            
-                            <div>Type E:  1,300sq ft (4R2B)</div>
+                        {/* <motion.div className=' md:w-[50vw] m-auto text-center text-3xl md:text-4xl p-10'
+                        variants={fadeIn}
+                        initial='hidden'
+                        animate={isInView2 ? 'visible' : 'hidden'}
+                        transition={{ ease: "easeInOut", duration: 1, delay: 0.5 }}
+                        ref={ref2}> */}
+                        <span><NumberCountAnimation value={2} /> towers </span>
+                        <span><NumberCountAnimation value={43} /> storeys</span>
+                        <div className='mt-5'>
+                            <span className='text-5xl  text-yellow-500'><NumberCountAnimation value={1062} /></span>
+                            <span > units in total</span>
                         </div>
+                    </div>
+                    <div className=' md:grid md:grid-cols-4 p-10 md:px-20 text-xl md:text-2xl' >
+                        <p className={infoTitleStyle}>Project Name </p>
+                        <p className={infoStyle}> Parkhill Residence</p>
+
+                        <p className={infoTitleStyle}> Address  </p>
+                        <p className={infoStyle}> Technology Park Malaysia, Lebuhraya Puchong-Sungai Besi, Bukit Jalil, 57000, Kuala Lumpur</p>
+
+                        <p className={infoTitleStyle}>Developer  </p>
+                        <p className={infoStyle}>Aset Kayamas Sdn Bhd (929423-V)</p>
+
+                        <p className={infoTitleStyle}>Property Type</p>
+                        <p className={infoStyle}>Condominium</p>
+
+                        <p className={infoTitleStyle}> Land Title </p>
+                        <p className={infoStyle}>  Residential</p>
+
+                        <p className={infoTitleStyle}>Tenure </p>
+                        <p className={infoStyle}>Leasehold</p>
+
+                        <p className={infoTitleStyle}> Land Area </p>
+                        <p className={infoStyle}> 5.65 acres (condo alone)</p>
+
+                        <p className={infoTitleStyle}>Units and Lifts Per Floor</p>
+                        <p className={infoStyle}>14 units per floor, served by 7 lifts</p>
+
+                        <p className={infoTitleStyle}>Unit Types and Built Up</p>
+                        <div className='col-span-1 w-[50vw]'>
+                            2 types available
+                            <div className=' flex'>
+                                <div className='mr-10'>
+                                    <p className='font-bold text-3xl text-yellow-500'>Type D</p>
+                                         <p>1,100sq ft (3R2B)</p>
+                                    <img src={typeD} alt='type D unit' className=' ' />
+                                </div>
+
+                                <div>
+                                <p className=' font-bold text-3xl text-yellow-500'>Type E</p>
+                                         <p>1,300sq ft (4R2B)</p>
+                                   
+                                    <img src={typeD} alt='type D unit' className=' ' />
+
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
 
@@ -96,7 +137,7 @@ const About = () => {
 
             <Footer />
         </div>
-        
+
     )
 }
 

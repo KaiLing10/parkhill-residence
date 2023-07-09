@@ -48,13 +48,12 @@ const Facilities = () => {
         <p> has just the facility for </p>
         <p> your enjoyment. </p>
 
-        <Link to="/vrtour">
+        <Link to="/facilities">
           <button className='mt-5 font-content text-xl border-2 border-white bg-black/20 rounded-xl py-2 px-4 transition ease-in-out delay-150 hover:bg-white/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
             View Facilities
           </button>
         </Link>
       </motion.div>
-
 
       <div className=' md:hidden'>
         <Parallax translateY={[0, -50]} className='shadow-md absolute w-40 md:w-72 -right-16 bottom-48 md:left-0 md:top-16'>

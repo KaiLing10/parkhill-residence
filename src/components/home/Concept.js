@@ -96,7 +96,7 @@ const Concept = () => {
                     <br />
 
                     {/* button */}
-                    <Link to="/vrtour" className=' w-4/5'>
+                    <Link to="/about" className=' w-4/5'>
                         <button className='font-content text-xl border-2 bg-white/60 border-black rounded-xl mt-5 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
                             About
                         </button>
