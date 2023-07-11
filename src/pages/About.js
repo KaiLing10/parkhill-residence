@@ -4,7 +4,7 @@ import { useInView, motion } from 'framer-motion'
 // components
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import NumberCountAnimation from './location/NumberCounting'
+import NumberCountAnimation from '../components/about/NumberCounting'
 
 // assets
 import bg from '../assets/condo.jpeg'
@@ -69,7 +69,26 @@ const About = () => {
 
                 {/* info content */}
                 <div className='font-light'>
-                    <div className=' md:w-[50vw] m-auto text-center text-3xl md:text-4xl p-10'>
+                    <motion.div className=' md:w-[50vw] m-auto text-center text-3xl md:text-4xl p-10'
+                     variants={{
+                        offscreen: { // Outside Screen
+                            scale: 0,
+                            opacity: 0,
+                        },
+                        onscreen: { // Inside Screen
+                            scale: 1,
+                            opacity: 1,
+                            transition: {
+                                duration: 0.8,
+                                type: "spring",
+                                bounce: 0.5,
+                            },
+                        },
+                    }}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    exit="offscreen"
+                    viewport={{ once: false, amount: 0.9 }}>
 
                         {/* <motion.div className=' md:w-[50vw] m-auto text-center text-3xl md:text-4xl p-10'
                         variants={fadeIn}
@@ -83,7 +102,7 @@ const About = () => {
                             <span className='text-5xl  text-yellow-500'><NumberCountAnimation value={1062} /></span>
                             <span > units in total</span>
                         </div>
-                    </div>
+                    </motion.div>
                     <div className=' md:grid md:grid-cols-4 p-10 md:px-20 text-xl md:text-2xl' >
                         <p className={infoTitleStyle}>Project Name </p>
                         <p className={infoStyle}> Parkhill Residence</p>
@@ -123,7 +142,7 @@ const About = () => {
                                 <p className=' font-bold text-3xl text-yellow-500'>Type E</p>
                                          <p>1,300sq ft (4R2B)</p>
                                    
-                                    <img src={typeD} alt='type D unit' className=' ' />
+                                    <img src={typeE} alt='type E unit' className=' ' />
 
                                 </div>
                             </div>
