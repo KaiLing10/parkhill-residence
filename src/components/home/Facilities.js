@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
 
 // assets
-import imgCenter from '../../assets/facilities/center.jpg'
+import imgCenter from '../../assets/facilities/readingPavilion1.jpg'
 import imgGame from '../../assets/facilities/gameRoom.jpg'
 import imgRoof from '../../assets/facilities/roof.jpg'
 import imgNight from '../../assets/facilities/night.jpg'

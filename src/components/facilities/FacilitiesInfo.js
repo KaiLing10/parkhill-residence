@@ -8,30 +8,30 @@ import gym3 from '../../assets/facilities/gym2.png'
 import function1 from '../../assets/facilities/functionRoom.jpg'
 import function2 from '../../assets/facilities/function1.jpeg'
 import function3 from '../../assets/facilities/function2.jpeg'
-import gameRoom1 from '../../assets/facilities/gameRoom2.jpg'
-import gameRoom2 from '../../assets/facilities/gameRoom.jpg'
+import gameRoom1 from '../../assets/facilities/gameRoom3.jpg'
+import gameRoom2 from '../../assets/facilities/gameRoom1.jpg'
 import gameRoom3 from '../../assets/facilities/gameRoom.jpg'
-import pool1 from '../../assets/facilities/pool1.jpg';
-import pool2 from '../../assets/facilities/pool1.jpg';
-import pool3 from '../../assets/facilities/pool1.jpg';
+import pool1 from '../../assets/facilities/pool.jpg';
+import pool2 from '../../assets/facilities/pool2.jpg';
+import pool3 from '../../assets/facilities/pool3.jpg';
 import badminton1 from '../../assets/facilities/badminton1.jpg';
 import badminton2 from '../../assets/facilities/badminton2.jpg';
 import badminton3 from '../../assets/facilities/badminton2.jpg';
-import playground1 from '../../assets/facilities/playground.jpg';
-import playground2 from '../../assets/facilities/playground.jpg';
+import playground1 from '../../assets/facilities/playground1.jpg';
+import playground2 from '../../assets/facilities/playground2.jpg';
 import playground3 from '../../assets/facilities/playground3.jpg';
 import readingPavilion1 from '../../assets/facilities/readingPavilion1.jpg';
 import readingPavilion2 from '../../assets/facilities/readingPavilion2.jpg';
-import readingPavilion3 from '../../assets/facilities/readingPavilion1.jpg';
+import readingPavilion3 from '../../assets/facilities/readingPavilion3.jpg';
 import mazeGarden1 from '../../assets/facilities/mazeGarden1.jpg';
-import mazeGarden2 from '../../assets/facilities/mazeGarden2.jpg';
-import mazeGarden3 from '../../assets/facilities/mazeGarden3.jpg';
-import reflexologyPath1 from '../../assets/facilities/mazeGarden1.jpg';
-import reflexologyPath2 from '../../assets/facilities/mazeGarden1.jpg';
-import reflexologyPath3 from '../../assets/facilities/mazeGarden1.jpg';
+import mazeGarden2 from '../../assets/facilities/mazeGarden3.jpg';
+import mazeGarden3 from '../../assets/facilities/mazeGarden2.jpg';
+import reflexologyPath1 from '../../assets/facilities/reflexologyPath1.jpg';
+import reflexologyPath2 from '../../assets/facilities/reflexologyPath2.jpg';
+import reflexologyPath3 from '../../assets/facilities/reflexologyPath3.jpg';
 import yogaDeck1 from '../../assets/facilities/yogaDeck1.jpg';
-import yogaDeck2 from '../../assets/facilities/yogaDeck1.jpg';
-import yogaDeck3 from '../../assets/facilities/yogaDeck1.jpg';
+import yogaDeck2 from '../../assets/facilities/yogaDeck2.jpg';
+import yogaDeck3 from '../../assets/facilities/yogaDeck3.jpg';
 
 // custom styles
 const facilitiesImage = 'w-[30vw] object-cover mx-5 my-16 border-4 border-white drop-shadow-black'
@@ -44,7 +44,7 @@ export default function FacilitiesInfo() {
         setSelectedOption(option);
     };
 
-    // Define corresponding images for each facility
+    // Define facility details
     const facilityDetails = [
         {
           title: 'Gymnasium',
@@ -65,7 +65,7 @@ export default function FacilitiesInfo() {
           img3: gameRoom3,
         },
         {
-          title: 'Pool area',
+          title: 'Pool Area',
           img1: pool1,
           img2: pool2,
           img3: pool3,
@@ -109,7 +109,7 @@ export default function FacilitiesInfo() {
       ];
       
 
-    // Find the selected option's images
+    // Find the selected facility option's details
     const selectedDetails = facilityDetails.find((option) => option.title === selectedOption) || facilityDetails[0];
 
 

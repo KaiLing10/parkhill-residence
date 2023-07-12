@@ -13,7 +13,7 @@ export default function DropdownList({ onOptionSelect }) {
         { value: 'Gymnasium', label: 'Gymnasium' },
         { value: 'Function Room', label: 'Function Room' },
         { value: 'Game Room', label: 'Game Room' },
-        { value: 'Pool area', label: 'Pool area' },
+        { value: 'Pool Area', label: 'Pool Area' },
         { value: 'Badminton Court', label: 'Badminton Court' },
         { value: 'Playground', label: 'Playground' },
         { value: 'Reading Pavilion', label: 'Reading Pavilion' },
