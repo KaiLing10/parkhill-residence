@@ -37,18 +37,18 @@ export default function Amenities() {
 
   // css style
   const amenities = '';
-  const imageStyle = 'w-4/5 h-[50vh] object-cover';
+  const imageStyle = 'w-4/5 h-[50vh] object-cover mb-5';
 
   return (
     <div className='flex text-2xl font-title p-10 md:p-20'>
-      <div className=" text-yellow-500 sticky top-32 pl-20 w-1/2 h-[30vh]">
+      <div className=" text-yellow-500 drop-shadow-black sticky top-32 pl-20 w-1/2 h-[30vh]">
         <p className='font-bold mb-10'>Distance</p>
         <p className='text-6xl '>{distance}</p>
 
       </div>
 
       <div className='w-1/2'>
-        <div className='text-yellow-500 font-bold mb-10'>Amenities</div>
+        <div className='text-yellow-500 drop-shadow-black font-bold mb-10'>Amenities</div>
         <div className={amenities} ref={car5min}>
           <img src={stadium} className={imageStyle} alt='stadium' />
           <p className='pb-20'>2.1km to Bukit Jalil National Stadium</p>

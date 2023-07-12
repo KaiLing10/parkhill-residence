@@ -9,7 +9,7 @@ import map2d from '../assets/location/map2d.jpg'
 const Location = () => {
 
     return (
-        <div className=' text-white bg-gradient-to-t from-gray-800 via-gray-600 to-gray-300'>
+        <div className=' text-white bg-gradient-to-b from-gray-300  to-black'>
             <Navbar />
             {/* map */}
 
