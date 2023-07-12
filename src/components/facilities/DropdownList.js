@@ -20,7 +20,6 @@ export default function DropdownList({ onOptionSelect }) {
         { value: 'Maze Garden', label: 'Maze Garden' },
         { value: 'Reflexology Path', label: 'Reflexology Path' },
         { value: 'Yoga & Tai Chi Deck', label: 'Yoga & Tai Chi Deck' }
-
     ]
 
     // Custom styles for dropdown options

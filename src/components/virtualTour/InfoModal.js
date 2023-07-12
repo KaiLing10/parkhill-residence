@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-// import facilitiesImage from '../../assets/vrtour/level7_clubhouse/info/badminton1.jpeg'
+import facilitiesImage from '../../assets/facilities/badminton2.jpg'
 
 export default function InfoModal({ handleInfoModal }) {
   // const closeModal = () =>{
@@ -22,10 +22,9 @@ export default function InfoModal({ handleInfoModal }) {
           <p className='text-3xl font-semibold text-center'> Badminton Court</p>
           <p className='text-lg my-5'>Enjoy a competitive game or engage in friendly matches with fellow residents!</p>
 
-          {/* <div className='bg-gray-200 h-60'>
-            <img src={process.env.PUBLIC_URL + `/loader/loader2.jpeg`}
-              alt='condo_image' className='w-1/2 h-2/3 z-30' />
-          </div> */}
+          <div className='md:h-[40vh]'>
+            <img src={facilitiesImage} alt='facilities' className='drop-shadow-black w-full h-full object-cover z-30' />
+            </div>
         </motion.div>
       </div>
     // </div>
