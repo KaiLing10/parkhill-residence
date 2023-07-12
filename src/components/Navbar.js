@@ -26,7 +26,7 @@ const Navbar = () => {
                     transition={{
                         ease: "easeInOut",
                         duration: 1,
-                        delay: 2,
+                        delay: 1,
                     }}>
                     <ul className='hidden md:flex '>
                         <li className='p-4'>
