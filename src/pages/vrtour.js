@@ -81,16 +81,22 @@ export default function Vrtour() {
         this.el.addEventListener("click", () => { handleInfoModal() });
       },
     });
-  }, []);
+    return () => {
+      // Cleanup A-Frame components when the component unmounts
+      delete AFRAME.components["navigate"];
+      delete AFRAME.components["info"];
+    };
+
+  });
 
 
   return (
 
     <div>
 
-      <div className='relative h-screen'>
+      <div className="relative h-screen ">
         <div className='absolute flex h-full w-full justify-center items-center'>
-           {/* welcome text */}
+          {/* welcome text */}
 
           <motion.div
             className=' z-30 bg-black/50 font-title text-white drop-shadow-black text-center text-2xl md:text-4xl'
@@ -105,7 +111,7 @@ export default function Vrtour() {
         </div>
 
         {/* modal */}
-        <div className="absolute h-full w-screen overflow-y-scroll">
+        <div className="absolute h-full w-screen ">
           {openInfo ? <InfoModal handleInfoModal={handleInfoModal} /> : ''}
           {openSwitchScene ? <SwitchSceneModal handleSwitchSceneModal={handleSwitchSceneModal} navigateToScene={navigateToScene} /> : ''}
         </div>
