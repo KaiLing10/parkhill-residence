@@ -9,7 +9,7 @@ import Navbar from '../components/Navbar';
 // custom style
 const unitImageStyle = 'mx-1 object-cover'
 const detailTitleStyle = 'text-sm text-gray-800'
-const detailStyle = ' mb-3'
+const detailStyle = 'mb-3'
 
 
 const unitInfo1 = () => {
