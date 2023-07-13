@@ -19,7 +19,7 @@ import badminton2 from '../../assets/facilities/badminton2.jpg';
 import badminton3 from '../../assets/facilities/badminton2.jpg';
 import playground1 from '../../assets/facilities/playground1.jpg';
 import playground2 from '../../assets/facilities/playground2.jpg';
-import playground3 from '../../assets/facilities/playground3.jpg';
+import playground3 from '../../assets/facilities/playground4.jpg';
 import readingPavilion1 from '../../assets/facilities/readingPavilion1.jpg';
 import readingPavilion2 from '../../assets/facilities/readingPavilion2.jpg';
 import readingPavilion3 from '../../assets/facilities/readingPavilion3.jpg';

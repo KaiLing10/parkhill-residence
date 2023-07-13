@@ -3,29 +3,29 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import unit1 from '../assets/unit/unit1.jpg'
 import unit2 from '../assets/unit/unit2.jpg'
-import { Link } from "react-router-dom";
 
 
 import UnitOption from '../components/rent/UnitOption'
 
-const handleUnitClick = () =>{
-
-}
 
 const Rent = () => {
   return (
     <div className='bg-gray-100 font-title'>
       <Navbar />
-      <div className='h-screen'>
-      <div className='pt-28 pl-10 md:pl-20'> Available Unit for Rent</div>
-      <div className='grid grid-cols-3'>
-      <Link to="/unit1">
-        <UnitOption unitImage={unit1} /> 
-      </Link>
-      <Link to="/unit2">
-        <UnitOption unitImage={unit2} /> 
-      </Link>
-      </div>
+      <div className=''>
+        <h2 className='pt-28 pb-10 pl-10 md:pl-20 text-2xl md:text-3xl'> Available Unit for Rent</h2>
+        <div className='pl-10 grid grid-cols-3'>
+          <UnitOption unitInfo={'/unitInfo1'} unitImage={unit1} noOfRoom={3} noOfBath={2} rental={'2,100'} />
+          <UnitOption unitInfo={'/unitInfo2'} unitImage={unit2} noOfRoom={4} noOfBath={2} rental={'2,800'} />
+        </div>
+        <div>
+          <div className='pt-28 pl-10 md:pl-20'>
+            <h2 className=' text-2xl md:text-3xl'> Can't find interested unit/room? </h2>
+            <p className='text-xl'> Leave your prefered unit type here</p>
+            <div className='bg-white w-[60vw] h-20'>
+
+            </div></div>
+        </div>
       </div>
       <Footer />
 
