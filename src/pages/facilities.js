@@ -8,7 +8,7 @@ import FacilitiesInfo from '../components/facilities/FacilitiesInfo'
 
 const Facilities = () => {
   return (
-    <div className='bg-gray-100 font-title'>
+    <div className='bg-gray-100 text-white font-title'>
       <Navbar />
       <FacilitiesInfo />
       <Footer />

@@ -1,14 +1,16 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
 import Amenities from '../components/location/Amenities'
 import Footer from '../components/Footer'
 
 // assets
 import map2d from '../assets/location/map2d.jpg'
+import Navbar from '../components/Navbar'
 
 const Location = () => {
+    
 
     return (
+        
         <div className=' text-black bg-gray-100'>
             <Navbar />
             {/* map */}

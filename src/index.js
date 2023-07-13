@@ -21,7 +21,6 @@ export default function App() {
     <BrowserRouter>
      <ScrollToTop>
       <Routes>
-        {/* <Route path="/" element={<Navbar />}> */}
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="about" element={<About />} />    
@@ -32,7 +31,6 @@ export default function App() {
           <Route path="unitInfo1" element={<UnitInfo1 />} />
           <Route path="unitInfo2" element={<UnitInfo2 />} />
           <Route path="*" element={<NoPage />} />
-        {/* </Route> */}
       </Routes>
       </ScrollToTop>
     </BrowserRouter>

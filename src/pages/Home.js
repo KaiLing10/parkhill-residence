@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 // Components
-import Navbar from '../components/Navbar';
 import Loader from "../components/home/Loader/Loader";
 import Hero from '../components/home/Hero';
 import Concept from '../components/home/Concept';
@@ -12,10 +11,11 @@ import Tour from '../components/home/Tour';
 import Facilities from '../components/home/Facilities';
 import Location from '../components/home/Location'
 import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 
 const Home = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   return (
     <AnimatePresence>
@@ -25,7 +25,9 @@ const Home = () => {
         </motion.div>
       ) : (
         <>
-          <Navbar />
+          <div className='text-white'>
+            <Navbar isHomePage={true} />
+          </div>
           <Hero />
           <ParallaxProvider>
             <Parallax >

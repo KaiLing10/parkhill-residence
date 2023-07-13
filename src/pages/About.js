@@ -34,7 +34,7 @@ const About = () => {
 
 
     return (
-        <div className='bg-gray-100 font-title'>
+        <div className='bg-gray-100 font-title text-black'>
 
             <Navbar />
             <div className='flex justify-center pt-20 pb-10'>

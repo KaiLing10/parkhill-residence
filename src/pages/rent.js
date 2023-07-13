@@ -10,7 +10,7 @@ import UnitOption from '../components/rent/UnitOption'
 
 const Rent = () => {
   return (
-    <div className='bg-gray-100 font-title'>
+    <div className='bg-gray-100 text-black font-title'>
       <Navbar />
       <div className=''>
         <h2 className='pt-28 pb-10 pl-10 md:pl-20 text-2xl md:text-3xl'> Available Unit for Rent</h2>
