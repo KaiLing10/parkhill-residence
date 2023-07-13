@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { BiBed, BiBath } from "react-icons/bi";
 
 import unit1a from '../assets/unit/unit1.jpg'
+import Navbar from '../components/Navbar';
 
 // custom style
 const unitImageStyle = 'mx-1 object-cover'
@@ -13,6 +14,9 @@ const detailStyle = ' mb-3'
 
 const unitInfo1 = () => {
   return (
+    <>
+    <Navbar />
+    
     <div className='md:p-20 font-title text-xl bg-gray-100 '>
       <div className='flex bg-white drop-shadow-md'>
         <div className={unitImageStyle}>
@@ -89,6 +93,7 @@ const unitInfo1 = () => {
 
       </div>
     </div >
+    </>
   )
 }
 
