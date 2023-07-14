@@ -5,8 +5,14 @@ import components from './fileLoader';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+// components
 import InfoModal from '../components/virtualTour/InfoModal'
 import SwitchSceneModal from '../components/virtualTour/SwitchSceneModal';
+
+// assets
+import badmintonImage from '../assets/facilities/badminton2.jpg'
+import poolImage from '../assets/facilities/pool4.jpg'
+
 
 export default function Vrtour() {
   const [firstTour, setFirstTour] = useState(true);
@@ -89,6 +95,31 @@ export default function Vrtour() {
 
   });
 
+  // Get info modal's content based on current scene
+  const getTitleAndContent = () => {
+    switch (currentScene) {
+      case 'Badminton':
+        return {
+          title: 'Badminton Court',
+          content: 'Enjoy a competitive game or engage in friendly matches with fellow residents!',
+          facilitiesImage: badmintonImage
+        };
+      case 'PoolCenter':
+        return {
+          title: 'Swimming Pool',
+          content: 'Take a refreshing dip and relax in our spacious swimming pool!',
+          facilitiesImage: poolImage
+        };
+      // Add more cases for other scenes
+      default:
+        return {
+          title: '',
+          content: '',
+        };
+    }
+  };
+
+
 
   return (
 
@@ -112,8 +143,8 @@ export default function Vrtour() {
 
         {/* modal */}
         <div className="absolute h-full w-screen ">
-          {openInfo ? <InfoModal handleInfoModal={handleInfoModal} /> : ''}
-          {openSwitchScene ? <SwitchSceneModal handleSwitchSceneModal={handleSwitchSceneModal} navigateToScene={navigateToScene} /> : ''}
+          {openInfo && (<InfoModal handleInfoModal={handleInfoModal} {...getTitleAndContent()} />)}
+          {openSwitchScene && (<SwitchSceneModal handleSwitchSceneModal={handleSwitchSceneModal} navigateToScene={navigateToScene} />)}
         </div>
 
         {/* static navbar */}

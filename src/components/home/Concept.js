@@ -164,8 +164,7 @@ const Concept = () => {
                         </motion.div>
 
                         {/* AR icon */}
-
-                        <motion.div className=' cursor-pointer' onClick={handleARMarkerModal}
+                        <motion.div className='cursor-pointer' onClick={handleARMarkerModal}
                             variants={onScreenAnim}
                             initial="offscreen"
                             whileInView="onscreen"
@@ -173,19 +172,22 @@ const Concept = () => {
                             viewport={{ once: false, amount: 0.9 }}
                             transition={{ duration: 0.6 }}
                         >
-                            <img src={arIcon} alt='ar_marker' className='w-32 ' />
+                            <img src={arIcon} alt='ar_marker' className='w-32 hover:scale-110 transition ease-in-out' />
                         </motion.div>
 
                     </div>
-                    {/* AR Marker  */}
+                    {/* AR Marker modal */}
                     {openARMarker && (
-                        <div className='absolute -bottom-12 -right-10 flex items-center justify-center w-48 h-48 bg-white drop-shadow-md z-30'>
+                        <motion.div className='absolute -bottom-12 -right-10 flex items-center justify-center w-48 h-48 bg-white drop-shadow-md z-30'
+                        initial={{ scale: 0.5 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.5 }}>
                             <div className='absolute top-0 right-0 text-2xl text-white font-semibold bg-red-400 hover:bg-red-800/80 cursor-pointer px-3 py-2' onClick={handleARMarkerModal}>X</div>
 
                             <div className='w-4/5 '>
                                 <img src={arMarker} alt='ar_marker' className='' /></div>
 
-                        </div>
+                        </motion.div>
                     )}
 
                 </div>
