@@ -12,6 +12,13 @@ import SwitchSceneModal from '../components/virtualTour/SwitchSceneModal';
 // assets
 import badmintonImage from '../assets/facilities/badminton2.jpg'
 import poolImage from '../assets/facilities/pool4.jpg'
+import playgroundImage from '../assets/facilities/playground3.jpg'
+import gameRoomImage from '../assets/facilities/gameRoom1.jpg'
+import functionRoomImage from '../assets/facilities/functionRoom.jpg'
+import gymnasiumImage from '../assets/facilities/gym1.png'
+import reflexologyPathImage from '../assets/facilities/badminton2.jpg'
+import readingPavilionImage from '../assets/facilities/readingPavilion2.jpg'
+
 
 
 export default function Vrtour() {
@@ -110,6 +117,43 @@ export default function Vrtour() {
           content: 'Take a refreshing dip and relax in our spacious swimming pool!',
           facilitiesImage: poolImage
         };
+      case 'Playground2':
+        return {
+          title: 'Playground',
+          content: 'Unleash your inner child and have a blast in our vibrant playground!',
+          facilitiesImage: playgroundImage
+        };
+      case 'GameRoom':
+        return {
+          title: 'Game Room',
+          content: 'Indulge in a variety of fun games and activities in our well-equipped game room!',
+          facilitiesImage: gameRoomImage
+        };
+      case 'FunctionRoom':
+        return {
+          title: 'Function Room',
+          content: 'Host your events and gatherings in our spacious and versatile function room!',
+          facilitiesImage: functionRoomImage
+        };
+      case 'Gym':
+        return {
+          title: 'Gymnasium',
+          content: 'Stay fit and active in our fully-equipped gymnasium, offering a wide range of exercise options!',
+          facilitiesImage: gymnasiumImage
+        };
+      case 'ReflexologyPath':
+        return {
+          title: 'Reflexology Path',
+          content: 'Relieve stress and improve your well-being as you walk along our soothing reflexology path!',
+          facilitiesImage: reflexologyPathImage
+        };
+      case 'RiverViewDeck2':
+        return {
+          title: 'Reading Pavilion',
+          content: 'Escape into the world of books and enjoy a tranquil reading experience in our beautiful pavilion!',
+          facilitiesImage: readingPavilionImage
+        };
+
       // Add more cases for other scenes
       default:
         return {
