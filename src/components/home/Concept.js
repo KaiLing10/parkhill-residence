@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion'
 import ConceptImage from '../../assets/condo.jpeg'
 import { Link } from "react-router-dom";
-
+import arMarker from '../../assets/AR/arMarker1.png'
+import arIcon from '../../assets/AR/arIcon.png'
 
 // Animation variants
+const onScreenAnim = {
+    offscreen: { opacity: 0, y: 20 },
+    onscreen: { opacity: 1, y: 0, },
+}
+
 const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -39,6 +45,13 @@ const AnimatedText = ({ text }) => (
 
 // Main component
 const Concept = () => {
+    // AR Marker
+    const [openARMarker, setOpenARMarker] = useState(false);
+
+    const handleARMarkerModal = () => {
+        setOpenARMarker(!openARMarker)
+    }
+
 
     // Track element visibility
     // https://www.react-spring.dev/docs/utilities/use-in-view#usage
@@ -101,6 +114,7 @@ const Concept = () => {
                             About
                         </button>
                     </Link>
+
                 </motion.div>
 
             </div>
@@ -120,7 +134,7 @@ const Concept = () => {
                 </motion.div>
 
                 {/* text content */}
-                <div className="col-span-2 flex flex-col justify-center items-start ">
+                <div className="relative col-span-2 flex flex-col justify-end items-start ">
                     <motion.div
                         className="text-xl md:text-3xl lg:text-4xl "
                         variants={sentence}
@@ -134,12 +148,45 @@ const Concept = () => {
                         <AnimatedText text="of the city '" variants={letter} />
                     </motion.div>
 
-                    {/* button */}
-                    <Link to="/about" >
-                        <button className='font-content text-xl border-2 bg-white border-black rounded-xl mt-5 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
-                            About
-                        </button>
-                    </Link>
+                    <div className='flex justify-between w-full mt-10'>
+                        {/* button */}
+                        <motion.div
+                            variants={onScreenAnim}
+                            initial="offscreen" whileInView="onscreen" exit="offscreen"
+                            viewport={{ once: false, amount: 0.7 }}
+                            transition={{ duration: 0.6 }}>
+
+                            <Link to="/about" >
+                                <button className='font-content text-xl border-2 bg-white border-black rounded-xl py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
+                                    About
+                                </button>
+                            </Link>
+                        </motion.div>
+
+                        {/* AR icon */}
+
+                        <motion.div className=' cursor-pointer' onClick={handleARMarkerModal}
+                            variants={onScreenAnim}
+                            initial="offscreen"
+                            whileInView="onscreen"
+                            exit="offscreen"
+                            viewport={{ once: false, amount: 0.9 }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <img src={arIcon} alt='ar_marker' className='w-32 ' />
+                        </motion.div>
+
+                    </div>
+                    {/* AR Marker  */}
+                    {openARMarker && (
+                        <div className='absolute -bottom-12 -right-10 flex items-center justify-center w-48 h-48 bg-white drop-shadow-md z-30'>
+                            <div className='absolute top-0 right-0 text-2xl text-white font-semibold bg-red-400 hover:bg-red-800/80 cursor-pointer px-3 py-2' onClick={handleARMarkerModal}>X</div>
+
+                            <div className='w-4/5 '>
+                                <img src={arMarker} alt='ar_marker' className='' /></div>
+
+                        </div>
+                    )}
 
                 </div>
 
