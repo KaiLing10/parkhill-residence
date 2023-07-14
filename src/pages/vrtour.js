@@ -154,7 +154,7 @@ export default function Vrtour() {
           facilitiesImage: readingPavilionImage
         };
 
-      // Add more cases for other scenes
+      
       default:
         return {
           title: '',
