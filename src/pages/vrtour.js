@@ -5,6 +5,11 @@ import components from './fileLoader';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+//icon
+import { TbMusic, TbMusicOff } from "react-icons/tb";
+import { HiSwitchHorizontal } from "react-icons/hi";
+import { ImExit } from "react-icons/im";
+// import { BiChevronDownCircle } from "react-icons/bi";
 
 // components
 import InfoModal from '../components/virtualTour/InfoModal'
@@ -46,14 +51,6 @@ export default function Vrtour() {
     }, 1500);
   };
 
-  // Handle info/switchScene button click
-  const handleInfoModal = () => {
-    setOpenInfo(!openInfo)
-  }
-
-  const handleSwitchSceneModal = () => {
-    setOpenSwitchScene(!openSwitchScene)
-  }
 
   // Render current scene component
   const renderScene = () => {
@@ -65,6 +62,14 @@ export default function Vrtour() {
       return null;
     }
   };
+
+    // Handle info/switchScene button click
+  const handleInfoModal = () => {
+    setOpenInfo(!openInfo)
+  }
+  const handleSwitchSceneModal = () => {
+    setOpenSwitchScene(!openSwitchScene)
+  }
 
   // Register custom A-Frame components
   useEffect(() => {
@@ -170,7 +175,6 @@ export default function Vrtour() {
   };
 
   return (
-
     <div>
 
       <div className="relative h-screen ">
@@ -197,23 +201,41 @@ export default function Vrtour() {
 
         {/* static navbar */}
         <div className='flex h-full justify-center items-end'>
-          <div className='bg-white/80 h-20 w-2/3 z-10 p-2 text-center'>
-            <Link to="/home" className='w-4/5 mx-3'>
-              <button className='font-content text-lg border-2 bg-white border-black rounded-xl my-2 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
-                Exit
-              </button>
+          <div className='relative bg-white/80 h-20 w-1/3 z-10 flex items-center justify-center rounded-md'>
+            
+            <button>
+              <Link to="/home">
+              {/* <button className='font-content text-lg border-2 bg-white border-black rounded-xl my-2 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'> */}
+              {/* Switch button */}
+              <div className='bg-white w-14 h-14 mx-2 text-2xl flex justify-center items-center rounded hover:bg-gray-100'>
+                <ImExit />
+              </div>
             </Link>
+            </button>
 
-            <button onClick={handleSwitchSceneModal} className='font-content text-lg border-2 bg-white border-black rounded-xl my-2 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
-              Switch
+            {/* Switch scene button */}
+            <button onClick={handleSwitchSceneModal} >
+              {/* <button onClick={handleSwitchSceneModal} className='font-content text-lg border-2 bg-white border-black rounded-xl my-2 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'> */}
+
+              {/* Switch button */}
+              <div className='bg-white w-14 h-14 mx-2 text-3xl flex justify-center items-center rounded hover:bg-gray-100'>
+                <HiSwitchHorizontal />
+              </div>
             </button>
+
             {/* Toggle Music Button */}
-            <button onClick={toggleMusic}>
-              {musicMuted ? 'Unmute Music' : 'Mute Music'}
+            <button onClick={toggleMusic} >
+              <div className='bg-white w-14 h-14 mx-2 text-3xl flex justify-center items-center rounded hover:bg-gray-100'>
+                {musicMuted ? < TbMusicOff /> : < TbMusic />}
+              </div>
+
             </button>
+
+            {/* <div className='aboulute text-3xl right-0 z-20 '>
+              < BiChevronDownCircle/> 
+            </div> */}
           </div>
         </div>
-
       </div>
 
       <Scene loading-screen="backgroundColor: #ffc83d" cursor="rayOrigin: mouse" raycaster="objects: .clickable">
@@ -229,7 +251,7 @@ export default function Vrtour() {
           animation={zoomIn ? "property: camera.zoom; from: 1; to: 1.4; easing: easeInQuad; dur: 1300" : "property: camera.zoom; from: 0.9 ; to: 1 ; dur: 1000"}
           look-controls={openInfo ? "pointerLockEnabled: false" : "pointerLockEnabled: true"}
           // look-controls="pointerLockEnabled: true"
-          position="0 1.6 0"  >
+          position="0 1.6 0" >
           <Entity cursor="fuse: false;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: #ffc600; shader: flat"></Entity>
         </Entity>
 
