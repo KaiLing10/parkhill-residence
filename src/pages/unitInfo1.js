@@ -17,7 +17,11 @@ const unitInfo1 = () => {
     <>
     <Navbar />
     
+    
     <div className='md:p-20 font-title text-xl bg-gray-100 '>
+    <Link to="/vrtour">
+    <p className='mb-3 text-2xl'> Rent</p> 
+    </Link>
       <div className='flex bg-white drop-shadow-md'>
         <div className={unitImageStyle}>
           <img src={unit1a} alt='unit_image' /></div>
@@ -39,7 +43,7 @@ const unitInfo1 = () => {
             </div>
           </div>
 <div className=''>
-          <Link to="/vrtour">
+          <Link to="/rent">
             <button className='mr-10 font-content text-xl border-2 bg-yellow-500/40 drop-shadow-md border-black rounded-xl mt-5 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
               room tour
             </button>

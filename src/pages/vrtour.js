@@ -5,6 +5,7 @@ import components from './fileLoader';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+
 // components
 import InfoModal from '../components/virtualTour/InfoModal'
 import SwitchSceneModal from '../components/virtualTour/SwitchSceneModal';
@@ -18,7 +19,7 @@ import functionRoomImage from '../assets/facilities/functionRoom.jpg'
 import gymnasiumImage from '../assets/facilities/gym1.png'
 import reflexologyPathImage from '../assets/facilities/badminton2.jpg'
 import readingPavilionImage from '../assets/facilities/readingPavilion2.jpg'
-
+import music from '../assets/Full_of_Joy.mp3'
 
 
 export default function Vrtour() {
@@ -27,6 +28,12 @@ export default function Vrtour() {
   const [zoomIn, setZoomIn] = useState(false);
   const [openInfo, setOpenInfo] = useState(false);
   const [openSwitchScene, setOpenSwitchScene] = useState(false);
+  const [musicMuted, setMusicMuted] = useState(false);
+
+  // Toggle music state
+  const toggleMusic = () => {
+    setMusicMuted(!musicMuted);
+  };
 
   // Navigate to other scene with animation
   const navigateToScene = (scene) => {
@@ -154,7 +161,6 @@ export default function Vrtour() {
           facilitiesImage: readingPavilionImage
         };
 
-      
       default:
         return {
           title: '',
@@ -162,8 +168,6 @@ export default function Vrtour() {
         };
     }
   };
-
-
 
   return (
 
@@ -203,15 +207,21 @@ export default function Vrtour() {
             <button onClick={handleSwitchSceneModal} className='font-content text-lg border-2 bg-white border-black rounded-xl my-2 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
               Switch
             </button>
+            {/* Toggle Music Button */}
+            <button onClick={toggleMusic}>
+              {musicMuted ? 'Unmute Music' : 'Mute Music'}
+            </button>
           </div>
         </div>
 
       </div>
 
       <Scene loading-screen="backgroundColor: #ffc83d" cursor="rayOrigin: mouse" raycaster="objects: .clickable">
-
         {/* 360 scene */}
         {renderScene()}
+
+        {/* bg music */}
+        {!musicMuted && (<Entity sound={`src: ${music}; autoplay: true; loop: true`} />)}
 
         {/* camera */}
         <Entity
