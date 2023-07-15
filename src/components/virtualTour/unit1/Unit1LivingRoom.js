@@ -10,7 +10,6 @@ export default function Unit1LivingRoom() {
         < >
             <Arrow position="2 1.6 -1" rotation="0 40 90" navigate={'Unit1Center'}
                 text="" text_rotation="0 300 0" />
-          
 
             <Entity primitive='a-sky' src={scene} rotation="0 200 0" />
 
