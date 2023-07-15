@@ -2,6 +2,8 @@ import React from 'react';
 import { Entity } from 'aframe-react';
 //assets
 import scene from '../../../assets/vrtour/level7/blockC.jpg';
+// import scene from '../../../assets/vrtour/unit1/bathRoom2.jpg';
+
 import Arrow from '../ArrowEntity';
 
 

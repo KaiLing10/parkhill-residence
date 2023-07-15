@@ -32,6 +32,8 @@ import reflexologyPath3 from '../../assets/facilities/reflexologyPath3.jpg';
 import yogaDeck1 from '../../assets/facilities/yogaDeck1.jpg';
 import yogaDeck2 from '../../assets/facilities/yogaDeck2.jpg';
 import yogaDeck3 from '../../assets/facilities/yogaDeck3.jpg';
+import { Link } from 'react-router-dom';
+
 
 // custom styles
 const facilitiesImage = 'w-[30vw] object-cover mx-5 my-16 border-4 border-white drop-shadow-black'
@@ -39,7 +41,6 @@ const facilitiesImage = 'w-[30vw] object-cover mx-5 my-16 border-4 border-white 
 
 export default function FacilitiesInfo() {
     const [selectedOption, setSelectedOption] = useState(null);
-
     const handleOptionSelect = (option) => {
         setSelectedOption(option);
     };
@@ -51,60 +52,71 @@ export default function FacilitiesInfo() {
           img1: gym1,
           img2: gym2,
           img3: gym3,
+          sceneName:'Gym'
         },
         {
           title: 'Function Room',
           img1: function1,
           img2: function2,
           img3: function3,
+          sceneName:'FunctionRoom'
         },
         {
           title: 'Game Room',
           img1: gameRoom1,
           img2: gameRoom2,
           img3: gameRoom3,
+          sceneName:'GameRoom'
         },
         {
           title: 'Pool Area',
           img1: pool1,
           img2: pool2,
           img3: pool3,
+          sceneName:'PoolCenter'
         },
         {
           title: 'Badminton Court',
           img1: badminton1,
           img2: badminton2,
           img3: badminton3,
+          sceneName:'Badminton'
         },
         {
           title: 'Playground',
           img1: playground1,
           img2: playground2,
           img3: playground3,
+          sceneName:'Playground2'
         },
         {
           title: 'Reading Pavilion',
           img1: readingPavilion1,
           img2: readingPavilion2,
           img3: readingPavilion3,
+          sceneName:'RiveriewDeck2'
         },
         {
           title: 'Maze Garden',
           img1: mazeGarden1,
           img2: mazeGarden2,
           img3: mazeGarden3,
+          sceneName:'Center3Down'
         },
         {
           title: 'Reflexology Path',
           img1: reflexologyPath1,
           img2: reflexologyPath2,
           img3: reflexologyPath3,
+          sceneName:'ReflexologyPath'
         },
         {
           title: 'Yoga & Tai Chi Deck',
           img1: yogaDeck1,
           img2: yogaDeck2,
           img3: yogaDeck3,
+          sceneName:'Yoga'
+
         },
       ];
       
@@ -119,10 +131,6 @@ export default function FacilitiesInfo() {
             {/* <div className='pt-28 w-screen flex justify-center'>
                     <img src={map} alt='facilities map' className='object-cover w-3/5 ' />
                  </div> */}
-
-            {/* <button className='mt-20 ml-20 font-content text-xl border-2 bg-white border-black rounded-xl py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
-                    Switch Facilities
-             </button> */}
 
 
             <div className='relative'>
@@ -154,9 +162,13 @@ export default function FacilitiesInfo() {
 
                     {/* 360 button */}
                     <div className='flex justify-center'>
+                    {/* <Link to={`/vrTour/${sceneName}`}  > */}
+
+                    <Link to={`/vrTour/${selectedDetails.sceneName}`} >
                         <button className=' font-content text-xl md:text-xl border-2 my-5 bg-black/40 border-white rounded-xl py-2 px-4 transition ease-in-out delay-150 hover:bg-white/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
                             360 View
                         </button>
+                        </Link>
                     </div>
                 </div>
 

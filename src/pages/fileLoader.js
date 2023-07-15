@@ -15,6 +15,18 @@ const componentContextClubHouse = require.context(
   /\.js$/
 );
 
+const componentContextUnit1 = require.context(
+  '../components/virtualTour/unit1',
+  false,
+  /\.js$/
+);
+
+const componentContextUnit2 = require.context(
+  '../components/virtualTour/unit2',
+  false,
+  /\.js$/
+);
+
 function registerComponents(componentContext) {
   componentContext.keys().forEach((componentPath) => {
     const componentName = componentPath.replace(/\.\/|\.js/g, '');
@@ -24,5 +36,8 @@ function registerComponents(componentContext) {
 
 registerComponents(componentContextLevel7);
 registerComponents(componentContextClubHouse);
+registerComponents(componentContextUnit1);
+registerComponents(componentContextUnit2);
+
 
 export default components;

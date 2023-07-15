@@ -3,7 +3,9 @@ import { Entity, Scene } from 'aframe-react';
 import AFRAME from 'aframe'
 import components from './fileLoader';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+
 
 //icon
 import { TbMusic, TbMusicOff } from "react-icons/tb";
@@ -24,16 +26,18 @@ import functionRoomImage from '../assets/facilities/functionRoom.jpg'
 import gymnasiumImage from '../assets/facilities/gym1.png'
 import reflexologyPathImage from '../assets/facilities/badminton2.jpg'
 import readingPavilionImage from '../assets/facilities/readingPavilion2.jpg'
-import music from '../assets/Full_of_Joy.mp3'
-
+import music from '../assets/music.mp3'
 
 export default function Vrtour() {
+  const { virtualId } = useParams(); //used when navigate from Facilities page
   const [firstTour, setFirstTour] = useState(true);
-  const [currentScene, setCurrentScene] = useState('BlockC');
+  const [currentScene, setCurrentScene] = useState(virtualId ||'BlockC');
   const [zoomIn, setZoomIn] = useState(false);
   const [openInfo, setOpenInfo] = useState(false);
   const [openSwitchScene, setOpenSwitchScene] = useState(false);
-  const [musicMuted, setMusicMuted] = useState(false);
+  const [musicMuted, setMusicMuted] = useState(true);
+  const navigate = useNavigate();
+
 
   // Toggle music state
   const toggleMusic = () => {
@@ -203,21 +207,19 @@ export default function Vrtour() {
         <div className='flex h-full justify-center items-end'>
           <div className='relative bg-white/80 h-20 w-1/3 z-10 flex items-center justify-center rounded-md'>
             
-            <button>
-              <Link to="/home">
-              {/* <button className='font-content text-lg border-2 bg-white border-black rounded-xl my-2 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'> */}
-              {/* Switch button */}
+            {/* <button> */}
+            <button onClick={() => navigate(-1)}>
+
+              {/* <Link to="/home"> */}
+              {/* Exit button */}
               <div className='bg-white w-14 h-14 mx-2 text-2xl flex justify-center items-center rounded hover:bg-gray-100'>
                 <ImExit />
               </div>
-            </Link>
+            {/* </Link> */}
             </button>
 
             {/* Switch scene button */}
             <button onClick={handleSwitchSceneModal} >
-              {/* <button onClick={handleSwitchSceneModal} className='font-content text-lg border-2 bg-white border-black rounded-xl my-2 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'> */}
-
-              {/* Switch button */}
               <div className='bg-white w-14 h-14 mx-2 text-3xl flex justify-center items-center rounded hover:bg-gray-100'>
                 <HiSwitchHorizontal />
               </div>
@@ -228,7 +230,6 @@ export default function Vrtour() {
               <div className='bg-white w-14 h-14 mx-2 text-3xl flex justify-center items-center rounded hover:bg-gray-100'>
                 {musicMuted ? < TbMusicOff /> : < TbMusic />}
               </div>
-
             </button>
 
             {/* <div className='aboulute text-3xl right-0 z-20 '>

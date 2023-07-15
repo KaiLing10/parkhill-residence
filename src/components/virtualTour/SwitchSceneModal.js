@@ -15,7 +15,7 @@ export default function SwitchSceneModal({ handleSwitchSceneModal, navigateToSce
     return (
         <div className='flex h-full justify-center items-center'>
             <motion.div
-                className='relative bg-white/90 w-1/2 z-30 h-2/3 p-10 text-white font-content '
+                className='relative bg-white drop-shadow-md w-1/2 z-30 h-2/3 p-10 text-white font-content '
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2 }}>

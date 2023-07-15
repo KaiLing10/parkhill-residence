@@ -13,7 +13,7 @@ const Rent = () => {
     <div className='bg-gray-100 text-black font-title'>
       <Navbar />
       <div className=''>
-        <h2 className='pt-28 pb-10 pl-10 md:pl-20 text-2xl md:text-3xl'> Available Unit for Rent</h2>
+        <h2 className='pt-28 pb-10 pl-10 md:pl-20 text-2xl md:text-3xl'>Units for Rent</h2>
         <div className='pl-10 grid grid-cols-3'>
           <UnitOption unitInfo={'/unitInfo1'} unitImage={unit1} noOfRoom={3} noOfBath={2} rental={'2,100'} />
           <UnitOption unitInfo={'/unitInfo2'} unitImage={unit2} noOfRoom={4} noOfBath={2} rental={'2,800'} />
