@@ -1,7 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
+
 // pages
 import Home from './pages/home';
 import About from './pages/about';
@@ -12,7 +14,6 @@ import NoPage from "./pages/nopage";
 import VRTour from './pages/vrtour';
 import UnitInfo1 from './pages/unitInfo1';
 import UnitInfo2 from './pages/unitInfo2';
-
 
 import ScrollToTop from './components/ScrollToTop';
 import AdminDashboard from './pages/admin/AdminDashboard';
@@ -40,7 +41,10 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
 root.render(<App />);
+
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<App />);
 
