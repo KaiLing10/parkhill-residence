@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { TextField, Button } from '@mui/material';
 import { amber } from '@mui/material/colors';
@@ -17,7 +17,7 @@ export default function BookUnitModal({ handleBookUnitModal }) {
             fullName: '',
             email: '',
             phone: '',
-            
+
         },
     });
 
@@ -27,7 +27,6 @@ export default function BookUnitModal({ handleBookUnitModal }) {
         reset()
         // Perform further actions, such as submitting the form
     };
-
 
     return (
         <div className="flex h-screen justify-center items-center z-10 bg-black/50">
@@ -103,8 +102,8 @@ export default function BookUnitModal({ handleBookUnitModal }) {
                         />
                     </div>
                     {isSubmitted && (
-    <p className="text-green-600">Form submitted successfully!</p>
-  )}
+                        <p className="text-green-600">Form submitted successfully!</p>
+                    )}
                     <div className='text-center'>
 
                         <Button
