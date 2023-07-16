@@ -1,5 +1,5 @@
 import React from 'react';
-import Typed from 'react-typed';
+// import Typed from 'react-typed';
 import { Link } from "react-router-dom";
 
 export default function Tour() {
@@ -9,10 +9,10 @@ export default function Tour() {
         <p className=''>Ultimate embodiment</p>
         <div className='flex justify-center'>
           <p className='pr-2'>of </p>
-          <Typed
+          {/* <Typed
             className='text-yellow-400'
             strings={['convenience', ' luxurious living', 'modern elegance']}
-            typeSpeed={50} backSpeed={40} loop />
+            typeSpeed={50} backSpeed={40} loop /> */}
         </div>
       </div>
 
