@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 // pages
 import Home from 'pages/home';
-import About from 'pages/about';
+import About from './pages/about';
 import Location from 'pages/location';
 import Facilities from 'pages/facilities';
 import Rent from 'pages/rent';
