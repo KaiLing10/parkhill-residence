@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { TextField, Button } from '@mui/material';
+import { amber } from '@mui/material/colors';
 import Select from 'react-select';
 
 // https://react-hook-form.com/get-started 
@@ -33,7 +34,6 @@ export default function Wishlist() {
         console.log(data);
         // Perform further actions, such as submitting the wishlist to the server
     };
-
 
     //   Define options for select field
     const unitCategoryOptions = [
@@ -93,110 +93,36 @@ export default function Wishlist() {
 
     };
 
-    //   const selectStyles = {
-    //     option: (provided, state) => ({
-    //       ...provided,
-    //       backgroundColor: state.isFocused ? 'gold' : 'white',
-    //       color: 'black',
-    //     }),
-    //     control: (provided) => ({
-    //       ...provided,
-    //       backgroundColor: 'white',
-    //       opacity: '1',
-    //     }),
-    //   };
-
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto">
-            {/* name */}
-            <div className="mb-4">
-                <Controller
-                    name="fullName"
-                    control={control}
-                    rules={{ required: 'Full Name is required' }}
-                    render={({ field }) => (
-                        <TextField
-                            {...field}
-                            label="Full Name"
-                            variant="outlined"
-                            fullWidth
-                            error={!!errors.fullName}
-                            helperText={errors.fullName?.message}
-                        />
-                    )}
-                />
-            </div>
-
-            {/* email */}
-            <div className="mb-4">
-                <Controller
-                    name="email"
-                    control={control}
-                    rules={{
-                        required: 'Email is required',
-                        pattern: {
-                            value: /^\S+@\S+$/i,
-                            message: 'Invalid email address',
-                        },
-                    }}
-                    render={({ field }) => (
-                        <TextField
-                            {...field}
-                            label="Email"
-                            variant="outlined"
-                            fullWidth
-                            error={!!errors.email}
-                            helperText={errors.email?.message}
-                        />
-                    )}
-                />
-            </div>
-
-            {/* phone */}
-            <div className="mb-4">
-                <Controller
-                    name="phone"
-                    control={control}
-                    rules={{ required: 'Phone Number is required' }}
-                    render={({ field }) => (
-                        <TextField
-                            {...field}
-                            label="Phone Number"
-                            variant="outlined"
-                            fullWidth
-                            error={!!errors.phone}
-                            helperText={errors.phone?.message}
-                        />
-                    )}
-                />
-            </div>
-
-            {/* category */}
-            <div className="mb-4">
-                <p className="font-bold mb-2">Main Information</p>
-                <Controller
-                    name="unitCategory"
-                    control={control}
-                    rules={{ required: 'Unit Category is required' }}
-                    render={({ field }) => (
-                        <Select
-                            {...field}
-                            options={unitCategoryOptions}
-                            placeholder="Select Unit Category"
-                            isClearable
-                            styles={selectStyles}
-                            className={errors.unitCategory ? 'is-invalid' : ''}
-                            onChange={handleUnitCategoryChange}
-                        />
-                    )}
-                />
+        <form onSubmit={handleSubmit(onSubmit)} clas dsName="font-content text-md max-w-md mx-auto">
+            <p className="font-bold mb-2">Unit Preferences</p>
+            <div className='md:grid grid-cols-3 gap-5 mb-5 '>
+                {/* category */}
+                <div className=''>
+                    <Controller
+                        name="unitCategory"
+                        control={control}
+                        rules={{ required: 'Unit Category is required' }}
+                        render={({ field }) => (
+                            <Select
+                                {...field}
+                                options={unitCategoryOptions}
+                                placeholder="Select Category"
+                                isClearable
+                                styles={selectStyles}
+                                className={errors.unitCategory ? 'is-invalid' : ''}
+                                onChange={handleUnitCategoryChange}
+                            />
+                        )}
+                    />
+                </div>
                 {errors.unitCategory && (
                     <p className="text-red-500 text-sm">{errors.unitCategory.message}</p>
                 )}
 
                 {/* unit/room type */}
-                <div className="mt-2">
+                <div className=''>
                     <Controller
                         name="unitType"
                         control={control}
@@ -205,7 +131,7 @@ export default function Wishlist() {
                             <Select
                                 {...field}
                                 options={dynamicUnitTypeOptions}
-                                placeholder="Select Unit Type"
+                                placeholder="Select Unit/Room Type"
                                 isDisabled={!selectedUnitCategory}
                                 isClearable
                                 styles={selectStyles}
@@ -217,42 +143,8 @@ export default function Wishlist() {
                         <p className="text-red-500 text-sm">{errors.unitType.message}</p>
                     )}
                 </div>
-            </div>
 
-            {/* Additional requirement */}
-            <div className="mb-4">
-                <Controller
-                    name="additionalRequirements"
-                    control={control}
-                    render={({ field }) => (
-                        <TextField
-                            {...field}
-                            label="Additional Requirements"
-                            multiline
-                            rows={4}
-                            variant="outlined"
-                            fullWidth
-                        />
-                    )}
-                />
-            </div>
-
-            {/* budget */}
-            <div className="mb-4">
-                <p className="font-bold mb-2">Budget & Furnishing</p>
-                <div className="grid grid-cols-2 gap-4">
-                    <Controller
-                        name="budget"
-                        control={control}
-                        render={({ field }) => (
-                            <TextField
-                                {...field}
-                                label="Budget"
-                                variant="outlined"
-                                fullWidth
-                            />
-                        )}
-                    />
+                <div className=''>
                     <Controller
                         name="furnishing"
                         control={control}
@@ -270,8 +162,10 @@ export default function Wishlist() {
                 </div>
             </div>
 
+
+
             <div className="mb-4">
-                <p className="font-bold mb-2">Move-in Date & Tenancy Period</p>
+                <p className="font-bold mb-2">Move-in Details</p>
                 <div className="grid grid-cols-2 gap-4">
                     <Controller
                         name="moveInDate"
@@ -305,8 +199,109 @@ export default function Wishlist() {
                     />
                 </div>
             </div>
-            <Button type="submit" variant="contained" color="primary" fullWidth>
-                Submit Wishlist
+            {/* Additional requirement */}
+            <div className="mb-4">
+                <Controller
+                    name="additionalRequirements"
+                    control={control}
+                    render={({ field }) => (
+                        <TextField
+                            {...field}
+                            label="Additional Requirements"
+                            multiline
+                            rows={4}
+                            variant="outlined"
+                            fullWidth
+                        />
+                    )}
+                />
+            </div>
+
+            {/* budget */}
+            <div className="mb-4">
+                <p className="font-bold mb-2">Budget Range</p>
+                <div className="grid grid-cols-2 gap-4">
+                    <Controller
+                        name="budget"
+                        control={control}
+                        render={({ field }) => (
+                            <TextField
+                                {...field}
+                                label="Budget"
+                                variant="outlined"
+                                fullWidth
+                            />
+                        )}
+                    />
+
+                </div>
+            </div>
+            <hr className='my-3' />
+            <p className="font-bold mb-2">Contact Information</p>
+
+            {/* name */}
+            <div className="mb-4">
+                <Controller
+                    name="fullName"
+                    control={control}
+                    rules={{ required: 'Full Name is required' }}
+                    render={({ field }) => (
+                        <TextField
+                            {...field}
+                            label="Full Name"
+                            variant="outlined"
+                            fullWidth
+                            error={!!errors.fullName}
+                            helperText={errors.fullName?.message}
+                        />
+                    )}
+                />
+            </div>
+
+            {/* email */}
+            <div className="mb-4 grid grid-cols-2 gap-4">
+                <Controller
+                    name="email"
+                    control={control}
+                    rules={{
+                        required: 'Email is required',
+                        pattern: {
+                            value: /^\S+@\S+$/i,
+                            message: 'Invalid email address',
+                        },
+                    }}
+                    render={({ field }) => (
+                        <TextField
+                            {...field}
+                            label="Email"
+                            variant="outlined"
+                            fullWidth
+                            error={!!errors.email}
+                            helperText={errors.email?.message}
+                        />
+                    )}
+                />
+
+                {/* phone */}
+
+                <Controller
+                    name="phone"
+                    control={control}
+                    rules={{ required: 'Phone Number is required' }}
+                    render={({ field }) => (
+                        <TextField
+                            {...field}
+                            label="Phone Number"
+                            variant="outlined"
+                            fullWidth
+                            error={!!errors.phone}
+                            helperText={errors.phone?.message}
+                        />
+                    )}
+                />
+            </div>
+            <Button type="submit" variant="contained" color="warning" style={{ backgroundColor: amber[500], color: 'black' }}>
+                Submit
             </Button>
         </form>
     );
