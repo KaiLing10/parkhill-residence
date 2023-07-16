@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 // pages
-import Home from 'pages/home';
+import Home from './pages/home';
 import About from './pages/about';
-import Location from 'pages/location';
-import Facilities from 'pages/facilities';
-import Rent from 'pages/rent';
-import NoPage from "pages/nopage";
-import VRTour from 'pages/vrtour';
-import UnitInfo1 from 'pages/unitInfo1';
-import UnitInfo2 from 'pages/unitInfo2';
+import Location from './pages/location';
+import Facilities from './pages/facilities';
+import Rent from './pages/rent';
+import NoPage from "./pages/nopage";
+import VRTour from './pages/vrtour';
+import UnitInfo1 from './pages/unitInfo1';
+import UnitInfo2 from './pages/unitInfo2';
 
 
 import ScrollToTop from './components/ScrollToTop';
