@@ -3,7 +3,7 @@ import { Entity, Scene } from 'aframe-react';
 import AFRAME from 'aframe'
 import components from './fileLoader';
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 

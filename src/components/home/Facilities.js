@@ -9,9 +9,7 @@ import imgCenter from '../../assets/facilities/readingPavilion1.jpg'
 import imgGame from '../../assets/facilities/gameRoom.jpg'
 import imgRoof from '../../assets/facilities/roof.jpg'
 import imgNight from '../../assets/facilities/night.jpg'
-import imgPlayground from '../../assets/facilities/playground.jpg'
 import imgGym from '../../assets/facilities/gym.jpg'
-import imgFunction from '../../assets/facilities/functionRoom.jpg'
 import imgGame2 from '../../assets/facilities/gameRoom2.jpg'
 
 
