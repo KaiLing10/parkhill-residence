@@ -1,38 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
-
 import { BiBed, BiBath } from "react-icons/bi";
-
+// components
+import Navbar from '../components/Navbar';
+import BookUnitModal from '../components/rent/BookUnitModal';
+// assets
 import unit1a from '../assets/unit/unit1.jpg'
 import unit1b from '../assets/unit/unit1b.jpg'
 import unit1c from '../assets/unit/unit1View.jpg'
 
-import Navbar from '../components/Navbar';
 
 // custom style
-const unitImageStyle = ' h-full w-full object-cover '
+const unitImageStyle = 'h-full w-full object-cover '
 const detailTitleStyle = 'text-sm text-gray-800'
 const detailStyle = 'mb-3'
 
 
-const unitInfo1 = () => {
+const UnitInfo1 = () => {
+  const [openBookUnitModal, setOpenBookUnitModal] = useState(false);
+
+  const handleBookUnitModal = () => {
+    setOpenBookUnitModal(!openBookUnitModal);
+  };
+
   return (
     <>
       <Navbar />
 
-      <div className='md:p-20 font-title text-xl bg-gray-100 '>
+      <div className='relative md:p-20 font-title text-xl bg-gray-100 '>
         <Link to="/rent">
           <p className='mb-3 text-2xl'> Rent</p>
         </Link>
         <div className='h-[30vh] flex justify-between gap-1 bg-white drop-shadow-md'>
           <div >
-            <img src={unit1a} alt='unit_image' className={unitImageStyle}/>
+            <img src={unit1a} alt='unit_image' className={unitImageStyle} />
           </div>
           <div >
-            <img src={unit1c} alt='unit_image'className={unitImageStyle} />
+            <img src={unit1c} alt='unit_image' className={unitImageStyle} />
           </div>
           <div >
-            <img src={unit1b} alt='unit_image' className={unitImageStyle}/>
+            <img src={unit1b} alt='unit_image' className={unitImageStyle} />
           </div>
         </div>
 
@@ -50,12 +57,13 @@ const unitInfo1 = () => {
               <Link to={`/vrTour/${'Unit1Center'}`} >
 
                 {/* Unit1Center */}
-                <button className='mr-10 font-content text-xl border-2 bg-red-500/40 drop-shadow-md border-black rounded-xl mt-5 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
+                <button className='mr-10 font-content text-xl border-2 bg-red-300  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6  transition ease-in-out delay-150 hover:bg-red-300/50 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
                   room tour
                 </button>
               </Link>
 
-              <button className='mr-10 font-content text-xl border-2 bg-gray-200 drop-shadow-md border-black rounded-xl mt-5 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
+              <button className='mr-10 font-content text-xl border-2 bg-red-300  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6 transition ease-in-out delay-150 hover:bg-red-300/50 hover:shadow-lg hover:-translate-y-1 hover:scale-110'
+                onClick={handleBookUnitModal}>
                 book now
               </button>
             </div>
@@ -102,9 +110,13 @@ const unitInfo1 = () => {
           <p> - Water Heater </p>
 
         </div>
+        {openBookUnitModal && (<div className="absolute top-0 left-0 h-full w-screen ">
+          <BookUnitModal handleBookUnitModal={handleBookUnitModal} />  </div>)}
+
       </div >
+
     </>
   )
 }
 
-export default unitInfo1
+export default UnitInfo1
