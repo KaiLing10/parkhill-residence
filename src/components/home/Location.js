@@ -24,7 +24,7 @@ const customIcon = new Icon({
 // custom cluster icon
 const createClusterCustomIcon = function (cluster) {
     return new divIcon({
-        html: `<span class="cluster-icon">${cluster.getChildCount()}</span>`,
+        html: `<span className="cluster-icon">${cluster.getChildCount()}</span>`,
         className: "custom-marker-cluster",
         iconSize: point(33, 33, true)
     });

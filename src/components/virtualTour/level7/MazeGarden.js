@@ -16,7 +16,7 @@ export default function MazeGarden() {
         rotation="270 180 0"
         scale="0.2 0.05 0.2"
         material={{ src: ArrowIcon, shader: 'flat' }}
-        class="clickable"
+        className="clickable"
         navigate={'Center3Down'}
       />
       

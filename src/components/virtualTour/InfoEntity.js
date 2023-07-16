@@ -26,7 +26,7 @@ export default function Info({ position, rotation, info }) {
                 shader: 'flat',
                 opacity: '0.8',
             }}
-            class="clickable"
+            className="clickable"
             events={{
                 mouseenter: handleHoverStart,
                 mouseleave: handleHoverEnd

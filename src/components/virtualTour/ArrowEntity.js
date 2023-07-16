@@ -44,7 +44,7 @@ export default function Arrow({ position, rotation, navigate, text, text_rotatio
           shader: 'flat', 
           opacity:'0.8',
         }}
-        class="clickable"
+        className="clickable"
         events={{
           mouseenter: handleHoverStart,
           mouseleave: handleHoverEnd
