@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 // pages
-import Home from './pages/home';
+import Home from './pages/Home';
 import About from './pages/about';
 import Location from './pages/location';
 import Facilities from './pages/facilities';

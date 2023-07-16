@@ -13,7 +13,6 @@ import Location from '../components/home/Location'
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
-
 const Home = () => {
   const [loading, setLoading] = useState(true);
 
