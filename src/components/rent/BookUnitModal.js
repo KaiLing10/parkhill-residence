@@ -1,18 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { TextField, Button } from '@mui/material';
 import { amber } from '@mui/material/colors';
-import Select from 'react-select';
 
 export default function BookUnitModal({ handleBookUnitModal }) {
+
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
     const {
         control,
         handleSubmit,
         formState: { errors },
-    } = useForm();
+        reset,
+    } = useForm({
+        defaultValues: {
+            fullName: '',
+            email: '',
+            phone: '',
+            
+        },
+    });
 
     const onSubmit = (data) => {
         console.log(data);
+        setIsSubmitted(true);
+        reset()
         // Perform further actions, such as submitting the form
     };
 
@@ -90,8 +102,11 @@ export default function BookUnitModal({ handleBookUnitModal }) {
                             )}
                         />
                     </div>
-
+                    {isSubmitted && (
+    <p className="text-green-600">Form submitted successfully!</p>
+  )}
                     <div className='text-center'>
+
                         <Button
                             type="submit"
                             variant="contained"
