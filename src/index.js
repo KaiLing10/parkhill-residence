@@ -14,6 +14,7 @@ import UnitInfo1 from './pages/unitInfo1';
 import UnitInfo2 from './pages/unitInfo2';
 
 import ScrollToTop from './components/ScrollToTop';
+import AdminDashboard from './pages/admin/AdminDashboard';
 
 export default function App() {
   return (
@@ -30,6 +31,8 @@ export default function App() {
           <Route path="vrtour/:virtualId" element={<VRTour />} />
           <Route path="unitInfo1" element={<UnitInfo1 />} />
           <Route path="unitInfo2" element={<UnitInfo2 />} />
+          <Route path="admin" element={<AdminDashboard />} />
+          
           <Route path="*" element={<NoPage />} />
       </Routes>
       </ScrollToTop>
