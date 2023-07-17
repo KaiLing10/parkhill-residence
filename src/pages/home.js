@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
@@ -15,6 +15,16 @@ import Navbar from '../components/Navbar';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const hasLoaderShown = sessionStorage.getItem('hasLoaderShown');
+
+    if (hasLoaderShown) {
+      setLoading(false);
+    } else {
+      sessionStorage.setItem('hasLoaderShown', 'true');
+    }
+  }, []);
 
   return (
     <AnimatePresence>
