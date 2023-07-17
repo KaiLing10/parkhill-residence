@@ -3,8 +3,8 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion'
 import ConceptImage from '../../assets/condo.jpeg'
 import { Link } from "react-router-dom";
-import arMarker from '../../assets/AR/arMarker1.png'
-import arIcon from '../../assets/AR/arIcon.png'
+import arMarker from '../../assets/AR/arQuickTourIcon.png'
+import icon from '../../assets/AR/logo.png'
 
 // Animation variants
 const onScreenAnim = {
@@ -95,7 +95,7 @@ const Concept = () => {
 
                 {/* Animated text */}
                 <motion.div
-                    className=" absolute text-center font-semibold h-auto z-30 text-2xl pt-5 "
+                    className=" absolute text-center font-bold h-auto z-30 text-2xl pt-5 "
                     variants={sentence}
                     initial="hidden"
                     animate={inViewTextMobile ? 'visible' : 'hidden'}
@@ -164,7 +164,8 @@ const Concept = () => {
                         </motion.div>
 
                         {/* AR icon */}
-                        <motion.div className='cursor-pointer' onClick={handleARMarkerModal}
+                        <motion.div
+
                             variants={onScreenAnim}
                             initial="offscreen"
                             whileInView="onscreen"
@@ -172,20 +173,25 @@ const Concept = () => {
                             viewport={{ once: false, amount: 0.9 }}
                             transition={{ duration: 0.6 }}
                         >
-                            <img src={arIcon} alt='ar_marker' className='w-32 hover:scale-110 transition ease-in-out' />
+
+
+                            <div className='w-32 shadow-md cursor-pointer' onClick={handleARMarkerModal} >
+                                <p className=' text-yellow-600 text-sm text-center'>Click for Quick Tour!</p>
+                                <img src={icon} alt='ar_marker' className=' hover:scale-110 transition ease-in-out' /></div>
                         </motion.div>
 
                     </div>
                     {/* AR Marker modal */}
                     {openARMarker && (
                         <motion.div className='absolute -bottom-12 -right-10 flex items-center justify-center w-48 h-48 bg-white drop-shadow-md z-30'
-                        initial={{ scale: 0.5 }}
-                        animate={{ scale: 1 }}
-                        transition={{ duration: 0.5 }}>
+                            initial={{ scale: 0.5 }}
+                            animate={{ scale: 1 }}
+                            transition={{ duration: 0.5 }}>
                             <div className='absolute top-0 right-0 text-2xl text-white font-semibold bg-red-400 hover:bg-red-800/80 cursor-pointer px-3 py-2' onClick={handleARMarkerModal}>X</div>
-
                             <div className='w-4/5 '>
-                                <img src={arMarker} alt='ar_marker' className='' /></div>
+                                <img src={arMarker} alt='ar_marker' className='' />
+                                <p className='text-yellow-600'>Scan with any scanner</p>
+                            </div>
 
                         </motion.div>
                     )}
