@@ -61,24 +61,23 @@ const Navbar = ({ isHomePage }) => {
                 </div>
 
                 {/* mobile */}
-                <div className={nav ? 'fixed left-0 top-0 w-[80%] h-full bg-black/70 ease-in-out duration-500' : 'fixed left-[-100%]'}>
-                    <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>REACT</h1>
+                <div className={nav ? 'fixed left-0 top-0 w-[70%] h-full bg-black/70 ease-in-out duration-500' : 'fixed left-[-100%]'}>
                     <nav>
                         <ul className='p-4'>
-                            <li className='p-4 border-b border-gray-600'>
+                            <li className='pt-10 p-4 border-b border-gray-600'>
                                 <Link to="/home">Home</Link>
                             </li>
                             <li className='p-4 border-b border-gray-600'>
                                 <Link to="/about">About</Link>
                             </li>
                             <li className='p-4 border-b border-gray-600'>
-                                <Link to="/">Location</Link>
+                                <Link to="/location">Location</Link>
                             </li>
                             <li className='p-4 border-b border-gray-600'>
-                                <Link to="/">Facilities</Link>
+                                <Link to="/facilities">Facilities</Link>
                             </li>
                             <li className='p-4'>
-                                <Link to="/">Location</Link>
+                                <Link to="/rent">Rent</Link>
                             </li>
                         </ul>
                     </nav>
