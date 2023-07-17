@@ -26,6 +26,7 @@
     "react-scripts": "5.0.1",
     "react-scroll-parallax": "^3.4.2",
     "react-select": "^5.7.4",
+    "react-typed": "^1.2.0",
     "semver": "^7.5.4",
     "web-vitals": "^3.4.0",
     "xml2js": "^0.6.0"
