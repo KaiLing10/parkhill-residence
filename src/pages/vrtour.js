@@ -184,14 +184,12 @@ export default function Vrtour() {
       <div className="relative h-screen ">
         <div className='absolute flex h-full w-full justify-center items-center'>
           {/* welcome text */}
-
           <motion.div
             className=' z-30 bg-black/50 font-title text-white drop-shadow-black text-center text-2xl md:text-4xl'
             initial={{ opacity: 0, y: 20 }}
             animate={firstTour ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ ease: "easeInOut", duration: 1, delay: 1 }}
-            onAnimationComplete={() => setFirstTour(false)}
-          >
+            onAnimationComplete={() => setFirstTour(false)}>
             <p>You are now at Level 7</p>
           </motion.div>
 
