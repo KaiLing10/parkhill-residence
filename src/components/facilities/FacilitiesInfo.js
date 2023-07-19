@@ -94,7 +94,7 @@ export default function FacilitiesInfo() {
           img1: readingPavilion1,
           img2: readingPavilion2,
           img3: readingPavilion3,
-          sceneName:'RiveriewDeck2'
+          sceneName:'RiverViewDeck2'
         },
         {
           title: 'Maze Garden',

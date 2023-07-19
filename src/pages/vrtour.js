@@ -48,7 +48,6 @@ const getTitleAndContent = (currentScene) => {
         title: 'Playground',
         content: 'Unleash your inner child and have a blast in our vibrant playground!',
         facilitiesImage: playgroundImage,
-        sceneNameMessage: 'Level 7 Outdoor'
       };
     case 'GameRoom':
       return {
@@ -76,14 +75,12 @@ const getTitleAndContent = (currentScene) => {
         title: 'Reflexology Path',
         content: 'Relieve stress and improve your well-being as you walk along our soothing reflexology path!',
         facilitiesImage: reflexologyPathImage,
-        sceneNameMessage: 'Level 7 Outdoor'
       };
     case 'RiverViewDeck2':
       return {
         title: 'Reading Pavilion',
         content: 'Escape into the world of books and enjoy a tranquil reading experience in our beautiful pavilion!',
         facilitiesImage: readingPavilionImage,
-        sceneNameMessage: 'Level 7 Outdoor'
       };
     case 'BlockC':
       return {
@@ -105,7 +102,7 @@ const getTitleAndContent = (currentScene) => {
       return {
         title: '',
         content: '',
-        sceneNameMessage: 'Level 7',
+        sceneNameMessage: 'Level 7 Outdoor',
       };
   }
 };
@@ -167,6 +164,7 @@ export default function Vrtour() {
       delete AFRAME.components["info"];
     }
 
+
     // for navigation through click event
     AFRAME.registerComponent('navigate', {
       schema: {
@@ -193,6 +191,8 @@ export default function Vrtour() {
         this.el.addEventListener("click", () => { handleInfoModal() });
       },
     });
+
+
 
     return () => {
       // Cleanup A-Frame components when the component unmounts
