@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-
 //icon
 import { TbMusic, TbMusicOff } from "react-icons/tb";
 import { HiSwitchHorizontal } from "react-icons/hi";
@@ -28,15 +27,99 @@ import reflexologyPathImage from '../assets/facilities/badminton2.jpg'
 import readingPavilionImage from '../assets/facilities/readingPavilion2.jpg'
 import music from '../assets/music.mp3'
 
+// Get info modal's content & scene name message based on current scene
+const getTitleAndContent = (currentScene) => {
+  switch (currentScene) {
+    case 'Badminton':
+      return {
+        title: 'Badminton Court',
+        content: 'Enjoy a competitive game or engage in friendly matches with fellow residents!',
+        facilitiesImage: badmintonImage,
+        sceneNameMessage: 'Level 7 Clubhouse'
+      };
+    case 'PoolCenter':
+      return {
+        title: 'Swimming Pool',
+        content: 'Take a refreshing dip and relax in our spacious swimming pool!',
+        facilitiesImage: poolImage,
+      };
+    case 'Playground2':
+      return {
+        title: 'Playground',
+        content: 'Unleash your inner child and have a blast in our vibrant playground!',
+        facilitiesImage: playgroundImage,
+        sceneNameMessage: 'Level 7 Outdoor'
+      };
+    case 'GameRoom':
+      return {
+        title: 'Game Room',
+        content: 'Indulge in a variety of fun games and activities in our well-equipped game room!',
+        facilitiesImage: gameRoomImage,
+        sceneNameMessage: 'Level 7 Clubhouse'
+      };
+    case 'FunctionRoom':
+      return {
+        title: 'Function Room',
+        content: 'Host your events and gatherings in our spacious and versatile function room!',
+        facilitiesImage: functionRoomImage,
+        sceneNameMessage: 'Level 7 Clubhouse'
+      };
+    case 'Gym':
+      return {
+        title: 'Gymnasium',
+        content: 'Stay fit and active in our fully-equipped gymnasium, offering a wide range of exercise options!',
+        facilitiesImage: gymnasiumImage,
+        sceneNameMessage: 'Level 7 Clubhouse'
+      };
+    case 'ReflexologyPath':
+      return {
+        title: 'Reflexology Path',
+        content: 'Relieve stress and improve your well-being as you walk along our soothing reflexology path!',
+        facilitiesImage: reflexologyPathImage,
+        sceneNameMessage: 'Level 7 Outdoor'
+      };
+    case 'RiverViewDeck2':
+      return {
+        title: 'Reading Pavilion',
+        content: 'Escape into the world of books and enjoy a tranquil reading experience in our beautiful pavilion!',
+        facilitiesImage: readingPavilionImage,
+        sceneNameMessage: 'Level 7 Outdoor'
+      };
+    case 'BlockC':
+      return {
+        sceneNameMessage: 'Level 7 Block C Entrance'
+      };
+
+    case 'Unit1Center':
+      return {
+        sceneNameMessage: 'Block D Level 12'
+      };
+
+    case 'Unit2Entrance':
+      return {
+        sceneNameMessage: 'Block C Level 31'
+      };
+
+
+    default:
+      return {
+        title: '',
+        content: '',
+        sceneNameMessage: 'Level 7',
+      };
+  }
+};
+
 export default function Vrtour() {
   const { virtualId } = useParams(); //used when navigate from Facilities page
-  const [firstTour, setFirstTour] = useState(true);
-  const [currentScene, setCurrentScene] = useState(virtualId ||'BlockC');
+  const [firstScene, setFirstScene] = useState(true);
+  const [currentScene, setCurrentScene] = useState(virtualId || 'BlockC');
   const [zoomIn, setZoomIn] = useState(false);
   const [openInfo, setOpenInfo] = useState(false);
   const [openSwitchScene, setOpenSwitchScene] = useState(false);
   const [musicMuted, setMusicMuted] = useState(true);
   const navigate = useNavigate();
+  const [sceneNameMessage, setSceneNameMessage] = useState('');
 
 
   // Toggle music state
@@ -67,7 +150,7 @@ export default function Vrtour() {
     }
   };
 
-    // Handle info/switchScene button click
+  // Handle info/switchScene button click
   const handleInfoModal = () => {
     setOpenInfo(!openInfo)
   }
@@ -110,6 +193,7 @@ export default function Vrtour() {
         this.el.addEventListener("click", () => { handleInfoModal() });
       },
     });
+
     return () => {
       // Cleanup A-Frame components when the component unmounts
       delete AFRAME.components["navigate"];
@@ -118,65 +202,12 @@ export default function Vrtour() {
 
   });
 
-  // Get info modal's content based on current scene
-  const getTitleAndContent = () => {
-    switch (currentScene) {
-      case 'Badminton':
-        return {
-          title: 'Badminton Court',
-          content: 'Enjoy a competitive game or engage in friendly matches with fellow residents!',
-          facilitiesImage: badmintonImage
-        };
-      case 'PoolCenter':
-        return {
-          title: 'Swimming Pool',
-          content: 'Take a refreshing dip and relax in our spacious swimming pool!',
-          facilitiesImage: poolImage
-        };
-      case 'Playground2':
-        return {
-          title: 'Playground',
-          content: 'Unleash your inner child and have a blast in our vibrant playground!',
-          facilitiesImage: playgroundImage
-        };
-      case 'GameRoom':
-        return {
-          title: 'Game Room',
-          content: 'Indulge in a variety of fun games and activities in our well-equipped game room!',
-          facilitiesImage: gameRoomImage
-        };
-      case 'FunctionRoom':
-        return {
-          title: 'Function Room',
-          content: 'Host your events and gatherings in our spacious and versatile function room!',
-          facilitiesImage: functionRoomImage
-        };
-      case 'Gym':
-        return {
-          title: 'Gymnasium',
-          content: 'Stay fit and active in our fully-equipped gymnasium, offering a wide range of exercise options!',
-          facilitiesImage: gymnasiumImage
-        };
-      case 'ReflexologyPath':
-        return {
-          title: 'Reflexology Path',
-          content: 'Relieve stress and improve your well-being as you walk along our soothing reflexology path!',
-          facilitiesImage: reflexologyPathImage
-        };
-      case 'RiverViewDeck2':
-        return {
-          title: 'Reading Pavilion',
-          content: 'Escape into the world of books and enjoy a tranquil reading experience in our beautiful pavilion!',
-          facilitiesImage: readingPavilionImage
-        };
-
-      default:
-        return {
-          title: '',
-          content: '',
-        };
-    }
-  };
+  //Used for the mesaage when users enter vr tour
+  // Get the scene name message based on the current scene
+  useEffect(() => {
+    const scene = getTitleAndContent(currentScene);
+    setSceneNameMessage(scene.sceneNameMessage);
+  }, [currentScene]);
 
   return (
     <div>
@@ -187,10 +218,10 @@ export default function Vrtour() {
           <motion.div
             className=' z-30 bg-black/50 font-title text-white drop-shadow-black text-center text-2xl md:text-4xl'
             initial={{ opacity: 0, y: 20 }}
-            animate={firstTour ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={firstScene ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ ease: "easeInOut", duration: 1, delay: 1 }}
-            onAnimationComplete={() => setFirstTour(false)}>
-            <p>You are now at Level 7</p>
+            onAnimationComplete={() => setFirstScene(false)}>
+            <p>You are now at {sceneNameMessage}</p>
           </motion.div>
 
         </div>
@@ -204,7 +235,7 @@ export default function Vrtour() {
         {/* static navbar */}
         <div className='flex h-full justify-center items-end'>
           <div className='relative bg-white/80 h-20 w-1/3 z-10 flex items-center justify-center rounded-md'>
-            
+
             {/* <button> */}
             <button onClick={() => navigate(-1)}>
 
@@ -213,7 +244,7 @@ export default function Vrtour() {
               <div className='bg-white w-14 h-14 mx-2 text-2xl flex justify-center items-center rounded hover:bg-gray-100'>
                 <ImExit />
               </div>
-            {/* </Link> */}
+              {/* </Link> */}
             </button>
 
             {/* Switch scene button */}
