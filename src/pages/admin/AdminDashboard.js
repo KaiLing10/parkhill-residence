@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // custom style
-const dashboardCardStyle = "p-4 py-10 md:p-6 bg-yellow-400/60 rounded shadow-md shadow-md transition ease-in-out delay-150 hover:bg-yellow-400 hover:shadow-lg hover:scale-105"
-const dashboardTextStyle = "text-lg md:text-xl font-bold mb-2"
+const dashboardCardStyle = "p-4 flex justify-center items-center text-center md:py-16 md:p-6 bg-yellow-400/60 rounded shadow-md shadow-md transition ease-in-out delay-150 hover:bg-yellow-400 hover:shadow-lg hover:scale-105"
+const dashboardTextStyle = "text-lg md:text-2xl font-bold mb-2"
 
 const AdminDashboard = () => {
   return (

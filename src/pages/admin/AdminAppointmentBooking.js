@@ -6,16 +6,22 @@ import { Link } from 'react-router-dom';
 const tableHeaderStyle = 'px-6 py-3 text-left font-semibold text-gray-700'
 const tableTextStyle = 'px-6 py-4 '
 
+
 const AdminAppointmentBooking = () => {
     const [appointmentData, setAppointmentData] = useState([]);
 
+    const handleClearData = () => {
+        localStorage.removeItem('appointmentData');
+    }
+    
     useEffect(() => {
-
         // Get the data from local storage when the component mounts
         const data = JSON.parse(localStorage.getItem('appointmentData')) || [];
         setAppointmentData(data);
         console.log(data)
     }, []);
+
+      
 
     return (
         <div className="py-10 w-4/5 mx-auto ">
@@ -30,6 +36,7 @@ const AdminAppointmentBooking = () => {
             </Link>
 
             <h1 className='text-3xl font-semibold font-title  my-5'> Appointment Booking </h1>
+            <button onClick={handleClearData}>Clear Data</button>
             <table className="font-content w-full border-collapse border border-gray-300">
                 <thead className="bg-yellow-600/20">
                     <tr>

@@ -19,6 +19,7 @@ import UnitInfo2 from './pages/unitInfo2';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminRentBooking from './pages/admin/AdminRentBooking';
 import AdminAppointmentBooking from './pages/admin/AdminAppointmentBooking';
+import AdminUnitPreference from './pages/admin/AdminUnitPreference';
 // import AdminUnitManagement from './pages/admin/AdminUnitManagement';
 
 export default function App() {
@@ -39,6 +40,9 @@ export default function App() {
           <Route path="admin" element={<AdminDashboard />} />
           <Route path="adminRentBooking" element={<AdminRentBooking />} />
           <Route path="adminAppointmentBooking" element={<AdminAppointmentBooking />} />
+          <Route path="adminUnitPreference" element={<AdminUnitPreference />} />
+
+          
           {/* <Route path="adminUnitManagement" element={<AdminUnitManagement />} /> */}
 
           

@@ -42,6 +42,7 @@ export default function Wishlist() {
 
       // Save the updated data array back to local storage
       localStorage.setItem('wishlistData', JSON.stringify(newData));
+      console.log(newData)
 
       setIsSubmitted(true);
       reset()
