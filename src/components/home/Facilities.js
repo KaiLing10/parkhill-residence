@@ -26,7 +26,7 @@ const Facilities = () => {
   });
 
   return (
-    <div className='font-title overflow-hidden bg-gradient-to-b from-gray-800 via-gray-600 to-gray-300 h-screen p-10 relative flex justify-center items-center'>
+    <div className='font-title  overflow-hidden md:overflow-visible bg-gradient-to-b from-gray-800 via-gray-600 to-gray-300 h-screen p-10 relative flex justify-center items-center'>
 
       {/* <p className=' absolute w-1/5  bg-green-200 text-center text-xl md:text-2xl'> */}
       {/* <motion.div
@@ -54,7 +54,7 @@ const Facilities = () => {
       </motion.div>
 
       <div className=' md:hidden'>
-        <Parallax translateY={[0, -50]} className='shadow-md absolute w-40 md:w-72 -right-16 bottom-48 md:left-0 md:top-16'>
+        <Parallax translateY={[0, -50]} className='absolute w-40 md:w-72 -right-16 bottom-48 md:left-0 md:top-16'>
           < img src={imgGame} alt='facility2' className=' ' />
         </Parallax>
         <Parallax translateY={[-10, 50]} className='absolute w-48 md:w-80 left-6 bottom-28 md:left-32 lg:left-56 md:bottom-20'>

@@ -95,7 +95,7 @@ const Concept = () => {
 
                 {/* Animated text */}
                 <motion.div
-                    className=" absolute text-center font-bold h-auto z-30 text-2xl pt-5 "
+                    className=" absolute text-center font-medium md:font-bold h-auto z-30 text-2xl pt-5 "
                     variants={sentence}
                     initial="hidden"
                     animate={inViewTextMobile ? 'visible' : 'hidden'}

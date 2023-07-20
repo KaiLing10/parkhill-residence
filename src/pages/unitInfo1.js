@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BiBed, BiBath } from "react-icons/bi";
 // components
 import Navbar from '../components/Navbar';
-import BookUnitModal from '../components/rent/BookUnitModal';
+import BookingModal from '../components/rent/BookingModal';
 // assets
 import unit1a from '../assets/unit/unit1.jpg'
 import unit1b from '../assets/unit/unit1b.jpg'
@@ -17,10 +17,10 @@ const detailStyle = 'mb-3'
 
 
 const UnitInfo1 = () => {
-  const [openBookUnitModal, setOpenBookUnitModal] = useState(false);
+  const [openBookingModal, setOpenBookingModal] = useState(false);
 
-  const handleBookUnitModal = () => {
-    setOpenBookUnitModal(!openBookUnitModal);
+  const handleBookingModal = () => {
+    setOpenBookingModal(!openBookingModal);
   };
 
   return (
@@ -63,7 +63,7 @@ const UnitInfo1 = () => {
               </Link>
 
               <button className='mr-10 font-content text-xl border-2 bg-red-300  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6 transition ease-in-out delay-150 hover:bg-red-300/50 hover:shadow-lg hover:-translate-y-1 hover:scale-110'
-                onClick={handleBookUnitModal}>
+                onClick={handleBookingModal}>
                 book now
               </button>
             </div>
@@ -110,8 +110,8 @@ const UnitInfo1 = () => {
           <p> - Water Heater </p>
 
         </div>
-        {openBookUnitModal && (<div className="absolute top-0 left-0 h-full w-screen ">
-          <BookUnitModal handleBookUnitModal={handleBookUnitModal} />  </div>)}
+        {openBookingModal && (<div className="absolute top-0 left-0 h-full w-screen ">
+          <BookingModal handleBookingModal={handleBookingModal} />  </div>)}
 
       </div >
 

@@ -3,10 +3,6 @@ import Select from 'react-select';
 
 export default function DropdownList({ onOptionSelect }) {
 
-    // Handle option change event
-    const handleOptionChange = (selectedOption) => {
-        onOptionSelect(selectedOption.value);
-    };
 
     //Facilities options
     const facilities = [
@@ -45,12 +41,14 @@ export default function DropdownList({ onOptionSelect }) {
 
     };
 
+      
+
     return (
         <div>
 
             <Select
                 className='font-content text-lg text-black '
-                onChange={handleOptionChange}
+                onChange={(selectedOption) => onOptionSelect((selectedOption.value))}
                 placeholder="Switch Facilities"
                 styles={colourStyles}
                 options={facilities}
