@@ -111,7 +111,7 @@ const UnitInfo1 = () => {
 
         </div>
         {openBookingModal && (<div className="absolute top-0 left-0 h-full w-screen ">
-          <BookingModal handleBookingModal={handleBookingModal} />  </div>)}
+          <BookingModal handleBookingModal={handleBookingModal} unitID='D-12-20' />  </div>)}
 
       </div >
 

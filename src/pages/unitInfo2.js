@@ -101,7 +101,6 @@ const UnitInfo2 = () => {
           </div>
 
           {/* Features */}
-
           <h3 className='text-3xl mb-2 mt-5'>Key Features</h3>
           <p> - Stadium View </p>
           <p> - Air-conditioning</p>
@@ -112,7 +111,7 @@ const UnitInfo2 = () => {
 
         </div>
         {openBookingModal && (<div className="absolute top-0 left-0 h-full w-screen ">
-          <BookingModal handleBookingModal={handleBookingModal} />  </div>)}
+          <BookingModal handleBookingModal={handleBookingModal} unitID='C-31-16' />  </div>)}
 
       </div >
 

@@ -1,54 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// custom style
+const dashboardCardStyle = "p-4 py-10 md:p-6 bg-yellow-400/60 rounded shadow-md shadow-md transition ease-in-out delay-150 hover:bg-yellow-400 hover:shadow-lg hover:scale-105"
+const dashboardTextStyle = "text-lg md:text-xl font-bold mb-2"
+
 const AdminDashboard = () => {
   return (
-    <div className="bg-gray-100">
-      <header className="bg-white shadow">
-        <nav className="container mx-auto px-4 py-6">
-          {/* Your navigation links */}
-          <ul className="flex space-x-4">
-            <li>
-              <Link to="/admin/bookings" className="text-gray-600 hover:text-gray-900">Bookings</Link>
-            </li>
-            <li>
-              <Link to="/admin/units" className="text-gray-600 hover:text-gray-900">Units</Link>
-            </li>
-            <li>
-              <Link to="/admin/appointments" className="text-gray-600 hover:text-gray-900">Appointments</Link>
-            </li>
-            <li>
-              <Link to="/admin/messages" className="text-gray-600 hover:text-gray-900">Messages</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <main className="container mx-auto px-4 py-6">
-        {/* Your admin content */}
-        <h1 className="text-3xl font-bold mb-4">Admin Dashboard</h1>
-        <div className="grid grid-cols-2 gap-4">
-          <Link to="/admin/bookings" className="p-4 bg-white rounded shadow">
-            <h2 className="text-xl font-bold mb-2">Bookings</h2>
-            {/* Display the total number of bookings */}
-            <p>10 Bookings</p>
+    <div className="bg-gray-100 h-[100vh] font-content">
+      <div className="mx-auto px-5 md:px-10 py-10">
+        <h1 className="text-3xl md:text-4xl font-title font-semibold mb-6">Admin Dashboard</h1>
+        {/* content */}
+        <div className="grid grid-cols-2 gap-2 md:gap-6">
+          <Link to="/adminRentBooking" className={dashboardCardStyle}>
+            <h2 className={dashboardTextStyle}>Rent Bookings</h2>
+            {/* <p>10 Bookings</p> */}
           </Link>
-          <Link to="/admin/units" className="p-4 bg-white rounded shadow">
-            <h2 className="text-xl font-bold mb-2">Units</h2>
-            {/* Display the total number of units */}
-            <p>2 Units Available currently</p>
+          <Link to="/adminAppointmentBooking" className={dashboardCardStyle}>
+            <h2 className={dashboardTextStyle}>Physical Visit Appointments</h2>
+            {/* <p>2 Appointments </p> */}
           </Link>
-          <Link to="/admin/appointments" className="p-4 bg-white rounded shadow">
-            <h2 className="text-xl font-bold mb-2">Appointments</h2>
-            {/* Display the total number of appointments */}
-            <p>5 Appointments</p>
+          {/* <Link to="/adminUnitManagement" className="p-6 bg-yellow-400/60  rounded shadow-md">
+            <h2 className={dashboardTextStyle}>Available Units</h2>
+            <p>5 Unit Available </p>
+          </Link> */}
+          <Link to="/adminEnquiries" className={dashboardCardStyle}>
+            <h2 className={dashboardTextStyle}>Enquiries</h2>
+            {/* <p>3 Enquiries</p> */}
           </Link>
-          <Link to="/admin/messages" className="p-4 bg-white rounded shadow">
-            <h2 className="text-xl font-bold mb-2">Messages</h2>
-            {/* Display the total number of messages */}
-            <p>20 Messages</p>
+          <Link to="/adminUnitPreference" className={dashboardCardStyle}>
+            <h2 className={dashboardTextStyle}>Unit Preferences</h2>
+            {/* <p>10 Unit Preferences by Users</p> */}
           </Link>
         </div>
-      </main>
+      </div>
     </div>
   );
 };

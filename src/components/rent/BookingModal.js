@@ -3,7 +3,11 @@ import BookUnit from './BookUnit';
 import BookAppointment from './BookAppointment';
 
 
-export default function BookingModal({ handleBookingModal }) {
+export default function BookingModal({ handleBookingModal, unitID }) {
+
+    console.log('hi');
+    console.log(unitID);
+    console.log("endhi")
 
     const [selectedOption, setSelectedOption] = useState('bookUnit');
 
@@ -37,7 +41,7 @@ export default function BookingModal({ handleBookingModal }) {
 
 
                 {/* Form */}
-                {selectedOption === 'bookUnit' ? <BookUnit /> : <BookAppointment />}
+                {selectedOption === 'bookUnit' ? <BookUnit unitID={unitID}/> : <BookAppointment />}
 
 
             </div>

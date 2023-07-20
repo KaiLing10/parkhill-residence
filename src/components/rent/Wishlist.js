@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { TextField, Button } from '@mui/material';
 import { amber } from '@mui/material/colors';
@@ -7,12 +7,15 @@ import Select from 'react-select';
 // https://react-hook-form.com/get-started 
 
 export default function Wishlist() {
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
     // Initialize react-hook-form and extract necessary methods/variables
     const {
         control,
         handleSubmit,
         watch,
         setValue,
+        reset,
         formState: { errors },
     } = useForm({
         defaultValues: {
@@ -31,8 +34,19 @@ export default function Wishlist() {
 
     // Handle form submission
     const onSubmit = (data) => {
-        console.log(data);
-        // Perform further actions, such as submitting the wishlist to the server
+      // Get the existing data from local storage 
+      const existingData = JSON.parse(localStorage.getItem('wishlistData')) || [];
+
+      // Add the new form data to the existing data array
+      const newData = [...existingData, data ];
+
+      // Save the updated data array back to local storage
+      localStorage.setItem('wishlistData', JSON.stringify(newData));
+
+      setIsSubmitted(true);
+      reset()
+   
+   
     };
 
     //   Define options for select field
@@ -300,6 +314,9 @@ export default function Wishlist() {
                     )}
                 />
             </div>
+            {isSubmitted && (
+                    <p className="text-green-600">Form submitted successfully!</p>
+                )}
             <Button type="submit" variant="contained" color="warning" style={{ backgroundColor: amber[500], color: 'black' }}>
                 Submit
             </Button>

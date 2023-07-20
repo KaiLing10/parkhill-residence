@@ -19,21 +19,34 @@ export default function BookAppointment() {
     } = useForm({
         defaultValues: {
             fullName: '',
-            email: '',
-            phone: ''
+            phone: '',
+            email: ''
         },
     });
 
+
     const onSubmit = (data) => {
-        console.log(data);
-        console.log({
-            ...data,
-            appointmentDate: selectedDate,
-            appointmentTime: selectedTime
-        });
+        // Extract day, month, and year from the selectedDate
+        const appointmentDate = selectedDate
+            ? {
+                day: selectedDate.getDate(),
+                month: selectedDate.getMonth() ,
+                year: selectedDate.getFullYear(),
+            }
+            : null;
+
+        // Get the existing data from local storage 
+        const existingData = JSON.parse(localStorage.getItem('appointmentData')) || [];
+
+        // Add the new form data to the existing data array
+        const newData = [...existingData, { ...data, appointmentDate: appointmentDate, appointmentTime: selectedTime }];
+
+        // Save the updated data array back to local storage
+        localStorage.setItem('appointmentData', JSON.stringify(newData));
+
         setIsSubmitted(true);
         reset()
-        // Perform further actions, such as submitting the form
+
     };
 
 

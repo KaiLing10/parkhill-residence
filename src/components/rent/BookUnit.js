@@ -3,7 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { TextField, Button } from '@mui/material';
 import { amber } from '@mui/material/colors';
 
-export default function BookUnit() {
+export default function BookUnit({unitID}) {
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const {
@@ -14,16 +14,26 @@ export default function BookUnit() {
     } = useForm({
         defaultValues: {
             fullName: '',
-            email: '',
             phone: '',
+            email: '',
         },
     });
 
     const onSubmit = (data) => {
-        console.log(data);
+       
+        // Get the existing data from local storage 
+        const existingData = JSON.parse(localStorage.getItem('rentData')) || [];
+
+        // Add the new form data to the existing data array
+        const newData = [...existingData, {...data, unitID: unitID}];
+        
+
+        // Save the updated data array back to local storage
+        localStorage.setItem('rentData', JSON.stringify(newData));
+        console.log(newData);
         setIsSubmitted(true);
         reset()
-        // Perform further actions, such as submitting the form
+    
     };
 
     return (
