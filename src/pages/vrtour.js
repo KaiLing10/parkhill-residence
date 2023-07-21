@@ -29,6 +29,7 @@ import music from '../assets/music.mp3'
 
 // Get info modal's content & scene name message based on current scene
 const getTitleAndContent = (currentScene) => {
+  console.log(currentScene)
   switch (currentScene) {
     case 'Badminton':
       return {
@@ -106,6 +107,7 @@ const getTitleAndContent = (currentScene) => {
       };
   }
 };
+
 
 export default function Vrtour() {
   const { virtualId } = useParams(); //used when navigate from Facilities page
@@ -228,7 +230,7 @@ export default function Vrtour() {
 
         {/* modal */}
         <div className="absolute h-full w-screen ">
-          {openInfo && (<InfoModal handleInfoModal={handleInfoModal} {...getTitleAndContent()} />)}
+          {openInfo && (<InfoModal handleInfoModal={handleInfoModal} {...getTitleAndContent(currentScene)} />)}
           {openSwitchScene && (<SwitchSceneModal handleSwitchSceneModal={handleSwitchSceneModal} navigateToScene={navigateToScene} />)}
         </div>
 

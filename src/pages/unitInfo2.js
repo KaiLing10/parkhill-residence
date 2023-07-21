@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
+import { BsArrowLeft } from "react-icons/bs";
 import { BiBed, BiBath } from "react-icons/bi";
 // components
 import Navbar from '../components/Navbar';
@@ -29,9 +30,14 @@ const UnitInfo2 = () => {
       <Navbar />
 
       <div className='relative md:p-20 font-title text-xl bg-gray-100 '>
-        <Link to="/rent">
-          <p className='mb-3 text-2xl'> Rent</p>
+        {/* back button */}
+        <Link to="/rent" className='flex w-1/5 cursor-pointer hover:text-gray-600'>
+          <div className='w-10 h-10 text-3xl ' >
+            <BsArrowLeft />
+          </div>
+          <p className='text-2xl '>Back</p>
         </Link>
+        {/* content */}
         <div className='h-[30vh] flex justify-between gap-1 bg-white drop-shadow-md'>
           <div >
             <img src={unit1a} alt='unit_image' className={unitImageStyle} />

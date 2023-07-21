@@ -3,7 +3,8 @@ import { motion } from 'framer-motion'
 
 
 export default function InfoModal({ handleInfoModal, title, content, facilitiesImage }) {
-
+  console.log('hihere')
+  console.log(title)
   return (
 
     // <div className="absolute h-screen w-screen overflow-y-scroll">

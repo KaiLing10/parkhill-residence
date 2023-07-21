@@ -26,11 +26,13 @@ const Navbar = ({ isHomePage }) => {
         <div className={navbarBg ? 'bg-black/10 fixed z-50 w-screen text-white' : 'fixed z-50 w-screen '}>
             <div className={`font-content flex justify-between items-center h-16 max-w-[1240px] mx-auto px-4 `}>
                 {/* dekstop */}
+                <Link to="/home">
                 <div className='flex ml-6 pt-1 md:pt-0 md:ml-10'>
                     <div className='items-start cursor-pointer font-bold w-14 md:w-24'>
-                        <img className='h-16' src={process.env.PUBLIC_URL + `/logo.png`} alt="logo" />
+                        <img className='h-12' src={process.env.PUBLIC_URL + `/logo.png`} alt="logo" />
                     </div>
                 </div>
+                </Link>
 
                 <motion.nav
                     initial={isHomePage ? { opacity: 0, y: -30 } : undefined}

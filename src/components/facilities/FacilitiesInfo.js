@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DropdownList from './DropdownList';
+import ImageModal from '../ImageModal'
 
 // assets
 import gym1 from '../../assets/facilities/gym.jpg'
@@ -36,145 +37,161 @@ import { Link } from 'react-router-dom';
 
 
 // custom styles
-const facilitiesImage = 'w-[30vw] object-cover mx-5 my-16 border-4 border-white drop-shadow-black'
+const facilitiesImage = 'w-[30vw] cursor-pointer object-cover mx-5 my-16 border-4 border-white drop-shadow-black'
 
 
 export default function FacilitiesInfo() {
-    const [selectedOption, setSelectedOption] = useState(null);
-    const handleOptionSelect = (option) => {
-        setSelectedOption(option);
-    };
 
-    // Define facility details
-    const facilityDetails = [
-        {
-          title: 'Gymnasium',
-          img1: gym1,
-          img2: gym2,
-          img3: gym3,
-          sceneName:'Gym'
-        },
-        {
-          title: 'Function Room',
-          img1: function1,
-          img2: function2,
-          img3: function3,
-          sceneName:'FunctionRoom'
-        },
-        {
-          title: 'Game Room',
-          img1: gameRoom1,
-          img2: gameRoom2,
-          img3: gameRoom3,
-          sceneName:'GameRoom'
-        },
-        {
-          title: 'Pool Area',
-          img1: pool1,
-          img2: pool2,
-          img3: pool3,
-          sceneName:'PoolCenter'
-        },
-        {
-          title: 'Badminton Court',
-          img1: badminton1,
-          img2: badminton2,
-          img3: badminton3,
-          sceneName:'Badminton'
-        },
-        {
-          title: 'Playground',
-          img1: playground1,
-          img2: playground2,
-          img3: playground3,
-          sceneName:'Playground2'
-        },
-        {
-          title: 'Reading Pavilion',
-          img1: readingPavilion1,
-          img2: readingPavilion2,
-          img3: readingPavilion3,
-          sceneName:'RiverViewDeck2'
-        },
-        {
-          title: 'Maze Garden',
-          img1: mazeGarden1,
-          img2: mazeGarden2,
-          img3: mazeGarden3,
-          sceneName:'Center3Down'
-        },
-        {
-          title: 'Reflexology Path',
-          img1: reflexologyPath1,
-          img2: reflexologyPath2,
-          img3: reflexologyPath3,
-          sceneName:'ReflexologyPath'
-        },
-        {
-          title: 'Yoga & Tai Chi Deck',
-          img1: yogaDeck1,
-          img2: yogaDeck2,
-          img3: yogaDeck3,
-          sceneName:'Yoga'
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-        },
-      ];
-      
+  // Handle option select
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+  };
 
-    // Find the selected facility option's details
-    const selectedDetails = facilityDetails.find((option) => option.title === selectedOption) || facilityDetails[0];
+  // Handle image click
+  const handleImageClick = (imageSrc) => {
+    setSelectedImage(imageSrc);
+    setShowModal(!showModal);
+  };
 
 
-    return (
-        <div>
-            {/* Facility map */}
-            {/* <div className='pt-28 w-screen flex justify-center'>
+  // Define facility details
+  const facilityDetails = [
+    {
+      title: 'Gymnasium',
+      img1: gym1,
+      img2: gym2,
+      img3: gym3,
+      sceneName: 'Gym'
+    },
+    {
+      title: 'Function Room',
+      img1: function1,
+      img2: function2,
+      img3: function3,
+      sceneName: 'FunctionRoom'
+    },
+    {
+      title: 'Game Room',
+      img1: gameRoom1,
+      img2: gameRoom2,
+      img3: gameRoom3,
+      sceneName: 'GameRoom'
+    },
+    {
+      title: 'Pool Area',
+      img1: pool1,
+      img2: pool2,
+      img3: pool3,
+      sceneName: 'PoolCenter'
+    },
+    {
+      title: 'Badminton Court',
+      img1: badminton1,
+      img2: badminton2,
+      img3: badminton3,
+      sceneName: 'Badminton'
+    },
+    {
+      title: 'Playground',
+      img1: playground1,
+      img2: playground2,
+      img3: playground3,
+      sceneName: 'Playground2'
+    },
+    {
+      title: 'Reading Pavilion',
+      img1: readingPavilion1,
+      img2: readingPavilion2,
+      img3: readingPavilion3,
+      sceneName: 'RiverViewDeck2'
+    },
+    {
+      title: 'Maze Garden',
+      img1: mazeGarden1,
+      img2: mazeGarden2,
+      img3: mazeGarden3,
+      sceneName: 'Center3Down'
+    },
+    {
+      title: 'Reflexology Path',
+      img1: reflexologyPath1,
+      img2: reflexologyPath2,
+      img3: reflexologyPath3,
+      sceneName: 'ReflexologyPath'
+    },
+    {
+      title: 'Yoga & Tai Chi Deck',
+      img1: yogaDeck1,
+      img2: yogaDeck2,
+      img3: yogaDeck3,
+      sceneName: 'Yoga'
+
+    },
+  ];
+
+
+  // Find the selected facility option's details
+  const selectedDetails = facilityDetails.find((option) => option.title === selectedOption) || facilityDetails[0];
+
+
+  return (
+    <div>
+      {/* Facility map */}
+      {/* <div className='pt-28 w-screen flex justify-center'>
                     <img src={map} alt='facilities map' className='object-cover w-3/5 ' />
                  </div> */}
 
 
-            <div className='relative'>
+      <div className='relative'>
 
-                {/* gradient */}
-                {/* <div className='absolute z-20 top-0 left-0 w-full h-28 bg-gradient-to-b from-gray-100/100 to-gray-100/0'></div> */}
+        {/* gradient */}
+        {/* <div className='absolute z-20 top-0 left-0 w-full h-28 bg-gradient-to-b from-gray-100/100 to-gray-100/0'></div> */}
 
-                {/* overlay */}
-                <div className="absolute z-10 top-0 left-0 bg-black/50 w-full h-screen"></div>
+        {/* overlay */}
+        <div className="absolute z-10 top-0 left-0 bg-black/50 w-full h-screen"></div>
 
-                {/* Background Image */}
-                <img src={selectedDetails.img1} alt='gym' className='h-screen w-screen object-cover' />
-                {/* content */}
-                <div className='absolute top-0 z-40 mt-32 text-white'>
-                    {/* title */}
-                    <div className='flex items-center justify-between md:mx-20'>
-                        <div className='text-8xl '>{selectedDetails.title}</div>
-              
-                        <DropdownList onOptionSelect={handleOptionSelect}/>
-                    </div>
+        {/* Background Image */}
+        <img src={selectedDetails.img1} alt='gym' className='h-screen w-screen object-cover' />
+        {/* content */}
+        <div className='absolute top-0 z-40 mt-32 text-white'>
+          {/* title */}
+          <div className='flex items-center justify-between md:mx-20'>
+            <div className='text-8xl '>{selectedDetails.title}</div>
 
-                    {/* gallery*/}
-                    <div className='bg-white/30 mt-10 h-[50vh] w-screen flex'>
-                        <img src={selectedDetails.img1} alt='facilities' className={facilitiesImage} />
-                        <img src={selectedDetails.img2} alt='facilities' className={facilitiesImage} />
-                        <img src={selectedDetails.img3} alt='facilities' className={facilitiesImage} />
-                    </div>
+            <DropdownList onOptionSelect={handleOptionSelect} />
+          </div>
 
-
-                    {/* 360 button */}
-                    <div className='flex justify-center'>
-                    {/* <Link to={`/vrTour/${sceneName}`}  > */}
-
-                    <Link to={`/vrTour/${selectedDetails.sceneName}`} >
-                        <button className=' font-content text-xl md:text-xl border-2 my-5 bg-black/40 border-white rounded-xl py-2 px-4 transition ease-in-out delay-150 hover:bg-white/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
-                            360 View
-                        </button>
-                        </Link>
-                    </div>
-                </div>
+          {/* gallery*/}
+          <div className='bg-white/30 mt-10 h-[50vh] w-screen flex'>
+            <img src={selectedDetails.img1} alt='facilities' className={facilitiesImage} onClick={() => handleImageClick(selectedDetails.img1)} />
+            <img src={selectedDetails.img2} alt='facilities' className={facilitiesImage} onClick={() => handleImageClick(selectedDetails.img2)} />
+            <img src={selectedDetails.img3} alt='facilities' className={facilitiesImage} onClick={() => handleImageClick(selectedDetails.img3)} />
+          </div>
 
 
+          {/* 360 button */}
+          <div className='flex justify-center'>
+            {/* <Link to={`/vrTour/${sceneName}`}  > */}
 
-            </div>
+            <Link to={`/vrTour/${selectedDetails.sceneName}`} >
+              <button className=' font-content text-xl md:text-xl border-2 my-5 bg-black/40 border-white rounded-xl py-2 px-4 transition ease-in-out delay-150 hover:bg-white/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
+                360 View
+              </button>
+            </Link>
+          </div>
         </div>
-    )
+
+        {/* Image modal */}
+        {showModal && selectedImage && (
+          <ImageModal handleImageClick={handleImageClick} selectedImage={selectedImage} />)}
+
+
+
+      </div>
+    </div>
+  )
 }

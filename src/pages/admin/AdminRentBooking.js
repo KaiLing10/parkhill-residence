@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 // custom style
 const tableHeaderStyle = 'px-6 py-3 text-left font-semibold text-gray-700'
-const tableTextStyle = 'px-6 py-4 '
+const tableTextStyle = 'px-6 py-4'
 
 const AdminRentBooking = () => {
     const [rentData, setRentData] = useState([]);
@@ -20,14 +20,15 @@ const AdminRentBooking = () => {
     return (
         <div className="py-10 w-4/5 mx-auto ">
 
+            {/* back button */}
             <Link to="/admin" className='flex w-1/5 text-yellow-600 cursor-pointer hover:text-gray-600'>
-                {/* <div > */}
                 <div className='w-10 h-10 text-3xl ' >
                     <BsArrowLeft />
                 </div>
                 <p className='text-2xl '>Dashboard</p>
-                {/* </div> */}
             </Link>
+
+            {/* content */}
             <h1 className='text-3xl font-semibold font-title  my-5'> Appointment Booking </h1>
             <table className="font-content w-full border-collapse border border-gray-300">
                 <thead className="bg-yellow-600/20">
