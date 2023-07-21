@@ -13,27 +13,40 @@ import pinnacle from '../../assets/location/pinnacle_mall.jpeg'
 export default function Amenities() {
   const [car5min, isInViewCar5min] = useInView({
   });
+  const [car7min, isInViewCar7min] = useInView({
+    threshold: 0.5,
+  });
+  const [car7min2, isInViewCar7min2] = useInView({
+    threshold: 0.5,
+  });
   const [car9min, isInViewCar9min] = useInView({
-    threshold: 0.7,
+    threshold: 0.5,
   });
   const [car9min2, isInViewCar9min2] = useInView({
-    threshold: 0.7,
+    threshold: 0.5,
   });
 
 
   const [distance, setDistance] = useState('5 min');
 
+
   useEffect(() => {
     if (isInViewCar5min) {
       setDistance('5 min');
-    } else if (isInViewCar9min) {
-      setDistance('9 min');
-    } else if (isInViewCar9min2) {
-      setDistance('9 min');
-    } else {
+    }
+    if (isInViewCar7min) {
       setDistance('7 min');
     }
-  }, [isInViewCar5min, isInViewCar9min, isInViewCar9min2]);
+    if (isInViewCar7min2) {
+      setDistance('7 min');
+    }
+    if (isInViewCar9min) {
+      setDistance('9 min');
+    }
+    if (isInViewCar9min2) {
+      setDistance('9 min');
+    }
+  }, [isInViewCar5min, isInViewCar7min, isInViewCar7min2,isInViewCar9min, isInViewCar9min2]);
 
   // css style
   const amenities = '';
@@ -54,11 +67,11 @@ export default function Amenities() {
           <p className='pb-20'>2.1km to Bukit Jalil National Stadium</p>
         </div>
 
-        <div className={amenities}>
+        <div className={amenities} ref={car7min}>
           <img src={lrtBukitJalil} className={imageStyle} alt='lrtBukitJalil' />
           <p className='pb-20'>3.2km to Bukit Jalil LRT Station</p>
         </div>
-        <div className={amenities} >
+        <div className={amenities} ref={car7min2}>
           <img src={endah} className={imageStyle} alt='Endah Parade' />
           <p className='pb-20'>3.6km to Endah Parade</p>
         </div>

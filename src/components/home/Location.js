@@ -1,9 +1,5 @@
-import React, {useRef} from 'react'
+import React, { useRef } from 'react'
 import { motion, useInView } from "framer-motion";
-import "leaflet/dist/leaflet.css";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import MarkerClusterGroup from "react-leaflet-cluster";
-import { Icon, divIcon, point } from "leaflet";
 import { Link } from "react-router-dom";
 
 const fadeIn = {
@@ -11,40 +7,7 @@ const fadeIn = {
     visible: { opacity: 1, y: 0 },
 };
 
-// https://www.youtube.com/watch?v=jD6813wGdBA&t=6s
-
-// create custom icon
-const customIcon = new Icon({
-    iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
-    //   iconUrl: require("../../assets/concept.jpg"),
-
-    iconSize: [48, 48] // size of the icon
-});
-
-// custom cluster icon
-const createClusterCustomIcon = function (cluster) {
-    return new divIcon({
-        html: `<span className="cluster-icon">${cluster.getChildCount()}</span>`,
-        className: "custom-marker-cluster",
-        iconSize: point(33, 33, true)
-    });
-};
-
-// markers
-const markers = [
-    {
-        geocode: [3.05530,101.695780],
-        popUp: "Parkhill Residence"
-    },
-];
-
 const Location = () => {
-    // const [ref1, inView1] = useInView({
-    //     threshold: 1,
-    //   });
-
-    // https://www.framer.com/motion/use-in-view/
-
     const ref1 = useRef(null)
     const isInView1 = useInView(ref1)
 
@@ -59,7 +22,8 @@ const Location = () => {
 
 
     return (
-        <div className=" h-screen bg-gradient-to-b from-gray-300  to-white md:flex p-10 md:p-20 pt-40">
+        <div className="  bg-gradient-to-b from-gray-300  to-white md:flex px-10 py-20 md:p-20 pt-40">
+           {/* text content */}
             <div className="w-full md:w-1/2 grid grid-cols-5 text-base md:text-xl font-title">
                 <motion.div
                     className="col-span-5 flex items-end pb-10 "
@@ -95,33 +59,26 @@ const Location = () => {
                 </motion.div>
 
                 <Link to="/location" className="col-span-5">
-                        <button className='font-content text-xl border-2 bg-white border-black rounded-xl mt-5 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
-                            View Location
-                        </button>
-                    </Link>
+                    <button className='font-content text-xl border-2 bg-white border-black rounded-xl mt-5 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
+                        View Location
+                    </button>
+                </Link>
 
             </div>
 
             {/* Map */}
-            <div className="md:w-1/2 h-full overflow-hidden flex justify-center">
-                <MapContainer center={[3.05530,101.695780]} zoom={12}  >
-       
-                    <TileLayer
-                        attribution="Google Maps"
-                        url="http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}" // regular
-                        maxZoom={20}
-                        subdomains={["mt0", "mt1", "mt2", "mt3"]}
-                    />
-
-                    <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterCustomIcon} >
-                        {/* Mapping through the markers */}
-                        {markers.map((marker) => (
-                            <Marker position={marker.geocode} icon={customIcon}>
-                                <Popup>{marker.popUp}</Popup>
-                            </Marker>
-                        ))}
-                    </MarkerClusterGroup>
-                </MapContainer>
+            <div className=" h-full md:w-1/2 overflow-hidden flex justify-center">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15936.593019609965!2d101.6958083!3d3.0549672!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4b07526fa23d%3A0xdec6a36b8e45cc14!2sParkhill%20Residence!5e0!3m2!1sen!2smy!4v1689923962707!5m2!1sen!2smy"
+                    width="600"
+                    height="450"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Google Map"
+                ></iframe>
+            
             </div>
         </div>
     );

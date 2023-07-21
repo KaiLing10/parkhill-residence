@@ -48,7 +48,6 @@ const UnitInfo1 = () => {
         {/* content */}
         <div className='h-[40vh] grid grid-cols-3 bg-white drop-shadow-md'>
           <div >
-
             <img src={unit1a} alt='unit_image' className={unitImageStyle} onClick={() => handleImageClick(unit1a)} />
           </div>
           <div >
@@ -90,15 +89,15 @@ const UnitInfo1 = () => {
           <h3 className='text-3xl mb-2 text-gray-800 font-medium'>Details</h3>
           <div className='grid grid-cols-2'>
             <div className=''>
-              <p className={detailTitleStyle}>Number of Room</p>
-              <p className={detailStyle}>3 room 2 bathroom</p>
+              <p className={detailTitleStyle}>Number of Rooms</p>
+              <p className={detailStyle}>3 rooms 2 bathrooms</p>
             </div>
             <div>
               <p className={detailTitleStyle}>Floor Size</p>
               <p className={detailStyle}>1100 sqft</p>
             </div>
             <div>
-              <p className={detailTitleStyle}>Furnshing</p>
+              <p className={detailTitleStyle}>Furnishing</p>
               <p className={detailStyle}>Fully Furnished</p>
             </div>
             <div>
