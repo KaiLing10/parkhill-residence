@@ -5,21 +5,30 @@ import { BiBed, BiBath } from "react-icons/bi";
 // components
 import Navbar from '../components/Navbar';
 import BookingModal from '../components/rent/BookingModal';
+import ImageModal from '../components/ImageModal';
 // assets
-import unit1a from '../assets/unit/unit1.jpg'
-import unit1b from '../assets/unit/unit1b.jpg'
-import unit1c from '../assets/unit/unit1View.jpg'
-
+import unit2a from '../assets/unit/unit2.jpg'
+import unit2b from '../assets/unit/unit1b.jpg'
+import unit2c from '../assets/unit/unit1View.jpg'
 
 // custom style
-const unitImageStyle = 'h-full w-full object-cover '
+const unitImageStyle = 'h-full w-full object-cover cursor-pointer'
 const detailTitleStyle = 'text-sm text-gray-800'
 const detailStyle = 'mb-3'
 
 
 const UnitInfo2 = () => {
   const [openBookingModal, setOpenBookingModal] = useState(false);
+  const [showImageModal, setShowImageModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
+  // Handle image click
+  const handleImageClick = (imageSrc) => {
+    setSelectedImage(imageSrc);
+    setShowImageModal(!showImageModal);
+  };
+
+  // Handle booking click
   const handleBookingModal = () => {
     setOpenBookingModal(!openBookingModal);
   };
@@ -38,15 +47,16 @@ const UnitInfo2 = () => {
           <p className='text-2xl '>Back</p>
         </Link>
         {/* content */}
-        <div className='h-[30vh] flex justify-between gap-1 bg-white drop-shadow-md'>
+
+        <div className='h-[40vh] grid grid-cols-3 bg-white drop-shadow-md'>
           <div >
-            <img src={unit1a} alt='unit_image' className={unitImageStyle} />
+            <img src={unit2a} alt='unit_image' className={unitImageStyle} onClick={() => handleImageClick(unit2a)} />
           </div>
           <div >
-            <img src={unit1c} alt='unit_image' className={unitImageStyle} />
+            <img src={unit2b} alt='unit_image' className={unitImageStyle} onClick={() => handleImageClick(unit2b)} />
           </div>
           <div >
-            <img src={unit1b} alt='unit_image' className={unitImageStyle} />
+            <img src={unit2c} alt='unit_image' className={unitImageStyle} onClick={() => handleImageClick(unit2c)} />
           </div>
         </div>
 
@@ -120,6 +130,10 @@ const UnitInfo2 = () => {
           <BookingModal handleBookingModal={handleBookingModal} unitID='C-31-16' />  </div>)}
 
       </div >
+      {/* Image modal */}
+      {showImageModal && selectedImage && (
+        <ImageModal handleImageClick={handleImageClick} selectedImage={selectedImage} />)}
+
 
     </>
   )

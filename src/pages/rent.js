@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import UnitOption from '../components/rent/UnitOption';
 import Wishlist from '../components/rent/Wishlist';
-import unit1 from '../assets/unit/unit1.jpg';
+import unit1 from '../assets/unit/unit1a.jpg';
 import unit2 from '../assets/unit/unit2.jpg';
 import bg from '../assets/facilities/pool4.jpg';
 

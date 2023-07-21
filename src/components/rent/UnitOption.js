@@ -1,5 +1,4 @@
 import React from 'react'
-// import unitImage from '../../assets/unit/unit1.jpg'
 import { BiBed, BiBath } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
