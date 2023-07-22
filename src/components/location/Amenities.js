@@ -60,7 +60,7 @@ export default function Amenities() {
       </div>
 
       {/* Amenities */}
-      <div className='pl-5 md:pl-0md:w-1/2 text-white'>
+      <div className='pl-5 md:pl-0 md:w-1/2 text-white'>
         <div className='text-yellow-500 font-bold mb-10'>Amenities</div>
         <div ref={car5min}>
           <img src={stadium} className={imageStyle} alt='stadium' />
@@ -77,11 +77,11 @@ export default function Amenities() {
         </div>
 
         <div ref={car9min}>
-          <img src={apu} alt='APU' />
+          <img src={apu} className={imageStyle} alt='APU' />
           <p className='pb-20'>3.8km to Asia Pacific University</p>
         </div>
         <div ref={car9min2}>
-          <img src={pinnacle} alt='Pinnacle Mall' />
+          <img src={pinnacle} className={imageStyle} alt='Pinnacle Mall' />
           <p className='pb-20'>4.2km to Pinnacle Sri Petaling Mall</p>
         </div>
       </div>
