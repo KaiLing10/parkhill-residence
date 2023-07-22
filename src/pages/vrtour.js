@@ -20,11 +20,14 @@ import SwitchSceneModal from '../components/virtualTour/SwitchSceneModal';
 import badmintonImage from '../assets/facilities/badminton2.jpg'
 import poolImage from '../assets/facilities/pool4.jpg'
 import playgroundImage from '../assets/facilities/playground3.jpg'
-import gameRoomImage from '../assets/facilities/gameRoom1.jpg'
+import gameRoomImage from '../assets/facilities/gameRoom4.jpg'
 import functionRoomImage from '../assets/facilities/functionRoom.jpg'
-import gymnasiumImage from '../assets/facilities/gym1.png'
-import reflexologyPathImage from '../assets/facilities/badminton2.jpg'
+import gymnasiumImage from '../assets/facilities/gym3.jpg'
+import reflexologyPathImage from '../assets/facilities/reflexologyPath2.jpg'
 import readingPavilionImage from '../assets/facilities/readingPavilion2.jpg'
+import yogaTaiChiDeckImage from '../assets/facilities/yogaDeck1.jpg'
+import jacuzziImage from '../assets/facilities/pool3.jpg'
+import outdoorLoungeImage from '../assets/facilities/mazeGarden4.jpg'
 import music from '../assets/music.mp3'
 
 // Get info modal's content & scene name message based on current scene
@@ -82,6 +85,26 @@ const getTitleAndContent = (currentScene) => {
         content: 'Escape into the world of books and enjoy a tranquil reading experience in our beautiful pavilion!',
         facilitiesImage: readingPavilionImage,
       };
+    case 'Jacuzzi':
+      return {
+        title: 'Jacuzzi',
+        content: 'Relax and unwind in our luxurious Jacuzzi, perfect for soothing your muscles and relieving stress.',
+        facilitiesImage: jacuzziImage,
+      };
+
+    case 'Center3Down':
+      return {
+        title: 'Outdoor Lounge',
+        content: 'Enjoy quality time with friends and family in outdoor lounge. It’s the perfect place to gather and socialize.',
+        facilitiesImage: outdoorLoungeImage,
+      };
+
+    case 'Yoga':
+      return {
+        title: 'Yoga & Tai Chi Deck',
+        content: 'Find your inner peace and improve your physical well-being on our dedicated Yoga & Tai Chi deck.',
+        facilitiesImage: yogaTaiChiDeckImage,
+      };
     case 'BlockC':
       return {
         sceneNameMessage: 'Level 7 Block C Entrance'
@@ -119,7 +142,6 @@ export default function Vrtour() {
   const navigate = useNavigate();
   const [sceneNameMessage, setSceneNameMessage] = useState('');
 
-
   // Toggle music state
   const toggleMusic = () => {
     setMusicMuted(!musicMuted);
@@ -127,6 +149,7 @@ export default function Vrtour() {
 
   // Navigate to other scene with animation
   const navigateToScene = (scene) => {
+
     setOpenSwitchScene(false)
     setOpenInfo(false)
     setZoomIn(true); // Enable zoom animation
@@ -150,7 +173,10 @@ export default function Vrtour() {
 
   // Handle info/switchScene button click
   const handleInfoModal = () => {
+    console.log("set open info")
+    console.log("current scene" + currentScene)
     setOpenInfo(!openInfo)
+
   }
   const handleSwitchSceneModal = () => {
     setOpenSwitchScene(!openSwitchScene)
@@ -158,15 +184,23 @@ export default function Vrtour() {
 
   // Register custom A-Frame components
   useEffect(() => {
-
+    console.log("use effect")
+    if (AFRAME.components["navigate"]) {
+      delete AFRAME.components["navigate"];
+    }
+    if (AFRAME.components["info"]) {
+      delete AFRAME.components["info"];
+    }
 
     // for navigation through click event
     AFRAME.registerComponent('navigate', {
+
       schema: {
         id: { type: 'string' }
       },
 
       init: function () {
+        console.log(" navigate registered")
         const scene = this.data;
         this.el.addEventListener('click', () => {
           navigateToScene(scene);
@@ -180,20 +214,19 @@ export default function Vrtour() {
         id: { type: 'string' }
       },
       init: function () {
-
-        this.el.addEventListener("click", () => { handleInfoModal() });
+        console.log("info component registered");
+        this.el.addEventListener("click", () => {
+          console.log("info element clicked");
+          handleInfoModal();
+        });
       },
     });
 
 
+    // Cleanup A-Frame components when the component unmounts
 
-    return () => {
-      // Cleanup A-Frame components when the component unmounts
-      delete AFRAME.components["navigate"];
-      delete AFRAME.components["info"];
-    };
 
-  });
+  }, [currentScene]);
 
   //Used for the mesaage when users enter vr tour
   // Get the scene name message based on the current scene
@@ -201,6 +234,9 @@ export default function Vrtour() {
     const scene = getTitleAndContent(currentScene);
     setSceneNameMessage(scene.sceneNameMessage);
   }, [currentScene]);
+
+  console.log("now at")
+  console.log(currentScene)
 
   return (
     <div>

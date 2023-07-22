@@ -12,7 +12,6 @@ export default function ImageModal({handleImageClick, selectedImage}) {
                     exit={{ opacity: 0 }}
                 >
                     <div className="relative z-20 font-title">
-
                         {/* image */}
                         <motion.img
                             src={selectedImage}

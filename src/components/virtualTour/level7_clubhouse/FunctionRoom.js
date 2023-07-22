@@ -3,9 +3,10 @@ import { Entity } from 'aframe-react';
 //assets
 import scene from '../../../assets/vrtour/level7_clubhouse/function_room.jpg';
 import Arrow from '../ArrowEntity';
+import Info from '../InfoEntity';
 
 
- export default function FunctionRoom() {
+export default function FunctionRoom() {
   return (
     < >
 
@@ -13,7 +14,8 @@ import Arrow from '../ArrowEntity';
         text="" text_rotation="0 180 -5" />
       <Arrow position="0.7 1.1 -2" rotation="5 70 40" navigate={'ClubHouseHallway1'}
         text="Hallway" text_rotation="-10 -20 0" />
-   
+      <Info position="-1 2 2.4" rotation="0 240 90" info={''}/>
+
       <Entity primitive='a-sky' src={scene} rotation="0 165 0" />
 
     </>

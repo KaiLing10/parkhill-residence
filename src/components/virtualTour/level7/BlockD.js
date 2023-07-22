@@ -13,7 +13,7 @@ export default function BlockD() {
         text="" text_rotation="0 200 0" />
       <Arrow position="-2.2 1.4 2.7" rotation="2 220 60" navigate={'BlockDDoor'}
         text="Block D" text_rotation="0 120 0" />
-      <Arrow position="0 1.3 -4" rotation="0 100 50" navigate={'Center4'}
+      <Arrow position="0 1.3 -3" rotation="0 90 50" navigate={'Center4'}
         text="" text_rotation="-10 240 0" />
 
       <Entity primitive='a-sky' src={scene} rotation="0 260 0" />

@@ -1,43 +1,24 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
-
 //assets
 import scene from '../../../assets/vrtour/level7/center3_down.jpg';
-import ArrowIcon from '../../../assets/vrtour/arrow.png';
-
+import Arrow from '../ArrowEntity';
+import Info from '../InfoEntity';
 
 export default function Center3Down() {
   return (
     <>
-      <Entity
-        geometry={{ primitive: 'cylinder' }}
-        position="-1.5 0.8 0"
-        rotation="270 180 90"
-        scale="0.2 0.05 0.2"
-        material={{ src: ArrowIcon, shader: 'flat' }}
-        className="clickable"
-        navigate={'MazeGarden'}
-      />
-       <Entity
-        geometry={{ primitive: 'cylinder' }}
-        position="1.9 1.6 3"
-        rotation="270 180 0"
-        scale="0.2 0.05 0.2"
-        material={{ src: ArrowIcon, shader: 'flat' }}
-        className="clickable"
-        navigate={'Center3'}
-      />
-      <Entity
-        geometry={{ primitive: 'cylinder' }}
-        position="0 1.3 -3"
-        rotation="270 180 0"
-        scale="0.2 0.05 0.2"
-        material={{ src: ArrowIcon, shader: 'flat' }}
-        className="clickable"
-        navigate={'BbqArea'}
-      />
 
-      <Entity primitive='a-sky' src={scene} rotation="0 90 0" />
+      <Arrow position="-2.3 1.5 1" rotation="180 30 270" navigate={'Center3'}
+        text="" text_rotation="-10 210 1" />
+      <Arrow position="-0.2 1.5 -2.5" rotation="0 80 90" navigate={'MazeGarden'}
+        text="" text_rotation="-10 210 1" />
+      <Arrow position="1.8 1.4 1.5" rotation="0 320 90" navigate={'BbqArea'}
+        text="" text_rotation="-10 210 1" />
+
+      <Info position="2.8 2 -1.5" rotation="0 30 90" info={''} />
+
+      <Entity primitive='a-sky' src={scene} rotation="0 340 0" />
     </>
   );
 }

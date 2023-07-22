@@ -12,7 +12,7 @@ import Info from '../InfoEntity';
    
       <Arrow position="-1.8 1.3 2.3" rotation="2 230 50" navigate={'ClubHouseHallway3'}
         text="Hallway" text_rotation="0 135 0" />
-      <Info position="4 2 0" rotation="0 0 90"  info={'a'} />
+      <Info position="4 2 0" rotation="0 0 90" info={''}/>
   
    
       <Entity primitive='a-sky' src={scene} rotation="0 100 0" />

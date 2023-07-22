@@ -3,8 +3,7 @@ import { motion } from 'framer-motion'
 
 
 export default function InfoModal({ handleInfoModal, title, content, facilitiesImage }) {
-  console.log('hihere')
-  console.log(title)
+  
   return (
 
     // <div className="absolute h-screen w-screen overflow-y-scroll">
@@ -18,7 +17,6 @@ export default function InfoModal({ handleInfoModal, title, content, facilitiesI
 
         <p className='text-2xl md:text-3xl font-semibold text-center'> {title}</p>
         <p className='text-md md:text-lg my-5'>{content}</p>
-        {/* <p className='text-lg my-5'>Enjoy a competitive game or engage in friendly matches with fellow residents!</p> */}
 
         <div className='md:h-[40vh]'>
           <img src={facilitiesImage} alt='facilities' className='drop-shadow-black w-full h-full object-cover z-30' />

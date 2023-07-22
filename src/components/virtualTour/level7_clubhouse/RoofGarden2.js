@@ -9,7 +9,7 @@ import Arrow from '../ArrowEntity';
   return (
     < >
 
-      <Arrow position="-1 1.2 1.8" rotation="0 200 30" navigate={'RoofGarden'}
+      <Arrow position="-1 1.2 1.8" rotation="90 250 90" navigate={'RoofGarden'}
         text="" text_rotation="-20 100 1" />
 
       <Entity primitive='a-sky' src={scene} rotation="0 300 0" />
