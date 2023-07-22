@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 
 
 const ImageBlock = ({ id, variants }) => {
-    console.log("ImageBlock rendered with id:", id , "+ variants: ", variants);
     return (
         <motion.div className={`absolute ${id}`}
             variants={variants}>

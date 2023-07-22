@@ -18,7 +18,6 @@ const AdminAppointmentBooking = () => {
         // Get the data from local storage when the component mounts
         const data = JSON.parse(localStorage.getItem('appointmentData')) || [];
         setAppointmentData(data);
-        console.log(data)
     }, []);
 
       

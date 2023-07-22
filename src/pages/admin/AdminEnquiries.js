@@ -21,7 +21,6 @@ const AdminEnquiries = () => {
         setEnquiryData(data);
   
     }, []);
-    console.log(enquiryData)
     return (
         <div className="py-10 w-4/5 mx-auto ">
 <button onClick={handleClearData}>Clear Data</button>

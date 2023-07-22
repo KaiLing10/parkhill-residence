@@ -6,10 +6,12 @@ import { BiBed, BiBath } from "react-icons/bi";
 import Navbar from '../components/Navbar';
 import BookingModal from '../components/rent/BookingModal';
 import ImageModal from '../components/ImageModal';
+import Footer from '../components/Footer';
 // assets
 import unit1a from '../assets/unit/unit1a.jpg'
 import unit1b from '../assets/unit/unit1b.jpg'
 import unit1c from '../assets/unit/unit1View.jpg'
+
 
 // custom style
 const unitImageStyle = 'h-full w-full object-cover cursor-pointer '
@@ -133,7 +135,7 @@ const UnitInfo1 = () => {
       {showImageModal && selectedImage && (
         <ImageModal handleImageClick={handleImageClick} selectedImage={selectedImage} />)}
 
-
+        < Footer />
     </>
   )
 }

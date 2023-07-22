@@ -14,7 +14,6 @@ const AdminRentBooking = () => {
         // Get the data from local storage when the component mounts
         const data = JSON.parse(localStorage.getItem('rentData')) || [];
         setRentData(data);
-        console.log(data)
     }, []);
 
     return (

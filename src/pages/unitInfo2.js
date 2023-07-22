@@ -6,6 +6,7 @@ import { BiBed, BiBath } from "react-icons/bi";
 import Navbar from '../components/Navbar';
 import BookingModal from '../components/rent/BookingModal';
 import ImageModal from '../components/ImageModal';
+import Footer from '../components/Footer';
 // assets
 import unit2a from '../assets/unit/unit2.jpg'
 import unit2b from '../assets/unit/unit1b.jpg'
@@ -134,7 +135,7 @@ const UnitInfo2 = () => {
       {showImageModal && selectedImage && (
         <ImageModal handleImageClick={handleImageClick} selectedImage={selectedImage} />)}
 
-
+      <Footer />
     </>
   )
 }

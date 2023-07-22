@@ -5,10 +5,6 @@ import BookAppointment from './BookAppointment';
 
 export default function BookingModal({ handleBookingModal, unitID }) {
 
-    console.log('hi');
-    console.log(unitID);
-    console.log("endhi")
-
     const [selectedOption, setSelectedOption] = useState('bookUnit');
 
     const handleOptionClick = (option) => {
