@@ -22,16 +22,16 @@ const Footer = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data)
+   
     // Get the existing data from local storage
     const existingData = JSON.parse(localStorage.getItem('enquiryData')) || [];
 
     // Add the new form data to the existing data array
-    const newData = [...existingData, { data }];
+    const newData = [...existingData, data];
 
     // Save the updated data array back to local storage
     localStorage.setItem('enquiryData', JSON.stringify(newData));
-    console.log(newData);
+
     setIsSubmitted(true);
     reset()
 
@@ -130,7 +130,7 @@ const Footer = () => {
             </div>
 
             {isSubmitted && (
-              <p className="text-green-800">Form submitted successfully!</p>
+              <p className="text-green-800">Message submitted successfully!</p>
             )}
             <div className='text-center'>
 

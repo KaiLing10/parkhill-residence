@@ -95,7 +95,7 @@ const Hero = () => {
       </div>
 
       <div className='absolute z-30 bottom-16 left-1/2'>
-        <div class='icon-scroll' ></div>
+        <div className='icon-scroll' ></div>
       </div>
 
       {/* Background */}

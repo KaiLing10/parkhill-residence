@@ -87,7 +87,7 @@ const Concept = () => {
                 <div>
                     <div className='absolute z-10 bottom-0 left-0 w-full h-full bg-white/50'></div>
                     <div className='z-0' >
-                        <img src={ConceptImage} alt='condo_image' layout='fill' objectFit='cover' />
+                        <img src={ConceptImage} alt='condo_image' layout='fill'  />
                     </div>
 
                 </div>

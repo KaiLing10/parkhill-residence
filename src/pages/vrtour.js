@@ -29,7 +29,6 @@ import music from '../assets/music.mp3'
 
 // Get info modal's content & scene name message based on current scene
 const getTitleAndContent = (currentScene) => {
-  console.log(currentScene)
   switch (currentScene) {
     case 'Badminton':
       return {
@@ -159,12 +158,6 @@ export default function Vrtour() {
 
   // Register custom A-Frame components
   useEffect(() => {
-    if (AFRAME.components["navigate"]) {
-      delete AFRAME.components["navigate"];
-    }
-    if (AFRAME.components["info"]) {
-      delete AFRAME.components["info"];
-    }
 
 
     // for navigation through click event
@@ -187,9 +180,7 @@ export default function Vrtour() {
         id: { type: 'string' }
       },
       init: function () {
-        const test = this.data;
-        console.log(this.data)
-        console.log(test)
+
         this.el.addEventListener("click", () => { handleInfoModal() });
       },
     });

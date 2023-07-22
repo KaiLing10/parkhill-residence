@@ -1,6 +1,6 @@
 import React from 'react';
-// import ReactDOM from 'react-dom/client';
-import { createRoot } from 'react-dom';
+import ReactDOM from 'react-dom/client';
+// import { createRoot } from 'react-dom';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 import ScrollToTop from './components/ScrollToTop';
@@ -20,9 +20,12 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminRentBooking from './pages/admin/AdminRentBooking';
 import AdminAppointmentBooking from './pages/admin/AdminAppointmentBooking';
 import AdminUnitPreference from './pages/admin/AdminUnitPreference';
+import AdminEnquiries from './pages/admin/AdminEnquiries';
+
 // import AdminUnitManagement from './pages/admin/AdminUnitManagement';
 
 export default function App() {
+  
   return (
     <BrowserRouter>
      <ScrollToTop>
@@ -41,23 +44,19 @@ export default function App() {
           <Route path="adminRentBooking" element={<AdminRentBooking />} />
           <Route path="adminAppointmentBooking" element={<AdminAppointmentBooking />} />
           <Route path="adminUnitPreference" element={<AdminUnitPreference />} />
-
+          <Route path="adminEnquiries" element={<AdminEnquiries />} />
           
           {/* <Route path="adminUnitManagement" element={<AdminUnitManagement />} /> */}
-
-          
-
-          
           <Route path="*" element={<NoPage />} />
       </Routes>
       </ScrollToTop>
     </BrowserRouter>
   );
 }
-const root = createRoot(document.getElementById('root'));
-root.render(<App />);
-
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
+// const root = createRoot(document.getElementById('root'));
 // root.render(<App />);
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
 

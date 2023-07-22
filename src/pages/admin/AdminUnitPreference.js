@@ -18,7 +18,6 @@ const AdminUnitPreference = () => {
         // Get the data from local storage when the component mounts
         const data = JSON.parse(localStorage.getItem('wishlistData')) || [];
         setWishlistData(data);
-        console.log(data);
     }, []);
 
     return (

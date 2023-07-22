@@ -72,12 +72,12 @@ const UnitInfo1 = () => {
               <Link to={`/vrTour/${'Unit1Center'}`} >
 
                 {/* Unit1Center */}
-                <button className='mr-10 font-content text-xl border-2 bg-red-300  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6  transition ease-in-out delay-150 hover:bg-red-300/50 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
+                <button className='mr-10 font-content text-xl border-2 bg-yellow-500  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6  transition ease-in-out delay-150 hover:bg-red-300/50 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
                   room tour
                 </button>
               </Link>
 
-              <button className='mr-10 font-content text-xl border-2 bg-red-300  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6 transition ease-in-out delay-150 hover:bg-red-300/50 hover:shadow-lg hover:-translate-y-1 hover:scale-110'
+              <button className='mr-10 font-content text-xl border-2 bg-yellow-500  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6 transition ease-in-out delay-150 hover:bg-red-300/50 hover:shadow-lg hover:-translate-y-1 hover:scale-110'
                 onClick={handleBookingModal}>
                 book now
               </button>
