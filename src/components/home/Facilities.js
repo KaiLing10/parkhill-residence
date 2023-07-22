@@ -47,7 +47,7 @@ const Facilities = () => {
         <Parallax translateY={[0, -50]} className='absolute w-40 md:w-72 -right-16 bottom-48 md:left-0 md:top-16'>
           < img src={imgGame} alt='facility2' className=' ' />
         </Parallax>
-        <Parallax translateY={[-10, 50]} className='absolute w-48 md:w-80 left-6 bottom-28 md:left-32 lg:left-56 md:bottom-20'>
+        <Parallax translateY={[20, 60]} className='absolute w-48 md:w-80 left-6 bottom-28 md:left-32 lg:left-56 md:bottom-20'>
           < img src={imgRoof} alt='facility3' />
         </Parallax>
         <Parallax translateY={[0, -30]} className='absolute w-32 md:w-60 right-0 top-40 md:right-0 md:bottom-48'>

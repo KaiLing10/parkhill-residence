@@ -63,7 +63,7 @@ const Navbar = ({ isHomePage }) => {
                 </div>
 
                 {/* mobile */}
-                <div className={nav ? 'fixed left-0 top-0 w-[70%] h-full bg-black/70 ease-in-out duration-500' : 'fixed left-[-100%]'}>
+                <div className={nav ? 'fixed text-white left-0 top-0 w-[70%] h-full bg-black/70 ease-in-out duration-500' : 'fixed left-[-100%]'}>
                     <nav>
                         <ul className='p-4'>
                             <li className='pt-10 p-4 border-b border-gray-600'>

@@ -46,41 +46,41 @@ export default function Amenities() {
     if (isInViewCar9min2) {
       setDistance('9 min');
     }
-  }, [isInViewCar5min, isInViewCar7min, isInViewCar7min2,isInViewCar9min, isInViewCar9min2]);
+  }, [isInViewCar5min, isInViewCar7min, isInViewCar7min2, isInViewCar9min, isInViewCar9min2]);
 
-  // css style
-  const amenities = '';
-  const imageStyle = 'w-4/5 h-[50vh] object-cover mb-5';
+  // custon style
+  const imageStyle = 'md:w-4/5 md:h-[50vh] object-cover mb-5';
 
   return (
     <div className='flex text-2xl font-title p-10 md:p-20 bg-gradient-to-b from-gray-100  to-black'>
-      <div className=" text-yellow-500  sticky top-32 pl-20 w-1/2 h-[30vh]">
+      {/* Distance */}
+      <div className=" text-yellow-500 sticky top-32 md:pl-20 w-1/3 md:w-1/2 h-[30vh]">
         <p className='font-bold mb-10'>Distance</p>
-        <p className='text-6xl '>{distance}</p>
-
+        <p className='text-4xl md:text-6xl '>{distance}</p>
       </div>
 
-      <div className='w-1/2 text-white'>
+      {/* Amenities */}
+      <div className='pl-5 md:pl-0md:w-1/2 text-white'>
         <div className='text-yellow-500 font-bold mb-10'>Amenities</div>
-        <div className={amenities} ref={car5min}>
+        <div ref={car5min}>
           <img src={stadium} className={imageStyle} alt='stadium' />
           <p className='pb-20'>2.1km to Bukit Jalil National Stadium</p>
         </div>
 
-        <div className={amenities} ref={car7min}>
+        <div ref={car7min}>
           <img src={lrtBukitJalil} className={imageStyle} alt='lrtBukitJalil' />
           <p className='pb-20'>3.2km to Bukit Jalil LRT Station</p>
         </div>
-        <div className={amenities} ref={car7min2}>
+        <div ref={car7min2}>
           <img src={endah} className={imageStyle} alt='Endah Parade' />
           <p className='pb-20'>3.6km to Endah Parade</p>
         </div>
 
-        <div className={amenities} ref={car9min}>
+        <div ref={car9min}>
           <img src={apu} alt='APU' />
           <p className='pb-20'>3.8km to Asia Pacific University</p>
         </div>
-        <div className={amenities} ref={car9min2}>
+        <div ref={car9min2}>
           <img src={pinnacle} alt='Pinnacle Mall' />
           <p className='pb-20'>4.2km to Pinnacle Sri Petaling Mall</p>
         </div>

@@ -8,7 +8,7 @@ import AerialView from '../assets/location/AerialView.jpg';
 import Navbar from '../components/Navbar';
 
 // custom style
-const mapOptionStyle='font-content text-lg md:text-xl border-2 bg-white border-black rounded-xl mt-5 mx-16 md:mx-2 py-2 px-4 md:px-6 shadow-md transition md:hover:bg-[#FFC107]/10 hover:shadow-sm '
+const mapOptionStyle = 'font-content text-lg md:text-xl border-2 border-black rounded-xl mt-5 mx-16 md:mx-2 py-2 px-4 md:px-6 shadow-md duration-300 transition hover:bg-[#FFC107]/10 hover:shadow-sm '
 
 // Google Map component
 const GoogleMapIframe = () => (
@@ -25,7 +25,7 @@ const GoogleMapIframe = () => (
 );
 
 const Location = () => {
-    const [imageType, setImageType] = useState('VectorMap');
+    const [map, setMap] = useState('VectorMap');
 
     return (
         <div className='text-black bg-gray-100'>
@@ -33,38 +33,38 @@ const Location = () => {
             <div className='flex flex-col md:flex-row justify-center pt-20'>
                 {/* Toggle buttons */}
                 <button
-                    className={`${mapOptionStyle} ${imageType === 'VectorMap' ? 'bg-[#FFC107]' : 'bg-white'
-                        }`}
-                    onClick={() => setImageType('VectorMap')}
+                    className={`${mapOptionStyle} 
+                    ${map === 'VectorMap' ? 'bg-[#FFC107]' : 'bg-white'}`}
+                    onClick={() => setMap('VectorMap')}
                 >
                     Vector Map
                 </button>
                 <button
-                    className={` ${mapOptionStyle} ${imageType === 'AerialView' ? 'bg-[#FFC107]' : 'bg-white'
-                        }`}
-                    onClick={() => setImageType('AerialView')}
+                    className={` ${mapOptionStyle} 
+                    ${map === 'AerialView' ? 'bg-[#FFC107]' : 'bg-white'}`}
+                    onClick={() => setMap('AerialView')}
                 >
                     Aerial View
                 </button>
                 <button
-                    className={`${mapOptionStyle} ${imageType === 'GoogleMap' ? 'bg-[#FFC107]' : 'bg-white'
-                        }`}
-                    onClick={() => setImageType('GoogleMap')}
+                    className={`${mapOptionStyle} 
+                    ${map === 'GoogleMap' ? 'bg-[#FFC107]' : 'bg-white'}`}
+                    onClick={() => setMap('GoogleMap')}
                 >
                     Google Map
                 </button>
             </div>
-            {/* image */}
+
+            {/* map shown */}
             <div className='pt-10 w-screen flex justify-center'>
-                {imageType === 'VectorMap' ? (
+                {map === 'VectorMap' ? (
                     <img src={VectorMap} alt='condo_image' className='object-cover md:w-3/5' />
-                ) : imageType === 'AerialView' ? (
+                ) : map === 'AerialView' ? (
                     <img src={AerialView} alt='condo_image' className='object-cover md:w-3/5' />
                 ) : (
                     <GoogleMapIframe />
                 )}
             </div>
-
 
 
             <div className='text-center py-10 text-xl'>

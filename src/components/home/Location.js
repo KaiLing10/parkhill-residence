@@ -22,7 +22,7 @@ const Location = () => {
 
 
     return (
-        <div className="  bg-gradient-to-b from-gray-300  to-white md:flex px-10 py-20 md:p-20 pt-40">
+        <div className="  bg-gradient-to-b from-gray-300  to-white md:flex px-10 py-20 md:p-20 md:pt-40">
            {/* text content */}
             <div className="w-full md:w-1/2 grid grid-cols-5 text-base md:text-xl font-title">
                 <motion.div
@@ -58,7 +58,7 @@ const Location = () => {
                     It's the perfect location for modern living.
                 </motion.div>
 
-                <Link to="/location" className="col-span-5">
+                <Link to="/location" className="col-span-5 my-5 md:my-0  ">
                     <button className='font-content text-xl border-2 bg-white border-black rounded-xl mt-5 py-2 px-6 shadow-md transition ease-in-out delay-150 hover:bg-black/10 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
                         View Location
                     </button>

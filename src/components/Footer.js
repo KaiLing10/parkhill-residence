@@ -40,11 +40,11 @@ const Footer = () => {
   return (
     <div className=' bg-gray-900 text-white p-10 '>
        <h2 className='text-3xl font-title font-semibold md:pl-10 text-yellow-500'>Contact Us</h2>
-      <div className=' grid grid-cols-4 '>
+      <div className=' md:grid md:grid-cols-4 '>
         {/* enquiry */}
-        <div className='col-span-3 pl-10'>
+        <div className='col-span-3 md:pl-10'>
          
-          <form onSubmit={handleSubmit(onSubmit)} className=" bg-white/50 rounded-sm p-6 w-2/3  ">
+          <form onSubmit={handleSubmit(onSubmit)} className=" bg-white/50 rounded-sm p-6 md:w-2/3  ">
             <div className="mb-2">
               <Controller
                 name="fullName"
@@ -145,11 +145,11 @@ const Footer = () => {
             </div>
           </form>
         </div>
-        <div className='col-span-1 pr-10 flex justify-center items-center'>
-          <img src={logo} alt='logo' className='w-full scale-150'/>
+        <div className='col-span-1 md:pr-10 flex justify-center items-center'>
+          <img src={logo} alt='logo' className='w-full  md:scale-150'/>
         </div>
       </div>
-      <p className='mt-5 text-center'> © 2023 Parkhill Residence - KaiLing. All rights reserved. </p>
+      <p className='md:mt-5 text-center'> © 2023 Parkhill Residence - KaiLing. All rights reserved. </p>
 
     </div>
   )
