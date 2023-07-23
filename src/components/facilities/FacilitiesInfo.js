@@ -17,7 +17,7 @@ import pool2 from '../../assets/facilities/pool2.jpg';
 import pool3 from '../../assets/facilities/pool3.jpg';
 import badminton1 from '../../assets/facilities/badminton1.jpg';
 import badminton2 from '../../assets/facilities/badminton2.jpg';
-import badminton3 from '../../assets/facilities/badminton2.jpg';
+import badminton3 from '../../assets/facilities/badminton3.jpg';
 import playground1 from '../../assets/facilities/playground1.jpg';
 import playground2 from '../../assets/facilities/playground2.jpg';
 import playground3 from '../../assets/facilities/playground4.jpg';

@@ -24,11 +24,11 @@ const AdminRentBooking = () => {
                 <div className='w-10 h-10 text-3xl ' >
                     <BsArrowLeft />
                 </div>
-                <p className='text-2xl '>Dashboard</p>
+                <p className='text-2xl '>Back</p>
             </Link>
 
             {/* content */}
-            <h1 className='text-3xl font-semibold font-title  my-5'> Appointment Booking </h1>
+            <h1 className='text-3xl font-semibold font-title  my-5'> Rent Bookings </h1>
             <table className="font-content w-full border-collapse border border-gray-300">
                 <thead className="bg-yellow-600/20">
                     <tr>

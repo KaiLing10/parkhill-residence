@@ -26,11 +26,11 @@ const AdminUnitPreference = () => {
                 <div className='w-10 h-10 text-3xl'>
                     <BsArrowLeft />
                 </div>
-                <p className='text-2xl'>Dashboard</p>
+                <p className='text-2xl'>Back</p>
             </Link>
 
-            <h1 className='text-3xl font-semibold font-title my-5'>Admin Preference List</h1>
-            <button onClick={handleClearData}>Clear Data</button>
+            <h1 className='text-3xl font-semibold font-title my-5'>User Unit Preferences </h1>
+            {/* <button onClick={handleClearData}>Clear Data</button> */}
             <table className="font-content w-full border-collapse border border-gray-300">
                 <thead className="bg-yellow-600/20">
                     <tr>

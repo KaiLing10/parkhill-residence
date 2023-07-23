@@ -39,7 +39,7 @@ const AdminUnitManagement = ({ setUnitVisibility }) => {
           />
         </label>
       </div>
-      {/* Add more units if necessary */}
+    
     </div>
   );
 };

@@ -9,9 +9,9 @@ const tableTextStyle = 'px-6 py-4'
 const AdminEnquiries = () => {
     const [enquiryData, setEnquiryData] = useState([]);
     const handleClearData = () => {
-      localStorage.removeItem('enquiryData');
-      window.location.reload();
-  }
+        localStorage.removeItem('enquiryData');
+        window.location.reload();
+    }
 
 
     useEffect(() => {
@@ -19,17 +19,17 @@ const AdminEnquiries = () => {
         // Get the data from local storage when the component mounts
         const data = JSON.parse(localStorage.getItem('enquiryData')) || [];
         setEnquiryData(data);
-  
+
     }, []);
     return (
         <div className="py-10 w-4/5 mx-auto ">
-<button onClick={handleClearData}>Clear Data</button>
+            {/* <button onClick={handleClearData}>Clear Data</button> */}
             {/* back button */}
             <Link to="/admin" className='flex w-1/5 text-yellow-600 cursor-pointer hover:text-gray-600'>
                 <div className='w-10 h-10 text-3xl ' >
                     <BsArrowLeft />
                 </div>
-                <p className='text-2xl '>Dashboard</p>
+                <p className='text-2xl '>Back</p>
             </Link>
 
             {/* content */}
@@ -50,7 +50,7 @@ const AdminEnquiries = () => {
                             <td className={tableTextStyle} >{data.phone}</td>
                             <td className={tableTextStyle} >{data.email}</td>
                             <td className={tableTextStyle} >{data.message}</td>
-                            
+
                         </tr>
                     ))}
                 </tbody>
