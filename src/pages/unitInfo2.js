@@ -9,8 +9,8 @@ import ImageModal from '../components/ImageModal';
 import Footer from '../components/Footer';
 // assets
 import unit2a from '../assets/unit/unit2.jpg'
-import unit2b from '../assets/unit/unit1b.jpg'
-import unit2c from '../assets/unit/unit1View.jpg'
+import unit2b from '../assets/unit/unit2b.jpg'
+import unit2c from '../assets/unit/unit2View.jpg'
 
 // custom style
 const unitImageStyle = 'h-full w-full object-cover cursor-pointer'
@@ -39,7 +39,7 @@ const UnitInfo2 = () => {
     <>
       <Navbar />
 
-      <div className='relative md:p-20 font-title text-xl bg-gray-100 '>
+      <div className='relative pt-20  md:p-20 font-title text-xl bg-gray-100 '>
         {/* back button */}
         <Link to="/rent" className='flex w-1/5 cursor-pointer hover:text-gray-600'>
           <div className='w-10 h-10 text-3xl ' >
@@ -63,7 +63,7 @@ const UnitInfo2 = () => {
 
         <div className=' bg-white p-10 drop-shadow-md'>
           {/* main info */}
-          <div className='flex justify-between'>
+          <div className='md:flex justify-between'>
             <div >
               <p className='text-4xl text-yellow-600 '>RM 2,800/mo</p>
               <div className='flex '>
@@ -71,16 +71,14 @@ const UnitInfo2 = () => {
                 <p className='text-3xl pl-10'> 1300 sqft</p>
               </div>
             </div>
-            <div className=''>
+            <div className='flex justify-between md:flex-row'>
               <Link to={`/vrTour/${'Unit2Entrance'}`} >
-
-                {/* Unit1Center */}
-                <button className='mr-10 font-content text-xl border-2 bg-red-300  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6  transition ease-in-out delay-150 hover:bg-red-300/50 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
+                <button className='md:mr-10 font-content text-xl border-2 bg-yellow-500 drop-shadow-md border-black rounded-xl mt-5 py-2 px-6  transition ease-in-out delay-150 hover:bg-yellow-500/40 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
                   room tour
                 </button>
               </Link>
 
-              <button className='mr-10 font-content text-xl border-2 bg-red-300  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6 transition ease-in-out delay-150 hover:bg-red-300/50 hover:shadow-lg hover:-translate-y-1 hover:scale-110'
+              <button className='md:mr-10 font-content text-xl border-2 bg-yellow-500 drop-shadow-md border-black rounded-xl mt-5 py-2 px-6 transition ease-in-out delay-150 hover:bg-yellow-500/40 hover:shadow-lg hover:-translate-y-1 hover:scale-110'
                 onClick={handleBookingModal}>
                 book now
               </button>

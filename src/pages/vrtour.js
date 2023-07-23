@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Entity, Scene } from 'aframe-react';
-import AFRAME from 'aframe'
-import components from './fileLoader';
+import AFRAME from 'aframe';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import components from './fileLoader';
 
 //icon
 import { TbMusic, TbMusicOff } from "react-icons/tb";
 import { HiSwitchHorizontal } from "react-icons/hi";
 import { ImExit } from "react-icons/im";
-// import { BiChevronDownCircle } from "react-icons/bi";
 
 // components
 import InfoModal from '../components/virtualTour/InfoModal'
@@ -183,7 +181,7 @@ export default function Vrtour() {
   }
 
   // Register custom A-Frame components
-  useEffect(() => {
+
     console.log("use effect")
     if (AFRAME.components["navigate"]) {
       delete AFRAME.components["navigate"];
@@ -223,10 +221,6 @@ export default function Vrtour() {
     });
 
 
-    // Cleanup A-Frame components when the component unmounts
-
-
-  }, [currentScene]);
 
   //Used for the mesaage when users enter vr tour
   // Get the scene name message based on the current scene
@@ -290,9 +284,6 @@ export default function Vrtour() {
               </div>
             </button>
 
-            {/* <div className='aboulute text-3xl right-0 z-20 '>
-              < BiChevronDownCircle/> 
-            </div> */}
           </div>
         </div>
       </div>

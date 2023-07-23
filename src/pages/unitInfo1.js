@@ -38,7 +38,7 @@ const UnitInfo1 = () => {
     <>
       <Navbar />
 
-      <div className='relative md:p-20 font-title text-xl bg-gray-100 '>
+      <div className='relative pt-20 md:p-20 font-title text-xl bg-gray-100 '>
 
         {/* back button */}
         <Link to="/rent" className='flex w-1/5 cursor-pointer hover:text-gray-600'>
@@ -62,7 +62,7 @@ const UnitInfo1 = () => {
 
         <div className=' bg-white p-10 drop-shadow-md'>
           {/* main info */}
-          <div className='flex justify-between'>
+          <div className='md:flex justify-between'>
             <div >
               <p className='text-4xl text-yellow-600 '>RM 2,300/mo</p>
               <div className='flex '>
@@ -70,16 +70,14 @@ const UnitInfo1 = () => {
                 <p className='text-3xl pl-10'> 1100 sqft</p>
               </div>
             </div>
-            <div className=''>
+            <div className='flex justify-between md:flex-row'>
               <Link to={`/vrTour/${'Unit1Center'}`} >
-
-                {/* Unit1Center */}
-                <button className='mr-10 font-content text-xl border-2 bg-yellow-500  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6  transition ease-in-out delay-150 hover:bg-red-300/50 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
+                <button className=' md:mr-10 font-content text-xl border-2 bg-yellow-500  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6  transition ease-in-out delay-150 hover:bg-yellow-500/40 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
                   room tour
                 </button>
               </Link>
 
-              <button className='mr-10 font-content text-xl border-2 bg-yellow-500  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6 transition ease-in-out delay-150 hover:bg-red-300/50 hover:shadow-lg hover:-translate-y-1 hover:scale-110'
+              <button className='md:mr-10 font-content text-xl border-2 bg-yellow-500  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6 transition ease-in-out delay-150 hover:bg-yellow-500/40 hover:shadow-lg hover:-translate-y-1 hover:scale-110'
                 onClick={handleBookingModal}>
                 book now
               </button>
