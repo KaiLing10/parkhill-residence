@@ -44,7 +44,7 @@ const Footer = () => {
         {/* enquiry */}
         <div className='col-span-3 md:pl-10'>
          
-          <form onSubmit={handleSubmit(onSubmit)} className=" bg-white/50 rounded-sm p-6 md:w-2/3  ">
+          <form onSubmit={handleSubmit(onSubmit)} className=" bg-white/60 rounded-sm p-6 md:w-2/3  ">
             <div className="mb-2">
               <Controller
                 name="fullName"
