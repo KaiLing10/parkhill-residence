@@ -43,12 +43,14 @@ const getTitleAndContent = (currentScene) => {
         title: 'Swimming Pool',
         content: 'Take a refreshing dip and relax in our spacious swimming pool!',
         facilitiesImage: poolImage,
+        sceneNameMessage:'Level 7 Outdoor',
       };
     case 'Playground2':
       return {
         title: 'Playground',
         content: 'Unleash your inner child and have a blast in our vibrant playground!',
         facilitiesImage: playgroundImage,
+        sceneNameMessage:'Level 7 Outdoor',
       };
     case 'GameRoom':
       return {
@@ -76,18 +78,21 @@ const getTitleAndContent = (currentScene) => {
         title: 'Reflexology Path',
         content: 'Relieve stress and improve your well-being as you walk along our soothing reflexology path!',
         facilitiesImage: reflexologyPathImage,
+        sceneNameMessage:'Level 7 Outdoor',
       };
     case 'RiverViewDeck2':
       return {
         title: 'Reading Pavilion',
         content: 'Escape into the world of books and enjoy a tranquil reading experience in our beautiful pavilion!',
         facilitiesImage: readingPavilionImage,
+        sceneNameMessage:'Level 7 Outdoor',
       };
     case 'Jacuzzi':
       return {
         title: 'Jacuzzi',
         content: 'Relax and unwind in our luxurious Jacuzzi, perfect for soothing your muscles and relieving stress.',
         facilitiesImage: jacuzziImage,
+        sceneNameMessage:'Level 7 Outdoor',
       };
 
     case 'Center3Down':
@@ -95,6 +100,7 @@ const getTitleAndContent = (currentScene) => {
         title: 'Outdoor Lounge',
         content: 'Enjoy quality time with friends and family in outdoor lounge. It’s the perfect place to gather and socialize.',
         facilitiesImage: outdoorLoungeImage,
+        sceneNameMessage:'Level 7 Outdoor',
       };
 
     case 'Yoga':
@@ -102,6 +108,7 @@ const getTitleAndContent = (currentScene) => {
         title: 'Yoga & Tai Chi Deck',
         content: 'Find your inner peace and improve your physical well-being on our dedicated Yoga & Tai Chi deck.',
         facilitiesImage: yogaTaiChiDeckImage,
+        sceneNameMessage:'Level 7 Outdoor',
       };
     case 'BlockC':
       return {
@@ -123,7 +130,7 @@ const getTitleAndContent = (currentScene) => {
       return {
         title: '',
         content: '',
-        sceneNameMessage: 'Level 7 Outdoor',
+        sceneNameMessage:'Level 7 ',
       };
   }
 };
