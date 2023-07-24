@@ -279,7 +279,11 @@ export default function Vrtour() {
           animation={zoomIn ? "property: camera.zoom; from: 1; to: 1.4; easing: easeInQuad; dur: 1300" : "property: camera.zoom; from: 0.9 ; to: 1 ; dur: 1000"}
           look-controls="pointerLockEnabled: true"
           position="0 1.6 0" >
-          <Entity cursor="fuse: false;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: #ffc600; shader: flat"></Entity>
+          <Entity
+            cursor="fuse: false;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            material="color: #ffc600; shader: flat">
+
+          </Entity>
         </Entity>
 
       </Scene>
