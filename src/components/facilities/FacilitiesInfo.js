@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+// http://react-responsive-carousel.js.org
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 import DropdownList from './DropdownList';
 import ImageModal from '../ImageModal'
 
@@ -36,8 +40,9 @@ import yogaDeck3 from '../../assets/facilities/yogaDeck3.jpg';
 import { Link } from 'react-router-dom';
 
 
-// custom styles
+// custom styles 1/2 2/3 
 const facilitiesImage = 'w-[30vw] cursor-pointer object-cover mx-5 my-16 border-4 border-white drop-shadow-black'
+const facilitiesImageMobile = 'h-3/5 bg-red-400 cursor-pointer object-cover mx-5 mt-10 md:my-16 border-4 border-white drop-shadow-black'
 
 
 export default function FacilitiesInfo() {
@@ -137,7 +142,6 @@ export default function FacilitiesInfo() {
   // Find the selected facility option's details
   const selectedDetails = facilityDetails.find((option) => option.title === selectedOption) || facilityDetails[0];
 
-
   return (
     <div>
       {/* Facility map */}
@@ -146,7 +150,7 @@ export default function FacilitiesInfo() {
                  </div> */}
 
 
-      <div className='relative'>
+      <div className='relative h-screen'>
 
         {/* gradient */}
         {/* <div className='absolute z-20 top-0 left-0 w-full h-28 bg-gradient-to-b from-gray-100/100 to-gray-100/0'></div> */}
@@ -157,21 +161,47 @@ export default function FacilitiesInfo() {
         {/* Background Image */}
         <img src={selectedDetails.img1} alt='gym' className='h-screen w-screen object-cover' />
         {/* content */}
-        <div className='absolute top-0 z-40 mt-32 text-white'>
+        <div className='absolute top-0 z-40 mt-24 md:mt-32 text-white'>
           {/* title */}
-          <div className='flex items-center justify-between md:mx-20'>
-            <div className='text-8xl '>{selectedDetails.title}</div>
-
+          <div className='flex flex-col md:flex-row md:items-center pl-10 md:pl-0 justify-between md:mx-20'>
+            <div className=' text-5xl md:text-8xl'>{selectedDetails.title}</div>
             <DropdownList onOptionSelect={handleOptionSelect} />
           </div>
 
           {/* gallery*/}
-          <div className='bg-white/30 mt-10 h-[50vh] w-screen flex'>
+          {/* mobile */}
+          <div className='md:hidden'>
+          <div className=' bg-white/30 mt-10 w-screen '>
+            <Carousel
+            //  showArrows={true} 
+            //  onChange={onChange} 
+            //  onClickItem={onClickItem} 
+            //  onClickThumb={onClickThumb}
+              showArrows={false}
+              showStatus={false}
+              showThumbs={false}
+              autoPlay
+              infiniteLoop
+              interval={3000} 
+            >
+              <div className={facilitiesImageMobile} onClick={() => handleImageClick(selectedDetails.img1)}>
+                <img src={selectedDetails.img1} alt='facilities' className='h-full w-full object-cover'/>
+              </div>
+              <div className={facilitiesImageMobile} onClick={() => handleImageClick(selectedDetails.img2)}>
+                <img src={selectedDetails.img2} alt='facilities' className='h-full' />
+              </div>
+              <div className={facilitiesImageMobile} onClick={() => handleImageClick(selectedDetails.img3)}>
+                <img src={selectedDetails.img3} alt='facilities' className='h-full'/>
+              </div>
+            </Carousel>
+          </div>
+          </div>
+{/* dekstop */}
+          <div className='hidden md:flex bg-white/30 mt-10 h-[50vh] w-screen '>
             <img src={selectedDetails.img1} alt='facilities' className={facilitiesImage} onClick={() => handleImageClick(selectedDetails.img1)} />
             <img src={selectedDetails.img2} alt='facilities' className={facilitiesImage} onClick={() => handleImageClick(selectedDetails.img2)} />
             <img src={selectedDetails.img3} alt='facilities' className={facilitiesImage} onClick={() => handleImageClick(selectedDetails.img3)} />
           </div>
-
 
           {/* 360 button */}
           <div className='flex justify-center'>
@@ -188,7 +218,6 @@ export default function FacilitiesInfo() {
         {/* Image modal */}
         {showModal && selectedImage && (
           <ImageModal handleImageClick={handleImageClick} selectedImage={selectedImage} />)}
-
 
 
       </div>

@@ -52,11 +52,12 @@ export default function Amenities() {
   const imageStyle = 'md:w-4/5 md:h-[50vh] object-cover mb-5';
 
   return (
-    <div className='flex text-2xl font-title p-10 md:p-20 bg-gradient-to-b from-gray-100  to-black'>
+    <div className='flex text-2xl font-title p-10 md:p-20 bg-gradient-to-b from-gray-700  to-black'>
+
       {/* Distance */}
-      <div className=" text-yellow-500 sticky top-32 md:pl-20 w-1/3 md:w-1/2 h-[30vh]">
-        <p className='font-bold mb-10'>Distance</p>
-        <p className='text-4xl md:text-6xl '>{distance}</p>
+      <div className=" text-yellow-500 sticky top-32 md:pl-40 w-1/3 md:w-1/2 h-[30vh]">
+        <p className='font-bold mb-10'>Duration</p>
+        <p className='text-4xl md:text-8xl '>{distance}</p>
       </div>
 
       {/* Amenities */}

@@ -67,7 +67,7 @@ const Location = () => {
             </div>
 
 
-            <div className='text-center py-10 text-xl'>
+            <div className='text-center py-10 pb-14 text-xl'>
                 <span className='text-gray-700 font-semibold'>Address: </span>Technology Park Malaysia,
                 Lebuhraya Puchong-Sungai Besi, Bukit Jalil, 57000, Kuala Lumpur
             </div>
