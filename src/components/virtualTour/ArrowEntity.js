@@ -14,43 +14,39 @@ export default function Arrow({ position, rotation, navigate, text, text_rotatio
     setIsHovered(false);
   };
 
-
   return (
 
     <Entity position={position}>
       {/* location text */}
       <Entity
         text={{
-          value: text , // Text content
+          value: text,
           font: 'https://cdn.aframe.io/fonts/Exo2Bold.fnt',
           color: 'black',
           align: 'center',
           width: 2,
           wrapCount: 20,
-          // lineHeight: 0.2,
-          // letterSpacing: 0.02
         }}
-        rotation= {text_rotation}
-        position="0 -0.4 0" 
+        rotation={text_rotation}
+        position="0 -0.4 0"
       />
 
       {/* arrow icon */}
       <Entity
-        geometry={{ primitive: 'cylinder' }}
-        rotation={rotation}
-        scale="0.28 0.03 0.28"
+        geometry={{ primitive: 'cylinder' }} rotation={rotation} scale="0.28 0.03 0.28"
         material={{
-          src: isHovered ? ArrowIconHover : ArrowIcon, 
-          shader: 'flat', 
-          opacity:'0.8',
+          src: isHovered ? ArrowIconHover : ArrowIcon,
+          shader: 'flat',
+          opacity: '0.8',
         }}
         className="clickable"
         events={{
           mouseenter: handleHoverStart,
           mouseleave: handleHoverEnd
         }}
-      navigate={navigate}
+        navigate={navigate}
       />
     </Entity>
   );
 }
+

@@ -7,6 +7,7 @@ import river from '../../assets/facilities/readingPavilion1.jpg'
 import clubhouse from '../../assets/facilities/gameRoom2.jpg'
 import center from '../../assets/facilities/reflexologyPath1.jpg'
 
+// custom style
 const buttonStyle = 'border-2 mx-2 border-black rounded-xl mt-5 pt-2 pb-1 px-2 shadow-md hover:bg-black/10'
 const imageStyle = 'mb-1 h-20 w-full object-cover '
 
