@@ -126,9 +126,6 @@ const sceneInfo = {
 
 };
 
-// Get scene info based on current scene
-const getSceneInfo = (currentScene) => sceneInfo[currentScene] || defaultSceneInfo;
-
 //custom style
 const toolButtonStyle = 'bg-white w-14 h-14 mx-2 text-2xl flex justify-center items-center rounded hover:bg-gray-100'
 
@@ -147,6 +144,9 @@ export default function Vrtour() {
   const toggleMusic = () => {
     setMusicMuted(!musicMuted);
   };
+
+  // Get scene info based on current scene
+  const getSceneInfo = (currentScene) => sceneInfo[currentScene] || defaultSceneInfo;
 
   // Navigate to other scene with animation
   const navigateToScene = (scene) => {
