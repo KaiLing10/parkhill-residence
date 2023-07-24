@@ -14,7 +14,6 @@ export default function Playground2() {
       <Arrow position="2.3 1.3 1.1" rotation="0 -20 70" navigate={'PlaygroundRestingArea'}
         text="" text_rotation="0 240 0" />
       <Info position="1.4 2 -2.5" rotation="0 60 90" info={''} />
-      
 
       <Entity primitive='a-sky' src={scene} rotation="0 300 0" />
 

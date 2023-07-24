@@ -8,7 +8,7 @@ import clubhouse from '../../assets/facilities/gameRoom2.jpg'
 import center from '../../assets/facilities/reflexologyPath1.jpg'
 
 const buttonStyle = 'border-2 mx-2 border-black rounded-xl mt-5 pt-2 pb-1 px-2 shadow-md hover:bg-black/10'
-const imageStyle ='mb-1 h-20 w-full object-cover '
+const imageStyle = 'mb-1 h-20 w-full object-cover '
 
 export default function SwitchSceneModal({ handleSwitchSceneModal, navigateToScene }) {
 
@@ -28,15 +28,15 @@ export default function SwitchSceneModal({ handleSwitchSceneModal, navigateToSce
                         <p>Pool Area</p>
                     </div>
                     <div onClick={() => navigateToScene('Center4')} className={buttonStyle}>
-                    <img src={river} alt='pool_image' className={imageStyle} />
+                        <img src={river} alt='pool_image' className={imageStyle} />
                         River View Deck
                     </div>
                     <div onClick={() => navigateToScene('ClubHouseHallway1')} className={buttonStyle} >
-                    <img src={clubhouse} alt='pool_image' className={imageStyle} />
+                        <img src={clubhouse} alt='pool_image' className={imageStyle} />
                         Club House
                     </div>
                     <div onClick={() => navigateToScene('Center3')} className={buttonStyle} >
-                    <img src={center} alt='pool_image' className={imageStyle} />
+                        <img src={center} alt='pool_image' className={imageStyle} />
                         Level 7 Center
                     </div>
                 </div>
