@@ -238,7 +238,7 @@ export default function Vrtour() {
 
         {/* Static tool panel */}
         <div className='flex h-full justify-center items-end'>
-          <div className='relative bg-white/80 h-20 w-1/3 z-10 flex items-center justify-center rounded-md'>
+          <div className='relative bg-white/80 h-20 z-10 flex items-center justify-center rounded-md'>
 
             {/* Exit button */}
             <button onClick={() => navigate(-1)}>
