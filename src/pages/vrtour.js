@@ -162,7 +162,6 @@ export default function Vrtour() {
   // Render current scene component
   const renderScene = () => {
     const SceneComponent = components[currentScene];
-
     return SceneComponent ? <SceneComponent /> : null;
   };
 
@@ -174,7 +173,7 @@ export default function Vrtour() {
     setOpenSwitchScene(!openSwitchScene)
   }
 
-  // == Register custom A-Frame components ==
+  // == Custom A-Frame components ==
   if (AFRAME.components["navigate"]) {
     delete AFRAME.components["navigate"];
   }
