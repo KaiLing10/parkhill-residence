@@ -1,3 +1,9 @@
+Developer Name: Goh Kai Ling
+Student ID: TP059724
+
+Website Link : https://parkhill-residence.vercel.app/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
