@@ -13,7 +13,7 @@ const Rent = () => {
       <Navbar />
 
       <h2 className='pt-28 pb-10 pl-10 md:pl-20 text-2xl md:text-4xl'>Units/Rooms for Rent</h2>
-      <div className='md:pl-10 pb-16  grid grid-cols-1 md:grid-cols-3 gap-5'>
+      <div className='md:px-10 pb-16 grid grid-cols-1 md:grid-cols-3 gap-5'>
         <UnitOption unitInfo={'/unitInfo1'} unitImage={unit1} noOfRoom={3} noOfBath={2} rental={'2,100'} />
         <UnitOption unitInfo={'/unitInfo2'} unitImage={unit2} noOfRoom={4} noOfBath={2} rental={'2,800'} />
       </div>
@@ -29,7 +29,7 @@ const Rent = () => {
           <h2 className='font-medium text-2xl md:text-4xl'>Can't find your ideal unit/room?</h2>
           <p className='text-sm md:text-xl'>Leave your preferred room type here, and we'll notify you when a matching unit becomes available.</p>
 
-          <div className='p-10 m-5 md:mb-10 md:mt-5 md:w-[70vw] bg-white drop-shadow-md'>
+          <div className='p-5  md:p-10 md:m-5 md:mb-10 mt-5 md:w-[70vw] bg-white drop-shadow-md'>
             <Wishlist />
           </div>
         </div>

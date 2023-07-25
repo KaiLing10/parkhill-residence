@@ -8,7 +8,7 @@ export default function UnitOption( {unitInfo, unitImage , noOfRoom , noOfBath, 
     <>
     <Link to={unitInfo}>
        
-    <div className='text-xl md:text-2xl h-96 w-80 mx-10 bg-white drop-shadow-md cursor-pointer hover:scale-105 transition ease-in-out hover:shadow-lg hover:-translate-y-1'
+    <div className='text-xl md:text-2xl h-80 md:h-96 md:w-80 mx-10 bg-white drop-shadow-md cursor-pointer hover:scale-105 transition ease-in-out hover:shadow-lg hover:-translate-y-1'
     >
         <img src={unitImage} alt='unit_image' className='h-2/3 object-cover' />
         <div className=' p-2 px-5'>

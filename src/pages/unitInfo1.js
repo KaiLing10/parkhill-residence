@@ -78,8 +78,7 @@ const UnitInfo1 = () => {
                 </button>
               </Link>
 
-              <button className={unitButtonStyle}
-                onClick={handleBookingModal}>
+              <button className={unitButtonStyle} onClick={handleBookingModal}>
                 book now
               </button>
             </div>

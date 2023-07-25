@@ -34,18 +34,18 @@ export default function Wishlist() {
 
     // Handle form submission
     const onSubmit = (data) => {
-      // Get the existing data from local storage 
-      const existingData = JSON.parse(localStorage.getItem('wishlistData')) || [];
+        // Get the existing data from local storage 
+        const existingData = JSON.parse(localStorage.getItem('wishlistData')) || [];
 
-      // Add the new form data to the existing data array
-      const newData = [...existingData, data ];
+        // Add the new form data to the existing data array
+        const newData = [...existingData, data];
 
-      // Save the updated data array back to local storage
-      localStorage.setItem('wishlistData', JSON.stringify(newData));
-      setIsSubmitted(true);
-      reset()
-   
-   
+        // Save the updated data array back to local storage
+        localStorage.setItem('wishlistData', JSON.stringify(newData));
+        setIsSubmitted(true);
+        reset()
+
+
     };
 
     //   Define options for select field
@@ -110,7 +110,7 @@ export default function Wishlist() {
     return (
         <form onSubmit={handleSubmit(onSubmit)} clas dsName="font-content text-md max-w-md mx-auto">
             <p className="font-bold mb-2">Unit Preferences</p>
-            <div className='md:grid grid-cols-3 gap-5 mb-5 '>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-5 mb-5 '>
                 {/* category */}
                 <div className=''>
                     <Controller
@@ -314,8 +314,8 @@ export default function Wishlist() {
                 />
             </div>
             {isSubmitted && (
-                    <p className="text-green-600">Form submitted successfully!</p>
-                )}
+                <p className="text-green-600">Form submitted successfully!</p>
+            )}
             <Button type="submit" variant="contained" color="warning" style={{ backgroundColor: amber[500], color: 'black' }}>
                 Submit
             </Button>
