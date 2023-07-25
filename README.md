@@ -1,7 +1,6 @@
-Developer Name: Goh Kai Ling
-Student ID: TP059724
-
-Website Link : https://parkhill-residence.vercel.app/
+# Developer Name: Goh Kai Ling
+# Student ID: TP059724
+# Website Link : https://parkhill-residence.vercel.app/
 
 
 # Getting Started with Create React App
