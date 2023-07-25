@@ -1,60 +1,60 @@
-import React, { useRef } from 'react'
-import { motion, useInView } from "framer-motion";
+import React from 'react'
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-};
+// Animation variants
+const onScreenAnim = {
+    offscreen: { opacity: 0, y: 20 },
+    onscreen: { opacity: 1, y: 0, },
+}
 
 const Location = () => {
-    const ref1 = useRef(null)
-    const isInView1 = useInView(ref1)
-
-    const ref2 = useRef(null)
-    const isInView2 = useInView(ref2)
-
-    const ref3 = useRef(null)
-    const isInView3 = useInView(ref3)
-
-    const ref4 = useRef(null)
-    const isInView4 = useInView(ref4)
-
 
     return (
         <div className="  bg-gradient-to-b from-gray-300  to-white md:flex px-10 py-20 md:p-20 md:pt-40">
-           {/* text content */}
+            {/* text content */}
             <div className="w-full md:w-1/2 grid grid-cols-5 text-base md:text-xl font-title">
                 <motion.div
                     className="col-span-5 flex items-end pb-10 "
-                    variants={fadeIn}
-                    initial='hidden'
-                    animate={isInView1 ? 'visible' : 'hidden'}
-                    transition={{ ease: "easeInOut", duration: 1.5 }}
-                    ref={ref1}>
+                    variants={onScreenAnim}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    exit="offscreen"
+                    viewport={{ once: false, amount: 0.9 }}
+                    transition={{ duration: 1 }}>
                     <span className="text-2xl md:text-4xl">Located in</span>
                     <span className="ml-3 text-4xl md:text-5xl text-yellow-500">Bukit Jalil,</span>
                 </motion.div>
 
                 <div className="col-start-2 col-end-6 mb-10 md:mb-0">
-                    <motion.div className=" my-5" variants={fadeIn}
-                        initial='hidden' animate={isInView2 ? 'visible' : 'hidden'}
-                        transition={{ ease: "easeInOut", duration: 1.5 }} ref={ref2}>
+                    <motion.div className=" my-5"
+                        variants={onScreenAnim}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        exit="offscreen"
+                        viewport={{ once: false, amount: 0.9 }}
+                        transition={{ duration: 1 }}>
                         easy access to transportation, shopping, entertainment
                     </motion.div>
-                    <motion.div variants={fadeIn} initial='hidden' animate={isInView4 ? 'visible' : 'hidden'}
-                        transition={{ ease: "easeInOut", duration: 1.5 }} ref={ref4}>
+                    <motion.div
+                        variants={onScreenAnim}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        exit="offscreen"
+                        viewport={{ once: false, amount: 0.9 }}
+                        transition={{ duration: 1 }}>
                         under 20 km from the city center
                     </motion.div>
                 </div>
 
                 <motion.div
                     className="col-span-5 text-2xl md:text-4xl "
-                    variants={fadeIn}
-                    initial='hidden'
-                    animate={isInView3 ? 'visible' : 'hidden'}
-                    transition={{ ease: "easeInOut", duration: 1.5 }}
-                    ref={ref3}>
+                    variants={onScreenAnim}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    exit="offscreen"
+                    viewport={{ once: false, amount: 0.9 }}
+                    transition={{ duration: 1 }}>
                     It's the perfect location for modern living.
                 </motion.div>
 
@@ -78,7 +78,7 @@ const Location = () => {
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Google Map"
                 ></iframe>
-            
+
             </div>
         </div>
     );

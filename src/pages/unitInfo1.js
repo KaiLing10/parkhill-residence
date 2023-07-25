@@ -17,6 +17,7 @@ import unit1c from '../assets/unit/unit1View.jpg'
 const unitImageStyle = 'h-full w-full object-cover cursor-pointer '
 const detailTitleStyle = 'text-sm text-gray-800'
 const detailStyle = 'mb-3'
+const unitButtonStyle ='md:mr-10 font-content text-xl border-2 bg-yellow-500  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6 transition ease-in-out delay-150 hover:bg-yellow-500/40 hover:shadow-lg hover:-translate-y-1 hover:scale-110'
 
 const UnitInfo1 = () => {
   const [openBookingModal, setOpenBookingModal] = useState(false);
@@ -72,12 +73,12 @@ const UnitInfo1 = () => {
             </div>
             <div className='flex justify-between md:flex-row'>
               <Link to={`/vrTour/${'Unit1Center'}`} >
-                <button className=' md:mr-10 font-content text-xl border-2 bg-yellow-500  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6  transition ease-in-out delay-150 hover:bg-yellow-500/40 hover:shadow-lg hover:-translate-y-1 hover:scale-110'>
+                <button className={unitButtonStyle}>
                   room tour
                 </button>
               </Link>
 
-              <button className='md:mr-10 font-content text-xl border-2 bg-yellow-500  drop-shadow-md border-black rounded-xl mt-5 py-2 px-6 transition ease-in-out delay-150 hover:bg-yellow-500/40 hover:shadow-lg hover:-translate-y-1 hover:scale-110'
+              <button className={unitButtonStyle}
                 onClick={handleBookingModal}>
                 book now
               </button>

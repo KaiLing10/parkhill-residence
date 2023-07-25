@@ -55,9 +55,7 @@ const Concept = () => {
 
     // Track element visibility
     // https://www.react-spring.dev/docs/utilities/use-in-view#usage
-    const [ref, inViewText] = useInView({
-        threshold: 1,
-    });
+
     const [ref3, inViewTextMobile] = useInView({
         triggerOnce: true,
         threshold: 1,
@@ -71,11 +69,12 @@ const Concept = () => {
         <div className='bg-gray-100 md:px-20 pt-20 md:pb-20 font-title'>
             <motion.div
                 className='px-10 md:px-20 pb-6 text-xl md:text-2xl '
-                variants={fadeIn}
-                initial='hidden'
-                animate={inViewText ? 'visible' : 'hidden'}
-                transition={{ ease: "easeInOut", duration: 0.8 }}
-                ref={ref}
+                variants={onScreenAnim}
+                initial="offscreen"
+                whileInView="onscreen"
+                exit="offscreen"
+                viewport={{ once: false, amount: 0.9 }}
+                transition={{ duration: 1 }}
             >
                 <p>Situated within the lush greenery of the surrounding hillsides</p>
             </motion.div>
@@ -87,7 +86,7 @@ const Concept = () => {
                 <div>
                     <div className='absolute z-10 bottom-0 left-0 w-full h-full bg-white/50'></div>
                     <div className='z-0' >
-                        <img src={ConceptImage} alt='condo_image' layout='fill'  />
+                        <img src={ConceptImage} alt='condo_image' layout='fill' />
                     </div>
 
                 </div>
