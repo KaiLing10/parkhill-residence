@@ -56,8 +56,8 @@ export default function Wishlist() {
 
     const unitTypeOptions = {
         'entire-unit': [
-            { value: '3-room', label: '3 Room Unit' },
-            { value: '4-room', label: '4 Room Unit' },
+            { value: '3-room', label: '3 Rooms Unit' },
+            { value: '4-room', label: '4 Rooms Unit' },
         ],
         'one-room': [
             { value: 'master-room', label: 'Master Room' },
