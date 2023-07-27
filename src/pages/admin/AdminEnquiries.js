@@ -8,10 +8,10 @@ const tableTextStyle = 'px-6 py-4'
 
 const AdminEnquiries = () => {
     const [enquiryData, setEnquiryData] = useState([]);
-    const handleClearData = () => {
-        localStorage.removeItem('enquiryData');
-        window.location.reload();
-    }
+    // const handleClearData = () => {
+    //     localStorage.removeItem('enquiryData');
+    //     window.location.reload();
+    // }
 
 
     useEffect(() => {

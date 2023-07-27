@@ -14,15 +14,15 @@ const imageStyle = 'mb-1 h-20 w-full object-cover '
 export default function SwitchSceneModal({ handleSwitchSceneModal, navigateToScene }) {
 
     return (
-        <div className='flex h-full justify-center items-center'>
+        <div className='flex p-10 md:h-full justify-center items-center'>
             <motion.div
-                className='relative bg-white drop-shadow-md w-1/2 z-30 h-2/3 p-10 text-white font-content '
+                className='relative bg-white drop-shadow-md md:w-1/2 z-30 p-10 text-white font-content '
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2 }}>
                 <div className='absolute top-0 right-0 text-2xl bg-red-400 hover:bg-red-800/80 cursor-pointer px-4 py-2' onClick={handleSwitchSceneModal}>X</div>
                 <p className='text-black text-3xl font-semibold text-center'>Switch Scene</p>
-                <div className='grid grid-cols-2 text-lg text-black my-5 font-content text-center cursor-pointer'>
+                <div className='grid overflow-y-scroll grid-cols-2 text-lg text-black my-5 font-content text-center cursor-pointer'>
 
                     <div onClick={() => navigateToScene('Pool0')} className={buttonStyle}>
                         <img src={pool} alt='pool_image' className={imageStyle} />
