@@ -74,11 +74,15 @@ const UnitInfo2 = () => {
               </div>
             </div>
             <div className='flex justify-between md:flex-row'>
-              <Link to={`/vrTour/${'Unit1Center'}`} >
-                <button className={unitButtonStyle}>
+            <button className={unitButtonStyle}>
+              <Link to={`/vrTour/${'Unit2Entrance'}`} >
+                
                   room tour
-                </button>
+               
               </Link>
+              </button>
+
+             
 
               <button className={unitButtonStyle} onClick={handleBookingModal}>
                 book now
