@@ -93,8 +93,12 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
+      <div className='absolute text-white/70 font-thin w-full z-30 bottom-1 '>
+
+      <p className='text-center font-content'>scroll down</p></div>
 
       <div className='absolute z-30 bottom-16 left-1/2'>
+
         <div className='icon-scroll' ></div>
       </div>
 
