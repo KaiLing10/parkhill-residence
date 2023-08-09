@@ -93,9 +93,9 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
-      <div className='absolute text-white/70 font-thin w-full z-30 bottom-1 '>
+      <div className='absolute text-white/70 font-thin w-full z-30 bottom-2 '>
 
-      <p className='text-center font-content'>scroll down</p></div>
+      <p className='text-center text-xs font-content'>scroll down</p></div>
 
       <div className='absolute z-30 bottom-16 left-1/2'>
 
